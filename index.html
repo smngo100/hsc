@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hispanics Service Center (HSC) — Rooted in Community, Open to Everyone</title>
+  <meta name="description" content="The Hispanic Service Center is a multilingual nonprofit serving all residents in Lapeer County with housing, food, transportation, senior care, and translation services." />
+  <style>
+    /* ==========================================================================
+       DESIGN TOKENS (:root)
+       ========================================================================== */
+    :root {
+      /* Colors Palette - Terracotta + Teal System */
+      --bg: #FAF3E8;
+      --surface2: #F0E4D3;
+      --surface3: #FFFCF7;
+      
+      --teal: #1B6B5C;
+      --teal-hover: #145247;
+      --teal-dim: rgba(27, 107, 92, 0.14);
+      --teal-border: rgba(27, 107, 92, 0.30);
+      
+      --terracotta: #C1502E;
+      --terracotta-hover: #A03E22;
+      --terracotta-dim: rgba(193, 80, 46, 0.14);
+      --terracotta-border: rgba(193, 80, 46, 0.30);
+      
+      --text1: #2A211A;
+      --text2: #6B5B4D;
+      --text3: #9C8C7D;
+      --text4: #C9BEB0;
+      
+      --line: rgba(42, 33, 26, 0.14);
+      --line-light: rgba(42, 33, 26, 0.08);
+      --line-strong: rgba(42, 33, 26, 0.24);
+      
+      --green: #2E7D4F;
+      --red: #C0392B;
+      --amber: #E8A317;
+      --white: #FFFFFF;
+
+      /* Typography */
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: 'SF Mono', 'Courier New', monospace;
+
+      /* Font Sizes */
+      --fs-xs: 0.75rem;    /* 12px */
+      --fs-sm: 0.875rem;   /* 14px */
+      --fs-base: 1rem;     /* 16px */
+      --fs-lg: 1.125rem;   /* 18px */
+      --fs-xl: 1.25rem;    /* 20px */
+      --fs-2xl: 1.5rem;    /* 24px */
+      --fs-3xl: 2rem;      /* 32px */
+      --fs-4xl: 2.5rem;    /* 40px */
+
+      /* Line Heights */
+      --lh-tight: 1.15;
+      --lh-heading: 1.25;
+      --lh-body: 1.6;
+
+      /* Spacing Scale */
+      --space-2xs: 4px;
+      --space-xs: 8px;
+      --space-sm: 12px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+      --space-2xl: 48px;
+      --space-3xl: 64px;
+
+      /* Radii & Shadows */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 2px 8px rgba(42, 33, 26, 0.06);
+      --shadow-md: 0 6px 18px rgba(42, 33, 26, 0.10);
+      --shadow-lg: 0 12px 28px rgba(42, 33, 26, 0.14);
+
+      /* Transitions */
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s ease;
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text1);
+      font-family: var(--font-body);
+      line-height: var(--lh-body);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    .hsc-container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION (BEM: .hsc-header, .hsc-nav)
+       ========================================================================== */
+    .hsc-header {
+      background-color: var(--surface3);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hsc-header__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .hsc-header__brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: var(--fs-base);
+      color: var(--text1);
+      letter-spacing: 0.02em;
+    }
+
+    .hsc-header__logo-box {
+      width: 38px;
+      height: 38px;
+      background: var(--surface2);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--teal);
+      position: relative;
+    }
+
+    .hsc-header__logo-box::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border: 1px stroke var(--teal-border);
+      pointer-events: none;
+    }
+
+    .hsc-nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .hsc-nav__menu {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+    }
+
+    .hsc-nav__link {
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--text2);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      transition: color var(--transition-fast), background-color var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .hsc-nav__link:hover,
+    .hsc-nav__link--active {
+      color: var(--teal);
+      background-color: var(--teal-dim);
+    }
+
+    .hsc-nav__toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hsc-nav__toggle-bar {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text1);
+      border-radius: 2px;
+      transition: transform var(--transition-fast), opacity var(--transition-fast);
+    }
+
+    .hsc-header__actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .hsc-lang-flag {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xs);
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      color: var(--text2);
+      background: var(--surface2);
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-light);
+    }
+
+    .hsc-lang-flag svg {
+      width: 18px;
+      height: 12px;
+      border-radius: 1px;
+    }
+
+    /* ==========================================================================
+       BUTTONS (.hsc-btn)
+       ========================================================================== */
+    .hsc-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .hsc-btn:active {
+      transform: scale(0.98);
+    }
+
+    .hsc-btn--teal {
+      background-color: var(--teal);
+      color: var(--white);
+    }
+
+    .hsc-btn--teal:hover {
+      background-color: var(--teal-hover);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hsc-btn--terracotta {
+      background-color: var(--terracotta);
+      color: var(--white);
+    }
+
+    .hsc-btn--terracotta:hover {
+      background-color: var(--terracotta-hover);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hsc-btn--outline {
+      background-color: transparent;
+      color: var(--text1);
+      border: 1px solid var(--text1);
+    }
+
+    .hsc-btn--outline:hover {
+      background-color: var(--surface2);
+    }
+
+    .hsc-btn--sm {
+      padding: 6px 14px;
+      font-size: var(--fs-xs);
+    }
+
+    /* ==========================================================================
+       PAGES & SECTIONS (.hsc-page, .hsc-section)
+       ========================================================================== */
+    .hsc-main {
+      flex: 1;
+    }
+
+    .hsc-page {
+      display: none;
+      animation: fadeIn var(--transition-normal);
+    }
+
+    .hsc-page--active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hsc-section {
+      padding: var(--space-2xl) 0;
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .hsc-section--alt {
+      background-color: var(--surface2);
+    }
+
+    .hsc-section__header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto var(--space-xl);
+    }
+
+    .hsc-section__eyebrow {
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: var(--space-xs);
+    }
+
+    .hsc-section__title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-3xl);
+      color: var(--text1);
+      line-height: var(--lh-tight);
+      margin-bottom: var(--space-sm);
+    }
+
+    .hsc-section__subtitle {
+      font-size: var(--fs-base);
+      color: var(--text2);
+      line-height: var(--lh-body);
+    }
+
+    /* ==========================================================================
+       HERO SECTION (.hsc-hero)
+       ========================================================================== */
+    .hsc-hero {
+      padding: var(--space-3xl) 0 var(--space-2xl);
+      background: linear-gradient(180deg, var(--surface3) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hsc-hero__grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+
+    .hsc-hero__eyebrow {
+      display: inline-block;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-dim);
+      padding: 4px 12px;
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-sm);
+    }
+
+    .hsc-hero__title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-4xl);
+      line-height: var(--lh-tight);
+      color: var(--text1);
+      margin-bottom: var(--space-md);
+    }
+
+    .hsc-hero__lead {
+      font-size: var(--fs-lg);
+      color: var(--text2);
+      line-height: var(--lh-body);
+      margin-bottom: var(--space-xl);
+    }
+
+    .hsc-hero__actions {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .hsc-hero__image-wrapper {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-md);
+      background-color: var(--surface2);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ==========================================================================
+       GRID SYSTEM (.hsc-grid)
+       ========================================================================== */
+    .hsc-grid {
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .hsc-grid--2cols {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hsc-grid--3cols {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hsc-grid--4cols {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* ==========================================================================
+       CARDS (.hsc-card)
+       ========================================================================== */
+    .hsc-card {
+      background-color: var(--surface3);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .hsc-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hsc-card__media {
+      height: 180px;
+      background-color: var(--surface2);
+      border-bottom: 1px solid var(--line-light);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hsc-card__body {
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .hsc-card__title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-xl);
+      color: var(--text1);
+      margin-bottom: var(--space-xs);
+    }
+
+    .hsc-card__text {
+      font-size: var(--fs-sm);
+      color: var(--text2);
+      line-height: var(--lh-body);
+      margin-bottom: var(--space-md);
+      flex: 1;
+    }
+
+    .hsc-card__footer {
+      margin-top: auto;
+      padding-top: var(--space-sm);
+    }
+
+    /* ==========================================================================
+       STATS BAR (.hsc-stats)
+       ========================================================================== */
+    .hsc-stats {
+      background-color: var(--surface2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: var(--space-xl) 0;
+    }
+
+    .hsc-stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      text-align: center;
+    }
+
+    .hsc-stats__item {
+      padding: var(--space-sm);
+    }
+
+    .hsc-stats__number {
+      font-family: var(--font-heading);
+      font-size: var(--fs-3xl);
+      font-weight: 700;
+      color: var(--teal);
+      line-height: var(--lh-tight);
+      margin-bottom: var(--space-2xs);
+    }
+
+    .hsc-stats__label {
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text2);
+    }
+
+    /* ==========================================================================
+       SERVICES TABS & DETAILS (.hsc-services-nav, .hsc-table)
+       ========================================================================== */
+    .hsc-subnav {
+      display: flex;
+      gap: var(--space-xs);
+      overflow-x: auto;
+      padding-bottom: var(--space-xs);
+      margin-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hsc-subnav__item {
+      padding: var(--space-xs) var(--space-md);
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      color: var(--text2);
+      background: var(--surface2);
+      border: 1px solid var(--line-light);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .hsc-subnav__item:hover,
+    .hsc-subnav__item--active {
+      background-color: var(--teal);
+      color: var(--white);
+      border-color: var(--teal);
+    }
+
+    /* Detail Box */
+    .hsc-detail-box {
+      background-color: var(--surface3);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hsc-detail-box__header {
+      border-bottom: 1px solid var(--line-light);
+      padding-bottom: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+
+    .hsc-rate-card {
+      background-color: var(--surface3);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      text-align: center;
+    }
+
+    .hsc-rate-card__amount {
+      font-family: var(--font-heading);
+      font-size: var(--fs-2xl);
+      font-weight: 700;
+      color: var(--terracotta);
+      margin-bottom: var(--space-2xs);
+    }
+
+    .hsc-rate-card__label {
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      color: var(--text2);
+      text-transform: uppercase;
+    }
+
+    /* Tables */
+    .hsc-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--surface3);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .hsc-table th,
+    .hsc-table td {
+      padding: var(--space-sm) var(--space-md);
+      text-align: left;
+      font-size: var(--fs-sm);
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .hsc-table th {
+      background-color: var(--surface2);
+      font-weight: 700;
+      color: var(--text1);
+      text-transform: uppercase;
+      font-size: var(--fs-xs);
+      letter-spacing: 0.05em;
+    }
+
+    .hsc-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ==========================================================================
+       GALLERY GRID & LIGHTBOX (.hsc-gallery)
+       ========================================================================== */
+    .hsc-gallery-filters {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-xl);
+      flex-wrap: wrap;
+    }
+
+    .hsc-gallery__item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      aspect-ratio: 4 / 3;
+      background-color: var(--surface2);
+    }
+
+    .hsc-gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-normal);
+    }
+
+    .hsc-gallery__item:hover img {
+      transform: scale(1.05);
+    }
+
+    .hsc-gallery__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(42,33,26,0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--space-md);
+      color: var(--white);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .hsc-gallery__item:hover .hsc-gallery__overlay {
+      opacity: 1;
+    }
+
+    .hsc-gallery__title {
+      font-size: var(--fs-sm);
+      font-weight: 700;
+    }
+
+    .hsc-gallery__tag {
+      font-size: var(--fs-xs);
+      color: var(--surface2);
+    }
+
+    /* ==========================================================================
+       TEAM / ABOUT US (.hsc-team)
+       ========================================================================== */
+    .hsc-team-card {
+      background-color: var(--surface3);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      text-align: center;
+    }
+
+    .hsc-team-card__avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: var(--surface2);
+      margin: 0 auto var(--space-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--teal-border);
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    .hsc-team-card__name {
+      font-size: var(--fs-base);
+      font-weight: 700;
+      color: var(--text1);
+    }
+
+    .hsc-team-card__role {
+      font-size: var(--fs-xs);
+      color: var(--text2);
+    }
+
+    /* ==========================================================================
+       FORM STYLES (.hsc-form)
+       ========================================================================== */
+    .hsc-form {
+      background-color: var(--surface3);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hsc-form__group {
+      margin-bottom: var(--space-md);
+    }
+
+    .hsc-form__label {
+      display: block;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text1);
+      margin-bottom: var(--space-2xs);
+    }
+
+    .hsc-form__input,
+    .hsc-form__select,
+    .hsc-form__textarea {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: var(--fs-sm);
+      font-family: inherit;
+      color: var(--text1);
+      background-color: var(--bg);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-sm);
+      outline: none;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .hsc-form__input:focus,
+    .hsc-form__select:focus,
+    .hsc-form__textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px var(--teal-dim);
+    }
+
+    .hsc-form__textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* ==========================================================================
+       FOOTER (.hsc-footer)
+       ========================================================================== */
+    .hsc-footer {
+      background-color: var(--surface3);
+      border-top: 1px solid var(--line);
+      margin-top: auto;
+    }
+
+    .hsc-footer__top {
+      background-color: var(--surface2);
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--line-light);
+      font-size: var(--fs-sm);
+      color: var(--text2);
+      text-align: center;
+    }
+
+    .hsc-footer__main {
+      padding: var(--space-2xl) 0 var(--space-xl);
+    }
+
+    .hsc-footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: var(--space-xl);
+    }
+
+    .hsc-footer__brand-title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-lg);
+      color: var(--text1);
+      margin-bottom: var(--space-xs);
+    }
+
+    .hsc-footer__brand-desc {
+      font-size: var(--fs-sm);
+      color: var(--text2);
+      line-height: var(--lh-body);
+    }
+
+    .hsc-footer__heading {
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text1);
+      margin-bottom: var(--space-md);
+    }
+
+    .hsc-footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .hsc-footer__link {
+      font-size: var(--fs-sm);
+      color: var(--text2);
+      transition: color var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .hsc-footer__link:hover {
+      color: var(--teal);
+    }
+
+    .hsc-footer__bottom {
+      border-top: 1px solid var(--line-light);
+      padding: var(--space-md) 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: var(--fs-xs);
+      color: var(--text3);
+    }
+
+    /* Toast Notification */
+    .hsc-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--text1);
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      z-index: 2000;
+    }
+
+    .hsc-toast--show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Modal / Lightbox */
+    .hsc-modal {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(42, 33, 26, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-md);
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-fast);
+    }
+
+    .hsc-modal--open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .hsc-modal__content {
+      background-color: var(--surface3);
+      border-radius: var(--radius-lg);
+      max-width: 700px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .hsc-modal__close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--surface2);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--text1);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       MEDIA QUERIES (TABLET & MOBILE BREAKPOINTS)
+       ========================================================================== */
+    /* Tablet Breakpoint (max-width: 1024px) */
+    @media (max-width: 1024px) {
+      .hsc-nav__toggle {
+        display: flex;
+      }
+
+      .hsc-nav__menu {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background-color: var(--surface3);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal), padding var(--transition-normal);
+        box-shadow: var(--shadow-md);
+      }
+
+      .hsc-nav__menu--open {
+        max-height: 360px;
+        padding: var(--space-md) 0;
+      }
+
+      .hsc-nav__link {
+        padding: var(--space-sm) var(--space-md);
+        border-radius: 0;
+      }
+
+      .hsc-hero__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+      }
+
+      .hsc-grid--3cols,
+      .hsc-grid--4cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hsc-stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hsc-footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+    }
+
+    /* Mobile Breakpoint (max-width: 768px) */
+    @media (max-width: 768px) {
+      .hsc-header__container {
+        height: 64px;
+      }
+
+      .hsc-header__brand-text {
+        font-size: 13px;
+      }
+
+      .hsc-nav__menu {
+        top: 64px;
+      }
+
+      .hsc-hero__title {
+        font-size: var(--fs-2xl);
+      }
+
+      .hsc-section__title {
+        font-size: var(--fs-2xl);
+      }
+
+      .hsc-grid--2cols,
+      .hsc-grid--3cols,
+      .hsc-grid--4cols {
+        grid-template-columns: 1fr;
+      }
+
+      .hsc-stats__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hsc-hero__actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hsc-hero__actions .hsc-btn {
+        width: 100%;
+      }
+
+      .hsc-footer__bottom {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAV BAR
+       ========================================================================== -->
+  <header class="hsc-header">
+    <div class="hsc-container hsc-header__container">
+      <!-- Brand Logo -->
+      <a href="#" class="hsc-header__brand" onclick="navigateTo('home'); return false;">
+        <div class="hsc-header__logo-box">HSC</div>
+        <span class="hsc-header__brand-text">HISPANICS SERVICE CENTER</span>
+      </a>
+
+      <!-- Responsive Navigation Menu -->
+      <nav class="hsc-nav">
+        <button class="hsc-nav__toggle" id="navToggle" aria-expanded="false" aria-label="Toggle Navigation Menu">
+          <span class="hsc-nav__toggle-bar"></span>
+          <span class="hsc-nav__toggle-bar"></span>
+          <span class="hsc-nav__toggle-bar"></span>
+        </button>
+
+        <ul class="hsc-nav__menu" id="navMenu">
+          <li><a class="hsc-nav__link hsc-nav__link--active" data-page="home" onclick="navigateTo('home')">Home</a></li>
+          <li><a class="hsc-nav__link" data-page="services" onclick="navigateTo('services')">Services</a></li>
+          <li><a class="hsc-nav__link" data-page="gallery" onclick="navigateTo('gallery')">Gallery</a></li>
+          <li><a class="hsc-nav__link" data-page="about" onclick="navigateTo('about')">About Us</a></li>
+          <li><a class="hsc-nav__link" data-page="contact" onclick="navigateTo('contact')">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Language & Donate CTA -->
+      <div class="hsc-header__actions">
+        <div class="hsc-lang-flag" title="English / Español">
+          <svg viewBox="0 0 640 480" aria-label="US Flag">
+            <path fill="#bd3d44" d="M0 0h640v480H0z"/>
+            <path stroke="#fff" stroke-width="37" d="M0 55.5h640M0 129h640M0 203h640M0 277h640M0 351h640M0 424.5h640"/>
+            <path fill="#192f5d" d="M0 0h285v258.5H0z"/>
+          </svg>
+          <span>EN</span>
+        </div>
+        <button class="hsc-btn hsc-btn--terracotta hsc-btn--sm" onclick="navigateTo('contact')">DONATE</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <main class="hsc-main">
+
+    <!-- ========================================================================
+         PAGE 1: HOME PAGE
+         ======================================================================== -->
+    <div class="hsc-page hsc-page--active" id="page-home">
+      <!-- Hero -->
+      <section class="hsc-hero">
+        <div class="hsc-container">
+          <div class="hsc-hero__grid">
+            <div class="hsc-hero__content">
+              <span class="hsc-hero__eyebrow">Rooted in Community, Open to Everyone</span>
+              <h1 class="hsc-hero__title">Rooted in Community, Open to Everyone.</h1>
+              <p class="hsc-hero__lead">
+                The Hispanic Service Center is a multilingual nonprofit serving all residents in Lapeer County — from housing and food security to transportation, senior care, and language support. We connect individuals and families with resources, assistance, and support they need to thrive.
+              </p>
+              <div class="hsc-hero__actions">
+                <button class="hsc-btn hsc-btn--teal" onclick="navigateTo('contact')">Get Help</button>
+                <button class="hsc-btn hsc-btn--outline" onclick="navigateTo('services')">See How We Can Help</button>
+              </div>
+            </div>
+            <div class="hsc-hero__image-wrapper">
+              <svg width="100%" height="100%" viewBox="0 0 500 380" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:#F0E4D3;">
+                <rect width="500" height="380" fill="#F0E4D3"/>
+                <line x1="0" y1="0" x2="500" y2="380" stroke="#C9BEB0" stroke-width="2"/>
+                <line x1="500" y1="0" x2="0" y2="380" stroke="#C9BEB0" stroke-width="2"/>
+                <circle cx="250" cy="190" r="45" fill="#FAF3E8" stroke="#1B6B5C" stroke-width="2"/>
+                <text x="250" y="196" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="#1B6B5C" text-anchor="middle">HSC COMMUNITY</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sponsor / Partners Bar -->
+      <div class="hsc-stats">
+        <div class="hsc-container">
+          <div class="hsc-stats__grid">
+            <div class="hsc-stats__item">
+              <div class="hsc-stats__number">50+</div>
+              <div class="hsc-stats__label">Years Serving The Community</div>
+            </div>
+            <div class="hsc-stats__item">
+              <div class="hsc-stats__number">1,200+</div>
+              <div class="hsc-stats__label">Families Housed</div>
+            </div>
+            <div class="hsc-stats__item">
+              <div class="hsc-stats__number">15,000+</div>
+              <div class="hsc-stats__label">Meals Distributed</div>
+            </div>
+            <div class="hsc-stats__item">
+              <div class="hsc-stats__number">3,500+</div>
+              <div class="hsc-stats__label">Residents Served</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What We Do Section -->
+      <section class="hsc-section">
+        <div class="hsc-container">
+          <div class="hsc-section__header">
+            <span class="hsc-section__eyebrow">Our Programs</span>
+            <h2 class="hsc-section__title">What We Do</h2>
+            <p class="hsc-section__subtitle">Direct support programs designed to meet essential human needs in our community.</p>
+          </div>
+
+          <div class="hsc-grid hsc-grid--3cols">
+            <!-- Service 1 -->
+            <article class="hsc-card">
+              <div class="hsc-card__media">
+                <svg width="100%" height="100%" viewBox="0 0 300 180" fill="none" style="background:#FFFCF7;">
+                  <rect width="300" height="180" fill="#FFFCF7"/>
+                  <line x1="0" y1="0" x2="300" y2="180" stroke="#EAE0D0" stroke-width="1.5"/>
+                  <line x1="300" y1="0" x2="0" y2="180" stroke="#EAE0D0" stroke-width="1.5"/>
+                  <circle cx="150" cy="90" r="28" fill="#F0E4D3" stroke="#1B6B5C" stroke-width="2"/>
+                  <path d="M142 90h16M150 82v16" stroke="#1B6B5C" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="hsc-card__body">
+                <h3 class="hsc-card__title">Imlay City Area Rides</h3>
+                <p class="hsc-card__text">Free transportation connecting rural residents to medical, legal, and essential appointments.</p>
+                <div class="hsc-card__footer">
+                  <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="showServiceDetail('rides')">Learn More</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 2 -->
+            <article class="hsc-card">
+              <div class="hsc-card__media">
+                <svg width="100%" height="100%" viewBox="0 0 300 180" fill="none" style="background:#FFFCF7;">
+                  <rect width="300" height="180" fill="#FFFCF7"/>
+                  <line x1="0" y1="0" x2="300" y2="180" stroke="#EAE0D0" stroke-width="1.5"/>
+                  <line x1="300" y1="0" x2="0" y2="180" stroke="#EAE0D0" stroke-width="1.5"/>
+                  <circle cx="150" cy="90" r="28" fill="#F0E4D3" stroke="#C1502E" stroke-width="2"/>
+                  <path d="M140 98l10-16 10 16" stroke="#C1502E" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="hsc-card__body">
+                <h3 class="hsc-card__title">Family Shelter</h3>
+                <p class="hsc-card__text">Safe, non-violent temporary housing for women and children who need shelter from crisis.</p>
+                <div class="hsc-card__footer">
+                  <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="showServiceDetail('shelter')">Learn More</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 3 -->
+            <article class="hsc-card">
+              <div class="hsc-card__media">
+                <svg width="100%" height="100%" viewBox="0 0 300 180" fill="none" style="background:#FFFCF7;">
+                  <rect width="300" height="180" fill="#FFFCF7"/>
+                  <line x1="0" y1="0" x2="300" y2="180" stroke="#EAE0D0" stroke-width="1.5"/>
+                  <line x1="300" y1="0" x2="0" y2="180" stroke="#EAE0D0" stroke-width="1.5"/>
+                  <circle cx="150" cy="90" r="28" fill="#F0E4D3" stroke="#1B6B5C" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="hsc-card__body">
+                <h3 class="hsc-card__title">Food Pantry</h3>
+                <p class="hsc-card__text">Free, dignified access to nutritious food. Our pantry is open to all Lapeer County residents.</p>
+                <div class="hsc-card__footer">
+                  <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="showServiceDetail('pantry')">Learn More</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 4 -->
+            <article class="hsc-card">
+              <div class="hsc-card__media">
+                <svg width="100%" height="100%" viewBox="0 0 300 180" fill="none" style="background:#FFFCF7;">
+                  <rect width="300" height="180" fill="#FFFCF7"/>
+                  <line x1="0" y1="0" x2="300" y2="180" stroke="#EAE0D0" stroke-width="1.5"/>
+                  <line x1="300" y1="0" x2="0" y2="180" stroke="#EAE0D0" stroke-width="1.5"/>
+                  <circle cx="150" cy="90" r="28" fill="#F0E4D3" stroke="#C1502E" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="hsc-card__body">
+                <h3 class="hsc-card__title">Senior Program</h3>
+                <p class="hsc-card__text">In-home support, transportation, and twice-weekly social activities for seniors.</p>
+                <div class="hsc-card__footer">
+                  <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="showServiceDetail('senior')">Learn More</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Service 5 -->
+            <article class="hsc-card">
+              <div class="hsc-card__media">
+                <svg width="100%" height="100%" viewBox="0 0 300 180" fill="none" style="background:#FFFCF7;">
+                  <rect width="300" height="180" fill="#FFFCF7"/>
+                  <line x1="0" y1="0" x2="300" y2="180" stroke="#EAE0D0" stroke-width="1.5"/>
+                  <line x1="300" y1="0" x2="0" y2="180" stroke="#EAE0D0" stroke-width="1.5"/>
+                  <circle cx="150" cy="90" r="28" fill="#F0E4D3" stroke="#1B6B5C" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="hsc-card__body">
+                <h3 class="hsc-card__title">Translation Services</h3>
+                <p class="hsc-card__text">Bilingual translation and document assistance for forms, certificates, and legal paperwork.</p>
+                <div class="hsc-card__footer">
+                  <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="showServiceDetail('translation')">Learn More</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Get Involved Section -->
+      <section class="hsc-section hsc-section--alt">
+        <div class="hsc-container">
+          <div class="hsc-section__header">
+            <span class="hsc-section__eyebrow">Make An Impact</span>
+            <h2 class="hsc-section__title">Get Involved</h2>
+            <p class="hsc-section__subtitle">Facing a hard time? Whether it's food, shelter, transportation, or translation support, our team is ready to help.</p>
+          </div>
+
+          <div class="hsc-grid hsc-grid--3cols">
+            <div class="hsc-card">
+              <div class="hsc-card__body" style="text-align: center; align-items: center;">
+                <h3 class="hsc-card__title">Get Help</h3>
+                <p class="hsc-card__text">Facing a hard time? Whether it's food, shelter, transportation, or translation support, our team is ready to help.</p>
+                <button class="hsc-btn hsc-btn--outline" onclick="navigateTo('contact')">See How We Can Help</button>
+              </div>
+            </div>
+
+            <div class="hsc-card">
+              <div class="hsc-card__body" style="text-align: center; align-items: center;">
+                <h3 class="hsc-card__title">Volunteer With Us</h3>
+                <p class="hsc-card__text">From driving neighbors to appointments to stocking pantry shelves, our volunteers are the heart of everything we do.</p>
+                <button class="hsc-btn hsc-btn--teal" onclick="navigateTo('contact')">Join The Team</button>
+              </div>
+            </div>
+
+            <div class="hsc-card">
+              <div class="hsc-card__body" style="text-align: center; align-items: center;">
+                <h3 class="hsc-card__title">Donate Today</h3>
+                <p class="hsc-card__text">Every gift — large or small — keeps our shelter open, our pantry stocked, and our doors welcoming to anyone who needs help.</p>
+                <button class="hsc-btn hsc-btn--terracotta" onclick="navigateTo('contact')">Donate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================================================
+         PAGE 2: SERVICES PAGE (WITH SUB-VIEWS)
+         ======================================================================== -->
+    <div class="hsc-page" id="page-services">
+      <section class="hsc-section">
+        <div class="hsc-container">
+          <div class="hsc-section__header">
+            <span class="hsc-section__eyebrow">Community Services</span>
+            <h2 class="hsc-section__title">Services</h2>
+            <p class="hsc-section__subtitle">
+              The Hispanic Service Center offers a range of no-cost and low-cost programs designed to meet needs in our community — from housing and food security to transportation, senior care, and language support. Every service is open to all Lapeer County residents, regardless of background.
+            </p>
+          </div>
+
+          <!-- Services Subnav Tabs -->
+          <ul class="hsc-subnav">
+            <li><button class="hsc-subnav__item hsc-subnav__item--active" onclick="showServiceDetail('all')">All Services</button></li>
+            <li><button class="hsc-subnav__item" onclick="showServiceDetail('rides')">Imlay City Area Rides</button></li>
+            <li><button class="hsc-subnav__item" onclick="showServiceDetail('shelter')">Family Shelter</button></li>
+            <li><button class="hsc-subnav__item" onclick="showServiceDetail('pantry')">Food Pantry</button></li>
+            <li><button class="hsc-subnav__item" onclick="showServiceDetail('senior')">Senior Program</button></li>
+            <li><button class="hsc-subnav__item" onclick="showServiceDetail('translation')">Translation Services</button></li>
+          </ul>
+
+          <!-- Sub-View: All Services Overview -->
+          <div id="service-subview-all">
+            <div class="hsc-grid hsc-grid--3cols">
+              <div class="hsc-card">
+                <div class="hsc-card__body">
+                  <h3 class="hsc-card__title">Imlay City Area Rides</h3>
+                  <p class="hsc-card__text">Free transportation connecting rural residents to medical, legal, and essential appointments.</p>
+                  <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="showServiceDetail('rides')">View Program Details</button>
+                </div>
+              </div>
+              <div class="hsc-card">
+                <div class="hsc-card__body">
+                  <h3 class="hsc-card__title">Family Shelter</h3>
+                  <p class="hsc-card__text">Safe, non-violent temporary housing for women and children who need shelter from crisis.</p>
+                  <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="showServiceDetail('shelter')">View Program Details</button>
+                </div>
+              </div>
+              <div class="hsc-card">
+                <div class="hsc-card__body">
+                  <h3 class="hsc-card__title">Food Pantry</h3>
+                  <p class="hsc-card__text">Free, dignified access to nutritious food. Open weekdays with grab-and-go options.</p>
+                  <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="showServiceDetail('pantry')">View Program Details</button>
+                </div>
+              </div>
+              <div class="hsc-card">
+                <div class="hsc-card__body">
+                  <h3 class="hsc-card__title">Senior Program</h3>
+                  <p class="hsc-card__text">In-home support, errands transportation, and twice-weekly social activities for seniors.</p>
+                  <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="showServiceDetail('senior')">View Program Details</button>
+                </div>
+              </div>
+              <div class="hsc-card">
+                <div class="hsc-card__body">
+                  <h3 class="hsc-card__title">Translation Services</h3>
+                  <p class="hsc-card__text">Bilingual assistance with citizenship forms, green card renewals, and document translation.</p>
+                  <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="showServiceDetail('translation')">View Program Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sub-View: Imlay City Area Rides -->
+          <div id="service-subview-rides" style="display:none;">
+            <div class="hsc-detail-box">
+              <div class="hsc-detail-box__header">
+                <h3 class="hsc-card__title" style="font-size: var(--fs-2xl);">Imlay City Area Rides</h3>
+                <p style="color: var(--text2); margin-top: var(--space-xs);">
+                  In partnership with the Ruth Hughes Community Foundation, HSC offers Imlay City Area Rides — a program that provides rides for residents without reliable personal transportation.
+                </p>
+              </div>
+              <p style="margin-bottom: var(--space-md); color: var(--text1);">
+                For many, transportation is the invisible barrier between stability and setback. A missed doctor's appointment, a lost job, or work program that slips away can be tragic. This program helps relieve that burden.
+              </p>
+              <div style="background-color: var(--surface2); padding: var(--space-md); border-radius: var(--radius-md); border: 1px solid var(--line); margin-bottom: var(--space-lg); text-align: center; font-weight: 700;">
+                Operating Hours: 8:00 AM - 5:00 PM (Monday – Friday)
+              </div>
+              
+              <h4 style="font-family: var(--font-heading); margin-bottom: var(--space-md); color: var(--text1);">Ride Rates Information:</h4>
+              <div class="hsc-grid hsc-grid--4cols" style="margin-bottom: var(--space-lg);">
+                <div class="hsc-rate-card">
+                  <div class="hsc-rate-card__amount">$15</div>
+                  <div class="hsc-rate-card__label">Long Distance Rides</div>
+                </div>
+                <div class="hsc-rate-card">
+                  <div class="hsc-rate-card__amount">$10</div>
+                  <div class="hsc-rate-card__label">Discounted Rides</div>
+                </div>
+                <div class="hsc-rate-card">
+                  <div class="hsc-rate-card__amount">$20</div>
+                  <div class="hsc-rate-card__label">Discounted Non-Res</div>
+                </div>
+                <div class="hsc-rate-card">
+                  <div class="hsc-rate-card__amount">$8</div>
+                  <div class="hsc-rate-card__label">Local Rides</div>
+                </div>
+              </div>
+              <p style="font-size: var(--fs-xs); color: var(--text3); text-align: center;">For more information or to schedule a ride, call <strong style="color: var(--teal);">(012) 345-6789</strong>.</p>
+            </div>
+          </div>
+
+          <!-- Sub-View: Family Shelter -->
+          <div id="service-subview-shelter" style="display:none;">
+            <div class="hsc-detail-box">
+              <div class="hsc-detail-box__header">
+                <h3 class="hsc-card__title" style="font-size: var(--fs-2xl);">Family Shelter</h3>
+                <p style="color: var(--text2); margin-top: var(--space-xs);">
+                  Safe, non-violent temporary housing for families in crisis, giving them time and space to stabilize.
+                </p>
+              </div>
+              <p style="margin-bottom: var(--space-md); color: var(--text1);">
+                The Hispanic Service Center provides temporary emergency shelter for families who need a safe place during periods of hardship. Families may stay for a short duration while working toward permanent housing.
+              </p>
+              <ul style="list-style: disc; padding-left: var(--space-lg); margin-bottom: var(--space-lg); color: var(--text2);">
+                <li style="margin-bottom: var(--space-xs);">Safe, private housing for women and children</li>
+                <li style="margin-bottom: var(--space-xs);">Supportive case management</li>
+                <li style="margin-bottom: var(--space-xs);">Nutritious meals, clothing, and essential supplies</li>
+                <li style="margin-bottom: var(--space-xs);">Assistance with employment, transportation, and housing navigation</li>
+              </ul>
+              <div style="background-color: var(--terracotta-dim); padding: var(--space-md); border-radius: var(--radius-md); border: 1px solid var(--terracotta-border); color: var(--terracotta); text-align: center; font-weight: 700;">
+                To check eligibility or to join the waitlist, call (012) 345-6789.
+              </div>
+            </div>
+          </div>
+
+          <!-- Sub-View: Food Pantry -->
+          <div id="service-subview-pantry" style="display:none;">
+            <div class="hsc-detail-box">
+              <div class="hsc-detail-box__header">
+                <h3 class="hsc-card__title" style="font-size: var(--fs-2xl);">Food Pantry</h3>
+                <p style="color: var(--text2); margin-top: var(--space-xs);">
+                  Free, dignified access to nutritious food open weekdays with appointment options for working families.
+                </p>
+              </div>
+              <p style="margin-bottom: var(--space-md); color: var(--text1);">
+                Our food pantry serves all residents throughout Lapeer County, open Monday through Friday, providing consistent access to nutritious food for individuals and families facing food insecurity.
+              </p>
+              <p style="margin-bottom: var(--space-md); color: var(--text1);">
+                Twice a week, we extend our reach through outdoor grab-and-go tables — making access quick, dignified, and convenient. We gratefully accept non-perishable food donations, produce, and monetary contributions to keep our shelves stocked.
+              </p>
+            </div>
+          </div>
+
+          <!-- Sub-View: Senior Program -->
+          <div id="service-subview-senior" style="display:none;">
+            <div class="hsc-detail-box">
+              <div class="hsc-detail-box__header">
+                <h3 class="hsc-card__title" style="font-size: var(--fs-2xl);">Senior Program</h3>
+                <p style="color: var(--text2); margin-top: var(--space-xs);">
+                  In-home support, transportation, and social enrichment for seniors in our community.
+                </p>
+              </div>
+              <p style="margin-bottom: var(--space-lg); color: var(--text1);">
+                Funded by the Valley Area Agency on Aging, our senior program provides essential services that promote dignity and independence for seniors and caregivers in our community — helping older adults remain safe, engaged, and supported in their own homes.
+              </p>
+              
+              <div class="hsc-grid hsc-grid--2cols">
+                <div style="background: var(--surface2); padding: var(--space-md); border-radius: var(--radius-md); border: 1px solid var(--line);">
+                  <h4 style="font-family: var(--font-heading); color: var(--teal); margin-bottom: var(--space-xs);">Services Provided</h4>
+                  <ul style="list-style: disc; padding-left: var(--space-md); font-size: var(--fs-sm); color: var(--text2);">
+                    <li>In-home visits</li>
+                    <li>Transportation for essential errands</li>
+                    <li>Twice-weekly social and enrichment activities</li>
+                    <li>Needs or help with light housekeeping or tasks</li>
+                  </ul>
+                </div>
+
+                <div style="background: var(--surface2); padding: var(--space-md); border-radius: var(--radius-md); border: 1px solid var(--line);">
+                  <h4 style="font-family: var(--font-heading); color: var(--terracotta); margin-bottom: var(--space-xs);">Qualifications</h4>
+                  <ul style="list-style: disc; padding-left: var(--space-md); font-size: var(--fs-sm); color: var(--text2);">
+                    <li>60 years or older</li>
+                    <li>A caregiver who is 60 years or older</li>
+                    <li>Low income resident</li>
+                    <li>Handicapped or experiencing isolation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sub-View: Translation Services -->
+          <div id="service-subview-translation" style="display:none;">
+            <div class="hsc-detail-box">
+              <div class="hsc-detail-box__header">
+                <h3 class="hsc-card__title" style="font-size: var(--fs-2xl);">Translation Services</h3>
+                <p style="color: var(--text2); margin-top: var(--space-xs);">
+                  Bilingual support for documents, forms, certificates, and legal paperwork.
+                </p>
+              </div>
+              <p style="margin-bottom: var(--space-lg); color: var(--text1);">
+                We provide bilingual translation assistance to help residents navigate everyday paperwork.
+              </p>
+
+              <div class="hsc-grid hsc-grid--2cols" style="margin-bottom: var(--space-lg);">
+                <!-- Certificates -->
+                <table class="hsc-table">
+                  <thead>
+                    <tr><th colspan="2">Certificates</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Marriage</td><td><strong>$40</strong></td></tr>
+                    <tr><td>Death</td><td><strong>$40</strong></td></tr>
+                    <tr><td>Court Records</td><td><strong>$45</strong></td></tr>
+                  </tbody>
+                </table>
+
+                <!-- Forms -->
+                <table class="hsc-table">
+                  <thead>
+                    <tr><th colspan="2">Forms</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Citizenship</td><td><strong>$105</strong></td></tr>
+                    <tr><td>I-90 Form</td><td><strong>$105</strong></td></tr>
+                    <tr><td>Passport</td><td><strong>$35</strong></td></tr>
+                    <tr><td>Immigration</td><td><strong>$20</strong></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="hsc-grid hsc-grid--2cols">
+                <!-- Copies -->
+                <table class="hsc-table">
+                  <thead>
+                    <tr><th colspan="2">Copies</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Black & White</td><td><strong>$0.10</strong></td></tr>
+                    <tr><td>Color</td><td><strong>$0.20</strong></td></tr>
+                  </tbody>
+                </table>
+
+                <!-- Renewals -->
+                <table class="hsc-table">
+                  <thead>
+                    <tr><th colspan="2">Renewals</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Green Card</td><td><strong>$65</strong></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p style="font-size: var(--fs-xs); color: var(--text3); margin-top: var(--space-md); text-align: center;">Other document translations are determined by page count. Call (012) 345-6789 for quotes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================================================
+         PAGE 3: GALLERY PAGE
+         ======================================================================== -->
+    <div class="hsc-page" id="page-gallery">
+      <section class="hsc-section">
+        <div class="hsc-container">
+          <div class="hsc-section__header">
+            <span class="hsc-section__eyebrow">Community Moments</span>
+            <h2 class="hsc-section__title">Photo Gallery</h2>
+            <p class="hsc-section__subtitle">A glimpse into our community events, programs, volunteers, and day-to-day care at the Hispanic Service Center.</p>
+          </div>
+
+          <!-- Category Filters -->
+          <div class="hsc-gallery-filters">
+            <button class="hsc-subnav__item hsc-subnav__item--active" onclick="filterGallery('all')">All Photos</button>
+            <button class="hsc-subnav__item" onclick="filterGallery('community')">Community</button>
+            <button class="hsc-subnav__item" onclick="filterGallery('pantry')">Food Pantry</button>
+            <button class="hsc-subnav__item" onclick="filterGallery('rides')">Rides Program</button>
+            <button class="hsc-subnav__item" onclick="filterGallery('shelter')">Shelter</button>
+          </div>
+
+          <!-- Gallery Grid -->
+          <div class="hsc-grid hsc-grid--3cols" id="gallery-grid">
+            <div class="hsc-gallery__item" data-category="community" onclick="openLightbox('Community Event 2026', 'HSC Community Assembly')">
+              <svg width="100%" height="100%" viewBox="0 0 300 225" fill="none" style="background:#F0E4D3;">
+                <rect width="300" height="225" fill="#F0E4D3"/>
+                <line x1="0" y1="0" x2="300" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+                <line x1="300" y1="0" x2="0" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+              </svg>
+              <div class="hsc-gallery__overlay">
+                <div class="hsc-gallery__title">Community Gathering</div>
+                <div class="hsc-gallery__tag">Community</div>
+              </div>
+            </div>
+
+            <div class="hsc-gallery__item" data-category="pantry" onclick="openLightbox('Food Distribution', 'Weekly Food Pantry Support')">
+              <svg width="100%" height="100%" viewBox="0 0 300 225" fill="none" style="background:#FAF3E8;">
+                <rect width="300" height="225" fill="#FAF3E8"/>
+                <line x1="0" y1="0" x2="300" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+                <line x1="300" y1="0" x2="0" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+              </svg>
+              <div class="hsc-gallery__overlay">
+                <div class="hsc-gallery__title">Food Pantry Stocking</div>
+                <div class="hsc-gallery__tag">Food Pantry</div>
+              </div>
+            </div>
+
+            <div class="hsc-gallery__item" data-category="rides" onclick="openLightbox('Imlay City Area Rides', 'Transit Vehicle Fleet')">
+              <svg width="100%" height="100%" viewBox="0 0 300 225" fill="none" style="background:#F0E4D3;">
+                <rect width="300" height="225" fill="#F0E4D3"/>
+                <line x1="0" y1="0" x2="300" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+                <line x1="300" y1="0" x2="0" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+              </svg>
+              <div class="hsc-gallery__overlay">
+                <div class="hsc-gallery__title">Area Rides Van</div>
+                <div class="hsc-gallery__tag">Rides</div>
+              </div>
+            </div>
+
+            <div class="hsc-gallery__item" data-category="shelter" onclick="openLightbox('Family Shelter Care', 'Housing Facility')">
+              <svg width="100%" height="100%" viewBox="0 0 300 225" fill="none" style="background:#FAF3E8;">
+                <rect width="300" height="225" fill="#FAF3E8"/>
+                <line x1="0" y1="0" x2="300" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+                <line x1="300" y1="0" x2="0" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+              </svg>
+              <div class="hsc-gallery__overlay">
+                <div class="hsc-gallery__title">Family Shelter Facility</div>
+                <div class="hsc-gallery__tag">Shelter</div>
+              </div>
+            </div>
+
+            <div class="hsc-gallery__item" data-category="community" onclick="openLightbox('Senior Social Program', 'Weekly Social Hour')">
+              <svg width="100%" height="100%" viewBox="0 0 300 225" fill="none" style="background:#F0E4D3;">
+                <rect width="300" height="225" fill="#F0E4D3"/>
+                <line x1="0" y1="0" x2="300" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+                <line x1="300" y1="0" x2="0" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+              </svg>
+              <div class="hsc-gallery__overlay">
+                <div class="hsc-gallery__title">Senior Social Activity</div>
+                <div class="hsc-gallery__tag">Community</div>
+              </div>
+            </div>
+
+            <div class="hsc-gallery__item" data-category="pantry" onclick="openLightbox('Grab & Go Food Table', 'Outdoor Distribution')">
+              <svg width="100%" height="100%" viewBox="0 0 300 225" fill="none" style="background:#FAF3E8;">
+                <rect width="300" height="225" fill="#FAF3E8"/>
+                <line x1="0" y1="0" x2="300" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+                <line x1="300" y1="0" x2="0" y2="225" stroke="#C9BEB0" stroke-width="1.5"/>
+              </svg>
+              <div class="hsc-gallery__overlay">
+                <div class="hsc-gallery__title">Grab & Go Station</div>
+                <div class="hsc-gallery__tag">Food Pantry</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================================================
+         PAGE 4: ABOUT US PAGE
+         ======================================================================== -->
+    <div class="hsc-page" id="page-about">
+      <section class="hsc-section">
+        <div class="hsc-container">
+          <div class="hsc-section__header">
+            <span class="hsc-section__eyebrow">Our History & Mission</span>
+            <h2 class="hsc-section__title" style="font-size: var(--fs-2xl);">What Started As A Small Act Of Care In 1972 Continues Today — Rooted In Community, Open To Everyone.</h2>
+          </div>
+
+          <div style="max-width: 800px; margin: 0 auto var(--space-2xl); color: var(--text2); line-height: 1.7;">
+            <p style="margin-bottom: var(--space-md);">
+              Founded in 1972 as the Hispanic Speaking Information Center, a group of dedicated community members came together to provide language and social services to migrant workers and Hispanic families settling in Lapeer County. The organization incorporated in 1989 as the Hispanic Service Center and expanded its mission in 1999 as a nonprofit — expanding its scope to serve ALL residents in Lapeer County, regardless of background.
+            </p>
+            <p style="margin-bottom: var(--space-md);">
+              In 1997, HSC partnered with Bethany Mennonite Church to open a family shelter in Imlay City. What started with 4 beds grew to accommodate up to 20 individuals, giving families in crisis a safe, dignified place to stay for up to 90 days, while they get back on their feet.
+            </p>
+            <p style="margin-bottom: var(--space-md);">
+              Today, nearly 50 years later, HSC is a trusted community resource, partnering with local agencies to serve anyone facing hardship. In 2018, HSC launched Imlay City Area Rides to fill a major transportation gap in the county. It's a symbol of what happens when a community cares for one another — with compassion, perseverance, and equity.
+            </p>
+          </div>
+
+          <!-- Team Section -->
+          <div class="hsc-section__header">
+            <span class="hsc-section__eyebrow">Leadership & Staff</span>
+            <h2 class="hsc-section__title">Our Team</h2>
+          </div>
+
+          <h3 style="font-family: var(--font-heading); text-align: center; margin-bottom: var(--space-md); color: var(--teal);">Hispanics Service Center Staff</h3>
+          <div class="hsc-grid hsc-grid--3cols" style="margin-bottom: var(--space-xl);">
+            <div class="hsc-team-card">
+              <div class="hsc-team-card__avatar">JB</div>
+              <div class="hsc-team-card__name">John Boefile</div>
+              <div class="hsc-team-card__role">Executive Director</div>
+            </div>
+            <div class="hsc-team-card">
+              <div class="hsc-team-card__avatar">MS</div>
+              <div class="hsc-team-card__name">Maria Santos</div>
+              <div class="hsc-team-card__role">Program Coordinator</div>
+            </div>
+            <div class="hsc-team-card">
+              <div class="hsc-team-card__avatar">CG</div>
+              <div class="hsc-team-card__name">Carlos Gomez</div>
+              <div class="hsc-team-card__role">Case Manager</div>
+            </div>
+          </div>
+
+          <h3 style="font-family: var(--font-heading); text-align: center; margin-bottom: var(--space-md); color: var(--terracotta);">Imlay City Area Rides Staff</h3>
+          <div class="hsc-grid hsc-grid--2cols" style="margin-bottom: var(--space-xl); max-width: 600px; margin-left: auto; margin-right: auto;">
+            <div class="hsc-team-card">
+              <div class="hsc-team-card__avatar">JB</div>
+              <div class="hsc-team-card__name">John Boefile</div>
+              <div class="hsc-team-card__role">Rides Coordinator</div>
+            </div>
+            <div class="hsc-team-card">
+              <div class="hsc-team-card__avatar">AR</div>
+              <div class="hsc-team-card__name">Ana Rodriguez</div>
+              <div class="hsc-team-card__role">Lead Driver</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================================================
+         PAGE 5: CONTACT PAGE
+         ======================================================================== -->
+    <div class="hsc-page" id="page-contact">
+      <section class="hsc-section">
+        <div class="hsc-container">
+          <div class="hsc-section__header">
+            <span class="hsc-section__eyebrow">Connect With Us</span>
+            <h2 class="hsc-section__title">Get In Touch With Us</h2>
+            <p class="hsc-section__subtitle">Reach out — we're here to help. Find our location, hours, and contact information below, or send us a message directly.</p>
+          </div>
+
+          <div class="hsc-grid hsc-grid--2cols" style="align-items: start;">
+            <!-- Contact Info Column -->
+            <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+              <div class="hsc-card" style="padding: var(--space-md);">
+                <div style="font-size: var(--fs-xs); font-weight: 700; color: var(--teal); text-transform: uppercase;">Location</div>
+                <div style="font-size: var(--fs-base); font-weight: 700; color: var(--text1); margin-top: 4px;">123 Main Street, Imlay City, MI 48444</div>
+              </div>
+
+              <div class="hsc-card" style="padding: var(--space-md);">
+                <div style="font-size: var(--fs-xs); font-weight: 700; color: var(--teal); text-transform: uppercase;">PO Box</div>
+                <div style="font-size: var(--fs-base); font-weight: 700; color: var(--text1); margin-top: 4px;">PO Box 123, Imlay City, MI 48444</div>
+              </div>
+
+              <div class="hsc-card" style="padding: var(--space-md);">
+                <div style="font-size: var(--fs-xs); font-weight: 700; color: var(--teal); text-transform: uppercase;">Email & Phone</div>
+                <div style="font-size: var(--fs-base); font-weight: 700; color: var(--text1); margin-top: 4px;">email@gmail.com</div>
+                <div style="font-size: var(--fs-base); font-weight: 700; color: var(--terracotta); margin-top: 2px;">(012) 345-6789</div>
+              </div>
+
+              <div class="hsc-card" style="padding: var(--space-md);">
+                <div style="font-size: var(--fs-xs); font-weight: 700; color: var(--teal); text-transform: uppercase;">Operating Hours</div>
+                <div style="font-size: var(--fs-base); font-weight: 700; color: var(--text1); margin-top: 4px;">Monday – Friday: 8:00 AM – 5:00 PM</div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="hsc-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+              <h3 style="font-family: var(--font-heading); font-size: var(--fs-xl); margin-bottom: var(--space-md); color: var(--text1);">Send Us A Message</h3>
+              
+              <div class="hsc-form__group">
+                <label class="hsc-form__label" for="fullName">Full Name</label>
+                <input class="hsc-form__input" type="text" id="fullName" required placeholder="Jane Doe" />
+              </div>
+
+              <div class="hsc-form__group">
+                <label class="hsc-form__label" for="email">Email Address</label>
+                <input class="hsc-form__input" type="email" id="email" required placeholder="jane@example.com" />
+              </div>
+
+              <div class="hsc-form__group">
+                <label class="hsc-form__label" for="serviceSelect">Service Needed</label>
+                <select class="hsc-form__select" id="serviceSelect">
+                  <option value="general">General Inquiry</option>
+                  <option value="rides">Imlay City Area Rides</option>
+                  <option value="shelter">Family Shelter</option>
+                  <option value="pantry">Food Pantry</option>
+                  <option value="senior">Senior Program</option>
+                  <option value="translation">Translation Services</option>
+                </select>
+              </div>
+
+              <div class="hsc-form__group">
+                <label class="hsc-form__label" for="message">Message</label>
+                <textarea class="hsc-form__textarea" id="message" required placeholder="How can our team help you today?"></textarea>
+              </div>
+
+              <button type="submit" class="hsc-btn hsc-btn--teal" style="width: 100%;">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="hsc-footer">
+    <div class="hsc-footer__top">
+      <div class="hsc-container">
+        Provide access to information, resources, assistance, and support to all Lapeer County residents, regardless of race or background.
+      </div>
+    </div>
+
+    <div class="hsc-footer__main">
+      <div class="hsc-container">
+        <div class="hsc-footer__grid">
+          <div>
+            <div class="hsc-footer__brand-title">HSC - HISPANICS SERVICE CENTER</div>
+            <p class="hsc-footer__brand-desc">
+              A multilingual nonprofit organization serving Lapeer County residents with housing, food security, transportation, senior programs, and document translation.
+            </p>
+          </div>
+
+          <div>
+            <div class="hsc-footer__heading">Quick Links</div>
+            <div class="hsc-footer__links">
+              <span class="hsc-footer__link" onclick="navigateTo('home')">Home</span>
+              <span class="hsc-footer__link" onclick="navigateTo('services')">Services</span>
+              <span class="hsc-footer__link" onclick="navigateTo('gallery')">Gallery</span>
+              <span class="hsc-footer__link" onclick="navigateTo('about')">About Us</span>
+              <span class="hsc-footer__link" onclick="navigateTo('contact')">Contact</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="hsc-footer__heading">Get Involved</div>
+            <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+              <button class="hsc-btn hsc-btn--teal hsc-btn--sm" onclick="navigateTo('contact')">GET HELP</button>
+              <button class="hsc-btn hsc-btn--outline hsc-btn--sm" onclick="navigateTo('contact')">JOIN US</button>
+              <button class="hsc-btn hsc-btn--terracotta hsc-btn--sm" onclick="navigateTo('contact')">DONATE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hsc-footer__bottom">
+      <div class="hsc-container" style="display: flex; align-items: center; justify-content: space-between;">
+        <span>©2026 HSC - HISPANICS SERVICE CENTER NONPROFIT. All Rights Reserved.</span>
+        <span>Lapeer County, Michigan</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Element -->
+  <div class="hsc-toast" id="toast"></div>
+
+  <!-- Lightbox Modal Element -->
+  <div class="hsc-modal" id="modal" onclick="closeLightbox(event)">
+    <div class="hsc-modal__content" onclick="event.stopPropagation()">
+      <button class="hsc-modal__close" onclick="closeLightbox()">&times;</button>
+      <div style="height: 300px; background: var(--surface2); display: flex; align-items: center; justify-content: center;">
+        <svg width="100%" height="100%" viewBox="0 0 500 300" fill="none">
+          <rect width="500" height="300" fill="#F0E4D3"/>
+          <line x1="0" y1="0" x2="500" y2="300" stroke="#C9BEB0" stroke-width="2"/>
+          <line x1="500" y1="0" x2="0" y2="300" stroke="#C9BEB0" stroke-width="2"/>
+        </svg>
+      </div>
+      <div style="padding: var(--space-md);">
+        <h3 id="modalTitle" style="font-family: var(--font-heading); color: var(--text1); margin-bottom: 4px;"></h3>
+        <p id="modalSub" style="font-size: var(--fs-sm); color: var(--text2);"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT
+       ========================================================================== -->
+  <script>
+    // 1. Hamburger Navigation Menu Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', function() {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navMenu.classList.toggle('hsc-nav__menu--open');
+      });
+    }
+
+    // 2. Single-Page Application View Switcher
+    function navigateTo(pageId) {
+      // Close mobile nav menu if open
+      if (navMenu && navMenu.classList.contains('hsc-nav__menu--open')) {
+        navMenu.classList.remove('hsc-nav__menu--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      // Hide all pages
+      const pages = document.querySelectorAll('.hsc-page');
+      pages.forEach(p => p.classList.remove('hsc-page--active'));
+
+      // Show target page
+      const targetPage = document.getElementById('page-' + pageId);
+      if (targetPage) {
+        targetPage.classList.add('hsc-page--active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Update active nav link state
+      const navLinks = document.querySelectorAll('.hsc-nav__link');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-page') === pageId) {
+          link.classList.add('hsc-nav__link--active');
+        } else {
+          link.classList.remove('hsc-nav__link--active');
+        }
+      });
+    }
+
+    // 3. Services Sub-View Switcher
+    function showServiceDetail(serviceId) {
+      // Switch active subnav button
+      const subnavItems = document.querySelectorAll('.hsc-subnav__item');
+      subnavItems.forEach(btn => {
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes("'" + serviceId + "'")) {
+          btn.classList.add('hsc-subnav__item--active');
+        } else {
+          btn.classList.remove('hsc-subnav__item--active');
+        }
+      });
+
+      // Switch subview visibility
+      const subviews = ['all', 'rides', 'shelter', 'pantry', 'senior', 'translation'];
+      subviews.forEach(id => {
+        const view = document.getElementById('service-subview-' + id);
+        if (view) {
+          view.style.display = (id === serviceId) ? 'block' : 'none';
+        }
+      });
+
+      // Navigate to services page if not already there
+      navigateTo('services');
+    }
+
+    // 4. Gallery Category Filtering
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.hsc-gallery__item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // 5. Lightbox Modal Functionality
+    function openLightbox(title, sub) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalSub').textContent = sub;
+      document.getElementById('modal').classList.add('hsc-modal--open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('modal').classList.remove('hsc-modal--open');
+    }
+
+    // 6. Contact Form Submission Toast
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const toast = document.getElementById('toast');
+      toast.textContent = 'Thank you! Your message has been sent to our team.';
+      toast.classList.add('hsc-toast--show');
+      
+      document.getElementById('contactForm').reset();
+
+      setTimeout(() => {
+        toast.classList.remove('hsc-toast--show');
+      }, 3500);
+    }
+  </script>
+</body>
+</html>

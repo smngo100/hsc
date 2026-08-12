@@ -1,0 +1,6 @@
+{
+  "name": "Hispanics Service Center",
+  "description": "Official website for HSC - Hispanics Service Center nonprofit organization",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
