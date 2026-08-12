@@ -1,1 +1,177 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Colors Palette - Terracotta + Teal System */
+    --bg: #FAF3E8;
+    --surface2: #F0E4D3;
+    --surface3: #FFFCF7;
+    
+    --teal: #1B6B5C;
+    --teal-hover: #145247;
+    --teal-dim: rgba(27, 107, 92, 0.14);
+    --teal-border: rgba(27, 107, 92, 0.30);
+    
+    --terracotta: #C1502E;
+    --terracotta-hover: #A03E22;
+    --terracotta-dim: rgba(193, 80, 46, 0.14);
+    --terracotta-border: rgba(193, 80, 46, 0.30);
+    
+    --text1: #2A211A;
+    --text2: #6B5B4D;
+    --text3: #9C8C7D;
+    --text4: #C9BEB0;
+    
+    --line: rgba(42, 33, 26, 0.14);
+    --line-light: rgba(42, 33, 26, 0.08);
+    --line-strong: rgba(42, 33, 26, 0.24);
+    
+    --green: #2E7D4F;
+    --red: #C0392B;
+    --amber: #E8A317;
+    --white: #FFFFFF;
+
+    /* Typography */
+    --font-heading: Georgia, 'Times New Roman', serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    /* Font Sizes */
+    --fs-xs: 0.75rem;    /* 12px */
+    --fs-sm: 0.875rem;   /* 14px */
+    --fs-base: 1rem;     /* 16px */
+    --fs-lg: 1.125rem;   /* 18px */
+    --fs-xl: 1.25rem;    /* 20px */
+    --fs-2xl: 1.5rem;    /* 24px */
+    --fs-3xl: 2rem;      /* 32px */
+    --fs-4xl: 2.5rem;    /* 40px */
+
+    /* Radii & Shadows */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 2px 8px rgba(42, 33, 26, 0.06);
+    --shadow-md: 0 6px 18px rgba(42, 33, 26, 0.10);
+    --shadow-lg: 0 12px 28px rgba(42, 33, 26, 0.14);
+
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text1);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+}
+
+/* Custom design classes matching original website tokens */
+.hsc-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.hsc-font-heading {
+  font-family: var(--font-heading);
+}
+
+.hsc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.hsc-btn:active {
+  transform: scale(0.98);
+}
+
+.hsc-btn-teal {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+.hsc-btn-teal:hover {
+  background-color: var(--teal-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.hsc-btn-terracotta {
+  background-color: var(--terracotta);
+  color: var(--white);
+}
+
+.hsc-btn-terracotta:hover {
+  background-color: var(--terracotta-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.hsc-btn-outline {
+  background-color: transparent;
+  color: var(--text1);
+  border: 1px solid var(--text1);
+}
+
+.hsc-btn-outline:hover {
+  background-color: var(--surface2);
+}
+
+.hsc-btn-sm {
+  padding: 6px 14px;
+  font-size: var(--fs-xs);
+}
+
+.hsc-card {
+  background-color: var(--surface3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hsc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.hsc-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--surface3);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.hsc-table th,
+.hsc-table td {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: var(--fs-sm);
+  border-bottom: 1px solid var(--line-light);
+}
+
+.hsc-table th {
+  background-color: var(--surface2);
+  font-weight: 700;
+  color: var(--text1);
+  text-transform: uppercase;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.05em;
+}
+
+.hsc-table tr:last-child td {
+  border-bottom: none;
+}
