@@ -63,6 +63,10 @@ export const translations = {
       cardDonateText:
         "Every gift — large or small — keeps our shelter open, our pantry stocked, and our doors welcoming to anyone who needs help.",
       cardDonateBtn: "Donate",
+      sponsorsEyebrow: "Our Partners & Sponsors",
+      sponsorsTitle: "Supported By Community Leadership",
+      sponsorsSubtitle:
+        "We are deeply grateful to our foundational sponsors, grantmakers, and community partners whose generosity makes our programs possible.",
     },
     services: {
       eyebrow: "Community Services",
@@ -313,6 +317,11 @@ export const translations = {
       cardDonateText:
         "Cada donación, grande o pequeña, mantiene nuestro refugio abierto, nuestra despensa abastecida y nuestras puertas abiertas a quien lo necesite.",
       cardDonateBtn: "Donar",
+      sponsorsEyebrow: "Nuestros Patrocinadores y Aliados",
+      sponsorsTitle: "Con el Apoyo del Liderazgo Comunitario",
+      sponsorsSubtitle:
+        "Agradecemos profundamente a nuestros patrocinadores principales, donantes de subvenciones y aliados comunitarios cuya generosidad hace posibles nuestros programas.",
+      becomeSponsorBtn: "Sé un Aliado",
     },
     services: {
       eyebrow: "Servicios Comunitarios",

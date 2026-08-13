@@ -260,6 +260,79 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
       </section>
+
+      {/* Sponsors & Partners Section */}
+      <section className="py-12 md:py-16 bg-[#FFFCF7] border-b border-[rgba(42,33,26,0.08)]">
+        <div className="hsc-container">
+          <div className="text-center max-w-[680px] mx-auto mb-10">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#1B6B5C] block mb-1">
+              {t.home.sponsorsEyebrow}
+            </span>
+            <h2 className="hsc-font-heading text-2xl md:text-3xl text-[#2A211A] font-bold mb-2">
+              {t.home.sponsorsTitle}
+            </h2>
+            <p className="text-base text-[#6B5B4D]">
+              {t.home.sponsorsSubtitle}
+            </p>
+          </div>
+
+          {/* Sponsors Grid */}
+          <div className="flex flex-nowrap items-center justify-center gap-8">
+            <img
+              src={`attachments/sponsors/easterseals.png`}
+              alt="Easterseals"
+              className="h-[8rem] w-auto object-contain shrink-0"
+            />
+            <img
+              src={`attachments/sponsors/fccf.jpg`}
+              alt="FCCF"
+              className="h-[8rem] w-auto object-contain shrink-0"
+            />
+            <img
+              src={`attachments/sponsors/Ford.png`}
+              alt="Ford"
+              className="h-[6rem] w-auto object-contain shrink-0"
+            />
+            <img
+              src={`attachments/sponsors/salvation_army.png`}
+              alt="Salvation Army"
+              className="h-[8rem] w-auto object-contain shrink-0"
+            />
+            <img
+              src={`attachments/sponsors/vaaa.jpg`}
+              alt="VAAA"
+              className="h-[8rem] w-auto object-contain shrink-0"
+            />
+          </div>
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <img
+              src={`attachments/sponsors/easterseals.png`}
+              alt="Easterseals"
+              className="h-[8rem] w-full object-contain"
+            />
+            <img
+              src={`attachments/sponsors/fccf.jpg`}
+              alt="FCCF"
+              className="h-[8rem] w-full object-contain"
+            />
+            <img
+              src={`attachments/sponsors/Ford.png`}
+              alt="Ford"
+              className="h-[6rem] w-full object-contain"
+            />
+            <img
+              src={`attachments/sponsors/salvation_army.png`}
+              alt="Salvation Army"
+              className="h-[8rem] w-full object-contain"
+            />
+            <img
+              src={`attachments/sponsors/vaaa.jpg`}
+              alt="VAAA"
+              className="h-[8rem] w-full object-contain"
+            />
+          </div> */}
+        </div>
+      </section>
     </div>
   );
 };
