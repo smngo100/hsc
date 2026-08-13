@@ -1,39 +1,46 @@
-import React from 'react';
-import { PageId, ServiceId } from '../types';
-import { StatsBar } from '../components/StatsBar';
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+import { PageId, ServiceId } from "../types";
+import { StatsBar } from "../components/StatsBar";
+import { useLanguage } from "../context/LanguageContext";
 
 interface HomePageProps {
   onNavigate: (page: PageId) => void;
   onSelectService: (service: ServiceId) => void;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService }) => {
+export const HomePage: React.FC<HomePageProps> = ({
+  onNavigate,
+  onSelectService,
+}) => {
   const { t } = useLanguage();
 
-  const servicesList: { id: Exclude<ServiceId, 'all'>; title: string; shortDesc: string }[] = [
+  const servicesList: {
+    id: Exclude<ServiceId, "all">;
+    title: string;
+    shortDesc: string;
+  }[] = [
     {
-      id: 'rides',
+      id: "rides",
       title: t.services.rides.title,
       shortDesc: t.services.rides.shortDesc,
     },
     {
-      id: 'shelter',
+      id: "shelter",
       title: t.services.shelter.title,
       shortDesc: t.services.shelter.shortDesc,
     },
     {
-      id: 'pantry',
+      id: "pantry",
       title: t.services.pantry.title,
       shortDesc: t.services.pantry.shortDesc,
     },
     {
-      id: 'senior',
+      id: "senior",
       title: t.services.senior.title,
       shortDesc: t.services.senior.shortDesc,
     },
     {
-      id: 'translation',
+      id: "translation",
       title: t.services.translation.title,
       shortDesc: t.services.translation.shortDesc,
     },
@@ -46,9 +53,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
         <div className="hsc-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
-              <span className="inline-block text-xs font-bold tracking-widest uppercase text-[#1B6B5C] bg-[rgba(27,107,92,0.14)] px-3 py-1 rounded-[6px] mb-3">
+              {/* <span className="inline-block text-xs font-bold tracking-widest uppercase text-[#1B6B5C] bg-[rgba(27,107,92,0.14)] px-3 py-1 rounded-[6px] mb-3">
                 {t.home.eyebrow}
-              </span>
+              </span> */}
               <h1 className="hsc-font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-[#2A211A] mb-4">
                 {t.home.heroTitle}
               </h1>
@@ -57,13 +64,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
               </p>
               <div className="flex flex-wrap gap-4">
                 <button
-                  onClick={() => onNavigate('contact')}
+                  onClick={() => onNavigate("contact")}
                   className="hsc-btn hsc-btn-teal"
                 >
                   {t.home.getHelp}
                 </button>
                 <button
-                  onClick={() => onNavigate('services')}
+                  onClick={() => onNavigate("services")}
                   className="hsc-btn hsc-btn-outline"
                 >
                   {t.home.seeHow}
@@ -79,12 +86,33 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
                   viewBox="0 0 500 380"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  style={{ background: '#F0E4D3' }}
+                  style={{ background: "#F0E4D3" }}
                 >
                   <rect width="500" height="380" fill="#F0E4D3" />
-                  <line x1="0" y1="0" x2="500" y2="380" stroke="#C9BEB0" strokeWidth="2" />
-                  <line x1="500" y1="0" x2="0" y2="380" stroke="#C9BEB0" strokeWidth="2" />
-                  <circle cx="250" cy="190" r="45" fill="#FAF3E8" stroke="#1B6B5C" strokeWidth="2" />
+                  <line
+                    x1="0"
+                    y1="0"
+                    x2="500"
+                    y2="380"
+                    stroke="#C9BEB0"
+                    strokeWidth="2"
+                  />
+                  <line
+                    x1="500"
+                    y1="0"
+                    x2="0"
+                    y2="380"
+                    stroke="#C9BEB0"
+                    strokeWidth="2"
+                  />
+                  <circle
+                    cx="250"
+                    cy="190"
+                    r="45"
+                    fill="#FAF3E8"
+                    stroke="#1B6B5C"
+                    strokeWidth="2"
+                  />
                   <text
                     x="250"
                     y="196"
@@ -123,13 +151,42 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {servicesList.map((service) => (
-              <article key={service.id} className="hsc-card flex flex-col h-full">
+              <article
+                key={service.id}
+                className="hsc-card flex flex-col h-full"
+              >
                 <div className="h-[180px] bg-[#FFFCF7] border-b border-[rgba(42,33,26,0.08)] relative flex items-center justify-center">
-                  <svg width="100%" height="100%" viewBox="0 0 300 180" fill="none">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 300 180"
+                    fill="none"
+                  >
                     <rect width="300" height="180" fill="#FFFCF7" />
-                    <line x1="0" y1="0" x2="300" y2="180" stroke="#EAE0D0" strokeWidth="1.5" />
-                    <line x1="300" y1="0" x2="0" y2="180" stroke="#EAE0D0" strokeWidth="1.5" />
-                    <circle cx="150" cy="90" r="28" fill="#F0E4D3" stroke="#1B6B5C" strokeWidth="2" />
+                    <line
+                      x1="0"
+                      y1="0"
+                      x2="300"
+                      y2="180"
+                      stroke="#EAE0D0"
+                      strokeWidth="1.5"
+                    />
+                    <line
+                      x1="300"
+                      y1="0"
+                      x2="0"
+                      y2="180"
+                      stroke="#EAE0D0"
+                      strokeWidth="1.5"
+                    />
+                    <circle
+                      cx="150"
+                      cy="90"
+                      r="28"
+                      fill="#F0E4D3"
+                      stroke="#1B6B5C"
+                      strokeWidth="2"
+                    />
                   </svg>
                 </div>
                 <div className="p-6 flex flex-col flex-1">
@@ -164,9 +221,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
             <h2 className="hsc-font-heading text-2xl md:text-3xl text-[#2A211A] font-bold mb-2">
               {t.home.impactTitle}
             </h2>
-            <p className="text-base text-[#6B5B4D]">
-              {t.home.impactSubtitle}
-            </p>
+            <p className="text-base text-[#6B5B4D]">{t.home.impactSubtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -178,7 +233,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
                 {t.home.cardGetHelpText}
               </p>
               <button
-                onClick={() => onNavigate('contact')}
+                onClick={() => onNavigate("contact")}
                 className="hsc-btn hsc-btn-outline"
               >
                 {t.home.cardGetHelpBtn}
@@ -193,7 +248,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
                 {t.home.cardVolunteerText}
               </p>
               <button
-                onClick={() => onNavigate('contact')}
+                onClick={() => onNavigate("contact")}
                 className="hsc-btn hsc-btn-teal"
               >
                 {t.home.cardVolunteerBtn}
@@ -208,7 +263,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
                 {t.home.cardDonateText}
               </p>
               <button
-                onClick={() => onNavigate('contact')}
+                onClick={() => onNavigate("contact")}
                 className="hsc-btn hsc-btn-terracotta"
               >
                 {t.home.cardDonateBtn}
