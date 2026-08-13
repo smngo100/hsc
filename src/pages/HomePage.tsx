@@ -79,53 +79,25 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative rounded-[16px] overflow-hidden border border-[rgba(42,33,26,0.14)] shadow-md bg-[#F0E4D3] aspect-4/3 flex items-center justify-center">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 500 380"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{ background: "#F0E4D3" }}
-                >
-                  <rect width="500" height="380" fill="#F0E4D3" />
-                  <line
-                    x1="0"
-                    y1="0"
-                    x2="500"
-                    y2="380"
-                    stroke="#C9BEB0"
-                    strokeWidth="2"
-                  />
-                  <line
-                    x1="500"
-                    y1="0"
-                    x2="0"
-                    y2="380"
-                    stroke="#C9BEB0"
-                    strokeWidth="2"
-                  />
-                  <circle
-                    cx="250"
-                    cy="190"
-                    r="45"
-                    fill="#FAF3E8"
-                    stroke="#1B6B5C"
-                    strokeWidth="2"
-                  />
-                  <text
-                    x="250"
-                    y="196"
-                    fontFamily="-apple-system, sans-serif"
-                    fontSize="14"
-                    fontWeight="700"
-                    fill="#1B6B5C"
-                    textAnchor="middle"
-                  >
-                    HSC COMMUNITY
-                  </text>
-                </svg>
-              </div>
+              {/* <div className="relative rounded-[16px] overflow-hidden shadow-md bg-[#F0E4D3] aspect-4/3 flex items-center justify-center">
+                <img
+                  src={`attachments/community.png`}
+                  alt="Community"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div> */}
+              <div
+                className="aspect-[4/3] bg-[#F0E4D3] bg-cover bg-center"
+                style={{
+                  backgroundImage: `url('attachments/community.png')`,
+                  WebkitMaskImage:
+                    "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+                  WebkitMaskComposite: "destination-in",
+                  maskImage:
+                    "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+                  maskComposite: "intersect",
+                }}
+              />
             </div>
           </div>
         </div>
