@@ -1,18 +1,18 @@
-import React from 'react';
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export const StatsBar: React.FC = () => {
   const { t } = useLanguage();
 
   const stats = [
-    { number: '50+', label: t.stats.years },
-    { number: '1,200+', label: t.stats.families },
-    { number: '15,000+', label: t.stats.meals },
-    { number: '3,500+', label: t.stats.residents },
+    { number: "50+", label: t.stats.years },
+    { number: "1,200+", label: t.stats.families },
+    { number: "15,000+", label: t.stats.meals },
+    { number: "3,500+", label: t.stats.residents },
   ];
 
   return (
-    <div className="bg-[#F0E4D3] border-y border-[rgba(42,33,26,0.14)] py-8">
+    <div className="bg-surface2 border-y border-[rgba(42,33,26,0.14)] py-8">
       <div className="hsc-container">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           {stats.map((stat, idx) => (

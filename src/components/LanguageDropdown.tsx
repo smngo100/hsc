@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useLanguage } from '../context/LanguageContext';
-import { Language } from '../data/translations';
+import React, { useState, useRef, useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext";
+import { Language } from "../data/translations";
 
 interface LanguageOption {
   code: Language;
@@ -10,8 +10,8 @@ interface LanguageOption {
 
 const LANGUAGES: LanguageOption[] = [
   {
-    code: 'en',
-    name: 'English',
+    code: "en",
+    name: "English",
     flag: (
       <svg
         className="w-5 h-3.5 rounded-[2px] border border-[rgba(0,0,0,0.12)] shrink-0 object-cover"
@@ -29,8 +29,8 @@ const LANGUAGES: LanguageOption[] = [
     ),
   },
   {
-    code: 'es',
-    name: 'Español',
+    code: "es",
+    name: "Español",
     flag: (
       <svg
         className="w-5 h-3.5 rounded-[2px] border border-[rgba(0,0,0,0.12)] shrink-0 object-cover"
@@ -49,16 +49,20 @@ export const LanguageDropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const currentLang = LANGUAGES.find((l) => l.code === language) || LANGUAGES[0];
+  const currentLang =
+    LANGUAGES.find((l) => l.code === language) || LANGUAGES[0];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handleSelect = (code: Language) => {
@@ -71,22 +75,29 @@ export const LanguageDropdown: React.FC = () => {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-semibold text-[#2A211A] bg-white hover:bg-[#FAF3E8] border border-[rgba(42,33,26,0.18)] rounded-2xl shadow-xs transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1B6B5C]"
+        className="flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-semibold text-[#2A211A] bg-white hover:bg-bg border border-[rgba(42,33,26,0.18)] rounded-2xl shadow-xs transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1B6B5C]"
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label="Select language"
       >
         {currentLang.flag}
-        <span className="text-xs font-semibold text-[#2A211A]">{currentLang.name}</span>
+        <span className="text-xs font-semibold text-[#2A211A]">
+          {currentLang.name}
+        </span>
         <svg
           className={`w-3.5 h-3.5 text-[#6B5B4D] transition-transform duration-200 ${
-            isOpen ? 'rotate-180' : ''
+            isOpen ? "rotate-180" : ""
           }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </button>
 
@@ -100,8 +111,8 @@ export const LanguageDropdown: React.FC = () => {
                 onClick={() => handleSelect(lang.code)}
                 className={`w-full flex items-center justify-between px-4 py-2.5 text-xs font-medium transition-colors cursor-pointer text-left ${
                   isSelected
-                    ? 'bg-[rgba(27,107,92,0.1)] text-[#1B6B5C] font-bold'
-                    : 'text-[#2A211A] hover:bg-[#FAF3E8]'
+                    ? "bg-[rgba(27,107,92,0.1)] text-[#1B6B5C] font-bold"
+                    : "text-[#2A211A] hover:bg-bg"
                 }`}
               >
                 <div className="flex items-center gap-2.5">

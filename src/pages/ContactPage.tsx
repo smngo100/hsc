@@ -1,29 +1,31 @@
-import React, { useState } from 'react';
-import { ContactFormData } from '../types';
-import { useLanguage } from '../context/LanguageContext';
+import React, { useState } from "react";
+import { ContactFormData } from "../types";
+import { useLanguage } from "../context/LanguageContext";
 
 interface ContactPageProps {
   onSubmitMessage: (data: ContactFormData) => void;
 }
 
-export const ContactPage: React.FC<ContactPageProps> = ({ onSubmitMessage }) => {
+export const ContactPage: React.FC<ContactPageProps> = ({
+  onSubmitMessage,
+}) => {
   const { t } = useLanguage();
 
   const [formData, setFormData] = useState<ContactFormData>({
-    fullName: '',
-    email: '',
-    serviceNeeded: 'general',
-    message: '',
+    fullName: "",
+    email: "",
+    serviceNeeded: "general",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmitMessage(formData);
     setFormData({
-      fullName: '',
-      email: '',
-      serviceNeeded: 'general',
-      message: '',
+      fullName: "",
+      email: "",
+      serviceNeeded: "general",
+      message: "",
     });
   };
 
@@ -38,30 +40,34 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onSubmitMessage }) => 
           <h1 className="hsc-font-heading text-3xl font-bold text-[#2A211A] mb-3">
             {t.contact.title}
           </h1>
-          <p className="text-base text-[#6B5B4D]">
-            {t.contact.subtitle}
-          </p>
+          <p className="text-base text-[#6B5B4D]">{t.contact.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Contact Information Column */}
           <div className="space-y-4">
             <div className="hsc-card p-5">
-              <div className="text-xs font-bold uppercase text-[#1B6B5C]">{t.contact.locationLabel}</div>
+              <div className="text-xs font-bold uppercase text-[#1B6B5C]">
+                {t.contact.locationLabel}
+              </div>
               <div className="text-base font-bold text-[#2A211A] mt-1">
                 {t.contact.locationValue}
               </div>
             </div>
 
             <div className="hsc-card p-5">
-              <div className="text-xs font-bold uppercase text-[#1B6B5C]">{t.contact.poBoxLabel}</div>
+              <div className="text-xs font-bold uppercase text-[#1B6B5C]">
+                {t.contact.poBoxLabel}
+              </div>
               <div className="text-base font-bold text-[#2A211A] mt-1">
                 {t.contact.poBoxValue}
               </div>
             </div>
 
             <div className="hsc-card p-5">
-              <div className="text-xs font-bold uppercase text-[#1B6B5C]">{t.contact.emailPhoneLabel}</div>
+              <div className="text-xs font-bold uppercase text-[#1B6B5C]">
+                {t.contact.emailPhoneLabel}
+              </div>
               <div className="text-base font-bold text-[#2A211A] mt-1">
                 email@gmail.com
               </div>
@@ -71,7 +77,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onSubmitMessage }) => 
             </div>
 
             <div className="hsc-card p-5">
-              <div className="text-xs font-bold uppercase text-[#1B6B5C]">{t.contact.hoursLabel}</div>
+              <div className="text-xs font-bold uppercase text-[#1B6B5C]">
+                {t.contact.hoursLabel}
+              </div>
               <div className="text-base font-bold text-[#2A211A] mt-1">
                 {t.contact.hoursValue}
               </div>
@@ -81,7 +89,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onSubmitMessage }) => 
           {/* Interactive Form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs"
+            className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs"
           >
             <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-6">
               {t.contact.formTitle}
@@ -95,9 +103,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onSubmitMessage }) => 
                 type="text"
                 required
                 value={formData.fullName}
-                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, fullName: e.target.value })
+                }
                 placeholder={t.contact.fullNamePlaceholder}
-                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-[#FAF3E8] border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
+                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
               />
             </div>
 
@@ -109,9 +119,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onSubmitMessage }) => 
                 type="email"
                 required
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 placeholder={t.contact.emailPlaceholder}
-                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-[#FAF3E8] border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
+                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
               />
             </div>
 
@@ -121,15 +133,27 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onSubmitMessage }) => 
               </label>
               <select
                 value={formData.serviceNeeded}
-                onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
-                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-[#FAF3E8] border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
+                onChange={(e) =>
+                  setFormData({ ...formData, serviceNeeded: e.target.value })
+                }
+                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
               >
-                <option value="general">{t.contact.serviceOptions.general}</option>
+                <option value="general">
+                  {t.contact.serviceOptions.general}
+                </option>
                 <option value="rides">{t.contact.serviceOptions.rides}</option>
-                <option value="shelter">{t.contact.serviceOptions.shelter}</option>
-                <option value="pantry">{t.contact.serviceOptions.pantry}</option>
-                <option value="senior">{t.contact.serviceOptions.senior}</option>
-                <option value="translation">{t.contact.serviceOptions.translation}</option>
+                <option value="shelter">
+                  {t.contact.serviceOptions.shelter}
+                </option>
+                <option value="pantry">
+                  {t.contact.serviceOptions.pantry}
+                </option>
+                <option value="senior">
+                  {t.contact.serviceOptions.senior}
+                </option>
+                <option value="translation">
+                  {t.contact.serviceOptions.translation}
+                </option>
               </select>
             </div>
 
@@ -141,9 +165,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onSubmitMessage }) => 
                 required
                 rows={4}
                 value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
                 placeholder={t.contact.messagePlaceholder}
-                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-[#FAF3E8] border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all resize-y"
+                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all resize-y"
               />
             </div>
 

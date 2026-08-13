@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="bg-[#FFFCF7] border-t border-[rgba(42,33,26,0.14)] mt-auto">
+    <footer className="bg-surface3 border-t border-[rgba(42,33,26,0.14)] mt-auto">
       {/* Footer Top Note */}
       {/* <div className="bg-[#F0E4D3] py-3 border-b border-[rgba(42,33,26,0.08)] text-sm text-[#6B5B4D] text-center">
         <div className="hsc-container">{t.footer.topNote}</div>

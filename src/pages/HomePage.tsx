@@ -127,7 +127,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 key={service.id}
                 className="hsc-card flex flex-col h-full"
               >
-                <div className="h-[15rem] bg-[#FFFCF7] border-b border-[rgba(42,33,26,0.08)] relative overflow-hidden">
+                <div className="h-[15rem] bg-surface3 border-b border-[rgba(42,33,26,0.08)] relative overflow-hidden">
                   <img
                     src={`attachments/card_covers/${service.id}.jpg`}
                     alt={service.title}
@@ -157,7 +157,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* Get Involved Section */}
-      <section className="py-12 md:py-16 bg-[#F0E4D3] border-b border-[rgba(42,33,26,0.08)]">
+      <section className="py-12 md:py-16 bg-surface2 border-b border-[rgba(42,33,26,0.08)]">
         <div className="hsc-container">
           <div className="text-center max-w-[680px] mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#C1502E] block mb-1">
@@ -234,7 +234,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* Sponsors & Partners Section */}
-      <section className="py-12 md:py-16 bg-[#FFFCF7] border-b border-[rgba(42,33,26,0.08)]">
+      <section className="py-12 md:py-16 bg-surface3 border-b border-[rgba(42,33,26,0.08)]">
         <div className="hsc-container">
           <div className="text-center max-w-[680px] mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#1B6B5C] block mb-1">

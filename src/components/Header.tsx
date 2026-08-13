@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   ];
 
   return (
-    <header className="bg-[#FFFCF7] border-b border-[rgba(42,33,26,0.14)] sticky top-0 z-50 shadow-xs">
+    <header className="bg-surface3 border-b border-[rgba(42,33,26,0.14)] sticky top-0 z-50 shadow-xs">
       <div className="hsc-container flex items-center justify-between h-[6rem] relative">
         {/* Brand Logo */}
         <a
@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           <ul
             className={`flex items-center gap-6 ${
               isMobileMenuOpen
-                ? "absolute top-[72px] left-0 right-0 bg-[#FFFCF7] border-b border-[rgba(42,33,26,0.14)] flex-col items-stretch p-4 shadow-md z-40 max-h-[360px]"
+                ? "absolute top-[72px] left-0 right-0 bg-surface3 border-b border-[rgba(42,33,26,0.14)] flex-col items-stretch p-4 shadow-md z-40 max-h-[360px]"
                 : "hidden lg:flex"
             }`}
           >

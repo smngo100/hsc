@@ -1,10 +1,47 @@
 @import "tailwindcss";
 
+@theme {
+  /* Backgrounds & Surfaces */
+  --color-bg: var(--bg);
+  --color-surface2: var(--surface2);
+  --color-surface3: var(--surface3);
+
+  /* Teal (Primary) */
+  --color-teal: var(--teal);
+  --color-teal-hover: var(--teal-hover);
+  --color-teal-dim: var(--teal-dim);
+  --color-teal-border: var(--teal-border);
+
+  /* Terracotta (Secondary) */
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-hover: var(--terracotta-hover);
+  --color-terracotta-dim: var(--terracotta-dim);
+  --color-terracotta-border: var(--terracotta-border);
+
+  /* Text */
+  --color-text1: var(--text1);
+  --color-text2: var(--text2);
+  --color-text3: var(--text3);
+  --color-text4: var(--text4);
+
+  /* Borders */
+  --color-line: var(--line);
+  --color-line-light: var(--line-light);
+  --color-line-strong: var(--line-strong);
+
+  /* Semantic */
+  --color-green: var(--green);
+  --color-red: var(--red);
+  --color-amber: var(--amber);
+}
+
 @layer base {
   :root {
-    /* Colors Palette - Terracotta + Teal System */
-    --bg: #faf3e8;
-    --surface2: #f0e4d3;
+    /* Colors Palette — Terracotta + Teal System */
+    /* --bg: #faf3e8; */
+    /* --surface2: #f0e4d3; */
+    --bg: #fdf8f0;
+    --surface2: #f8f0e2;
     --surface3: #fffcf7;
 
     --teal: #1b6b5c;
@@ -19,7 +56,7 @@
 
     --text1: #2a211a;
     --text2: #6b5b4d;
-    --text3: #9c8c7d;
+    --text3: #7a695a;
     --text4: #c9beb0;
 
     --line: rgba(42, 33, 26, 0.14);
@@ -69,7 +106,9 @@
   }
 }
 
-/* Custom design classes matching original website tokens */
+/* ------------------------------------------------------------------ */
+/* Custom design classes matching original website tokens              */
+/* ------------------------------------------------------------------ */
 .hsc-container {
   width: 100%;
   max-width: 1140px;

@@ -127,7 +127,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
         {/* Sub-View: Imlay City Area Rides */}
         {activeService === "rides" && (
-          <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
+          <div className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
                 {t.services.rides.title}
@@ -168,7 +168,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               {translatedRideRates.map((rate, i) => (
                 <div
                   key={i}
-                  className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[10px] p-4 text-center"
+                  className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[10px] p-4 text-center"
                 >
                   <div className="hsc-font-heading text-2xl font-bold text-[#C1502E] mb-1">
                     {rate.amount}
@@ -187,7 +187,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
         {/* Sub-View: Family Shelter */}
         {activeService === "shelter" && (
-          <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
+          <div className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
                 {t.services.shelter.title}
@@ -212,7 +212,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
         {/* Sub-View: Food Pantry */}
         {activeService === "pantry" && (
-          <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
+          <div className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
                 {t.services.pantry.title}
@@ -232,7 +232,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
         {/* Sub-View: Senior Program */}
         {activeService === "senior" && (
-          <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
+          <div className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
                 {t.services.senior.title}
@@ -273,7 +273,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
         {/* Sub-View: Translation Services */}
         {activeService === "translation" && (
-          <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
+          <div className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
                 {t.services.translation.title}
