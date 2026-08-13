@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { PageId } from '../types';
+import { useLanguage } from '../context/LanguageContext';
+import { LanguageDropdown } from './LanguageDropdown';
 
 interface HeaderProps {
   currentPage: PageId;
@@ -8,6 +10,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const handleNavClick = (page: PageId) => {
     setIsMobileMenuOpen(false);
@@ -15,16 +18,16 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   };
 
   const navLinks: { id: PageId; label: string }[] = [
-    { id: 'home', label: 'Home' },
-    { id: 'services', label: 'Services' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'about', label: 'About Us' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'home', label: t.nav.home },
+    { id: 'services', label: t.nav.services },
+    { id: 'gallery', label: t.nav.gallery },
+    { id: 'about', label: t.nav.about },
+    { id: 'contact', label: t.nav.contact },
   ];
 
   return (
     <header className="bg-[#FFFCF7] border-b border-[rgba(42,33,26,0.14)] sticky top-0 z-50 shadow-xs">
-      <div className="hsc-container flex items-center justify-between h-[72px] md:h-[72px] relative">
+      <div className="hsc-container flex items-center justify-between h-[72px] relative">
         {/* Brand Logo */}
         <a
           href="#home"
@@ -35,17 +38,17 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           className="flex items-center gap-3 font-serif font-bold text-base text-[#2A211A] tracking-wide"
         >
           <div className="w-[38px] h-[38px] bg-[#F0E4D3] border border-[rgba(42,33,26,0.24)] rounded-[6px] flex items-center justify-center text-[11px] font-extrabold text-[#1B6B5C] relative">
-            HSC
+            {t.brand.short}
           </div>
           <span className="text-xs sm:text-sm md:text-base font-bold text-[#2A211A]">
-            HISPANICS SERVICE CENTER
+            {t.brand.title}
           </span>
         </a>
 
         {/* Responsive Navigation Menu */}
         <nav className="flex items-center">
           <button
-            className="lg:hidden flex flex-col justify-between w-7 h-5 p-0 bg-transparent border-none cursor-pointer z-50"
+            className="lg:hidden flex flex-col justify-between w-7 h-5 p-0 bg-transparent border-none cursor-pointer z-50 mr-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle Navigation Menu"
@@ -95,25 +98,15 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           </ul>
         </nav>
 
-        {/* Actions: EN Flag & Donate CTA */}
-        <div className="flex items-center gap-3 md:gap-4">
-          <div
-            className="hidden sm:flex items-center gap-1 text.xs font-bold text-[#6B5B4D] bg-[#F0E4D3] px-2 py-1 rounded-[6px] border border-[rgba(42,33,26,0.08)]"
-            title="English / Español"
-          >
-            <svg className="w-[18px] h-[12px] rounded-[1px]" viewBox="0 0 640 480" aria-label="US Flag">
-              <path fill="#bd3d44" d="M0 0h640v480H0z" />
-              <path stroke="#fff" strokeWidth="37" d="M0 55.5h640M0 129h640M0 203h640M0 277h640M0 351h640M0 424.5h640" />
-              <path fill="#192f5d" d="M0 0h285v258.5H0z" />
-            </svg>
-            <span className="text-xs">EN</span>
-          </div>
+        {/* Actions: Language Selector & Donate CTA */}
+        <div className="flex items-center gap-2 sm:gap-4">
+          <LanguageDropdown />
 
           <button
             onClick={() => onNavigate('contact')}
             className="hsc-btn hsc-btn-terracotta hsc-btn-sm"
           >
-            DONATE
+            {t.nav.donate}
           </button>
         </div>
       </div>

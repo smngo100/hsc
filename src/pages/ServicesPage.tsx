@@ -1,6 +1,7 @@
 import React from 'react';
 import { ServiceId } from '../types';
-import { RIDE_RATES, TRANSLATION_FEES, SERVICES_DATA } from '../data/contentData';
+import { RIDE_RATES, TRANSLATION_FEES } from '../data/contentData';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ServicesPageProps {
   activeService: ServiceId;
@@ -11,13 +12,50 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
   activeService,
   onSelectService,
 }) => {
+  const { t } = useLanguage();
+
   const tabs: { id: ServiceId; label: string }[] = [
-    { id: 'all', label: 'All Services' },
-    { id: 'rides', label: 'Imlay City Area Rides' },
-    { id: 'shelter', label: 'Family Shelter' },
-    { id: 'pantry', label: 'Food Pantry' },
-    { id: 'senior', label: 'Senior Program' },
-    { id: 'translation', label: 'Translation Services' },
+    { id: 'all', label: t.services.tabs.all },
+    { id: 'rides', label: t.services.tabs.rides },
+    { id: 'shelter', label: t.services.tabs.shelter },
+    { id: 'pantry', label: t.services.tabs.pantry },
+    { id: 'senior', label: t.services.tabs.senior },
+    { id: 'translation', label: t.services.tabs.translation },
+  ];
+
+  const servicesOverviewList: { id: Exclude<ServiceId, 'all'>; title: string; shortDesc: string }[] = [
+    {
+      id: 'rides',
+      title: t.services.rides.title,
+      shortDesc: t.services.rides.shortDesc,
+    },
+    {
+      id: 'shelter',
+      title: t.services.shelter.title,
+      shortDesc: t.services.shelter.shortDesc,
+    },
+    {
+      id: 'pantry',
+      title: t.services.pantry.title,
+      shortDesc: t.services.pantry.shortDesc,
+    },
+    {
+      id: 'senior',
+      title: t.services.senior.title,
+      shortDesc: t.services.senior.shortDesc,
+    },
+    {
+      id: 'translation',
+      title: t.services.translation.title,
+      shortDesc: t.services.translation.shortDesc,
+    },
+  ];
+
+  const translatedRideRates = [
+    { amount: '$15', label: t.services.rides.rates.longDistance },
+    { amount: '$10', label: t.services.rides.rates.discounted },
+    { amount: '$20', label: t.services.rides.rates.nonRes },
+    { amount: '$8', label: t.services.rides.rates.local },
   ];
 
   return (
@@ -26,13 +64,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         {/* Header */}
         <div className="mb-8">
           <span className="text-xs font-bold uppercase tracking-widest text-[#1B6B5C] block mb-1">
-            Community Services
+            {t.services.eyebrow}
           </span>
           <h1 className="hsc-font-heading text-3xl font-bold text-[#2A211A] mb-3">
-            Services
+            {t.services.title}
           </h1>
           <p className="text-base text-[#6B5B4D] max-w-3xl leading-relaxed">
-            The Hispanic Service Center offers a range of no-cost and low-cost programs designed to meet needs in our community — from housing and food security to transportation, senior care, and language support. Every service is open to all Lapeer County residents, regardless of background.
+            {t.services.subtitle}
           </p>
         </div>
 
@@ -59,7 +97,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         {/* Sub-View: All Services Overview */}
         {activeService === 'all' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES_DATA.map((service) => (
+            {servicesOverviewList.map((service) => (
               <div key={service.id} className="hsc-card p-6 flex flex-col justify-between">
                 <div>
                   <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
@@ -73,7 +111,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   onClick={() => onSelectService(service.id)}
                   className="hsc-btn hsc-btn-teal hsc-btn-sm self-start"
                 >
-                  View Program Details
+                  {t.services.viewDetails}
                 </button>
               </div>
             ))}
@@ -85,24 +123,24 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
-                Imlay City Area Rides
+                {t.services.rides.title}
               </h2>
               <p className="text-sm text-[#6B5B4D] mt-2">
-                In partnership with the Ruth Hughes Community Foundation, HSC offers Imlay City Area Rides — a program that provides rides for residents without reliable personal transportation.
+                {t.services.rides.intro}
               </p>
             </div>
             <p className="text-base text-[#2A211A] leading-relaxed mb-6">
-              For many, transportation is the invisible barrier between stability and setback. A missed doctor's appointment, a lost job, or work program that slips away can be tragic. This program helps relieve that burden.
+              {t.services.rides.body}
             </p>
             <div className="bg-[#F0E4D3] p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] mb-8 text-center font-bold text-[#2A211A]">
-              Operating Hours: 8:00 AM - 5:00 PM (Monday – Friday)
+              {t.services.rides.hours}
             </div>
 
             <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-4">
-              Ride Rates Information:
+              {t.services.rides.ratesHeader}
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              {RIDE_RATES.map((rate, i) => (
+              {translatedRideRates.map((rate, i) => (
                 <div key={i} className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[10px] p-4 text-center">
                   <div className="hsc-font-heading text-2xl font-bold text-[#C1502E] mb-1">
                     {rate.amount}
@@ -114,7 +152,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               ))}
             </div>
             <p className="text-xs text-[#9C8C7D] text-center">
-              For more information or to schedule a ride, call <strong className="text-[#1B6B5C]">(012) 345-6789</strong>.
+              {t.services.rides.callNote}
             </p>
           </div>
         )}
@@ -124,23 +162,22 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
-                Family Shelter
+                {t.services.shelter.title}
               </h2>
               <p className="text-sm text-[#6B5B4D] mt-2">
-                Safe, non-violent temporary housing for families in crisis, giving them time and space to stabilize.
+                {t.services.shelter.intro}
               </p>
             </div>
             <p className="text-base text-[#2A211A] leading-relaxed mb-6">
-              The Hispanic Service Center provides temporary emergency shelter for families who need a safe place during periods of hardship. Families may stay for a short duration while working toward permanent housing.
+              {t.services.shelter.body}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-[#6B5B4D] text-sm mb-8">
-              <li>Safe, private housing for women and children</li>
-              <li>Supportive case management</li>
-              <li>Nutritious meals, clothing, and essential supplies</li>
-              <li>Assistance with employment, transportation, and housing navigation</li>
+              {t.services.shelter.list.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
             <div className="bg-[rgba(193,80,46,0.14)] p-4 rounded-[10px] border border-[rgba(193,80,46,0.3)] text-[#C1502E] text-center font-bold">
-              To check eligibility or to join the waitlist, call (012) 345-6789.
+              {t.services.shelter.callNote}
             </div>
           </div>
         )}
@@ -150,17 +187,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
-                Food Pantry
+                {t.services.pantry.title}
               </h2>
               <p className="text-sm text-[#6B5B4D] mt-2">
-                Free, dignified access to nutritious food open weekdays with appointment options for working families.
+                {t.services.pantry.intro}
               </p>
             </div>
             <p className="text-base text-[#2A211A] leading-relaxed mb-4">
-              Our food pantry serves all residents throughout Lapeer County, open Monday through Friday, providing consistent access to nutritious food for individuals and families facing food insecurity.
+              {t.services.pantry.body1}
             </p>
             <p className="text-base text-[#2A211A] leading-relaxed">
-              Twice a week, we extend our reach through outdoor grab-and-go tables — making access quick, dignified, and convenient. We gratefully accept non-perishable food donations, produce, and monetary contributions to keep our shelves stocked.
+              {t.services.pantry.body2}
             </p>
           </div>
         )}
@@ -170,38 +207,36 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
-                Senior Program
+                {t.services.senior.title}
               </h2>
               <p className="text-sm text-[#6B5B4D] mt-2">
-                In-home support, transportation, and social enrichment for seniors in our community.
+                {t.services.senior.intro}
               </p>
             </div>
             <p className="text-base text-[#2A211A] leading-relaxed mb-8">
-              Funded by the Valley Area Agency on Aging, our senior program provides essential services that promote dignity and independence for seniors and caregivers in our community — helping older adults remain safe, engaged, and supported in their own homes.
+              {t.services.senior.body}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-[#F0E4D3] p-6 rounded-[10px] border border-[rgba(42,33,26,0.14)]">
                 <h4 className="hsc-font-heading text-lg font-bold text-[#1B6B5C] mb-3">
-                  Services Provided
+                  {t.services.senior.providedTitle}
                 </h4>
                 <ul className="list-disc pl-5 space-y-2 text-sm text-[#6B5B4D]">
-                  <li>In-home visits</li>
-                  <li>Transportation for essential errands</li>
-                  <li>Twice-weekly social and enrichment activities</li>
-                  <li>Needs or help with light housekeeping or tasks</li>
+                  {t.services.senior.providedList.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
                 </ul>
               </div>
 
               <div className="bg-[#F0E4D3] p-6 rounded-[10px] border border-[rgba(42,33,26,0.14)]">
                 <h4 className="hsc-font-heading text-lg font-bold text-[#C1502E] mb-3">
-                  Qualifications
+                  {t.services.senior.qualificationsTitle}
                 </h4>
                 <ul className="list-disc pl-5 space-y-2 text-sm text-[#6B5B4D]">
-                  <li>60 years or older</li>
-                  <li>A caregiver who is 60 years or older</li>
-                  <li>Low income resident</li>
-                  <li>Handicapped or experiencing isolation</li>
+                  {t.services.senior.qualificationsList.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -213,39 +248,53 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
-                Translation Services
+                {t.services.translation.title}
               </h2>
               <p className="text-sm text-[#6B5B4D] mt-2">
-                Bilingual support for documents, forms, certificates, and legal paperwork.
+                {t.services.translation.intro}
               </p>
             </div>
             <p className="text-base text-[#2A211A] leading-relaxed mb-8">
-              We provide bilingual translation assistance to help residents navigate everyday paperwork.
+              {t.services.translation.body}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              {TRANSLATION_FEES.map((group, idx) => (
-                <table key={idx} className="hsc-table">
-                  <thead>
-                    <tr>
-                      <th colSpan={2}>{group.category}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {group.items.map((row, rIdx) => (
-                      <tr key={rIdx}>
-                        <td>{row.item}</td>
-                        <td>
-                          <strong>{row.fee}</strong>
-                        </td>
+              {TRANSLATION_FEES.map((group, idx) => {
+                const translatedCategory =
+                  t.services.translation.categories[
+                    group.category as keyof typeof t.services.translation.categories
+                  ] || group.category;
+
+                return (
+                  <table key={idx} className="hsc-table">
+                    <thead>
+                      <tr>
+                        <th colSpan={2}>{translatedCategory}</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              ))}
+                    </thead>
+                    <tbody>
+                      {group.items.map((row, rIdx) => {
+                        const translatedItemName =
+                          t.services.translation.items[
+                            row.item as keyof typeof t.services.translation.items
+                          ] || row.item;
+
+                        return (
+                          <tr key={rIdx}>
+                            <td>{translatedItemName}</td>
+                            <td>
+                              <strong>{row.fee}</strong>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                );
+              })}
             </div>
             <p className="text-xs text-[#9C8C7D] text-center mt-4">
-              Other document translations are determined by page count. Call (012) 345-6789 for quotes.
+              {t.services.translation.callNote}
             </p>
           </div>
         )}

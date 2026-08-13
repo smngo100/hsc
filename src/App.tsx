@@ -10,12 +10,14 @@ import { ServicesPage } from './pages/ServicesPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
-export default function App() {
+function MainLayout() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [activeService, setActiveService] = useState<ServiceId>('all');
   const [modalItem, setModalItem] = useState<GalleryItem | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   const handleNavigate = (page: PageId) => {
     setCurrentPage(page);
@@ -33,7 +35,7 @@ export default function App() {
   };
 
   const handleFormSubmit = (_data: ContactFormData) => {
-    setToastMessage('Thank you! Your message has been sent to our team.');
+    setToastMessage(t.contact.toastSuccess);
     setTimeout(() => {
       setToastMessage(null);
     }, 3500);
@@ -80,5 +82,13 @@ export default function App() {
 
       <Toast message={toastMessage} />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <MainLayout />
+    </LanguageProvider>
   );
 }

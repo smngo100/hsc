@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageId, ServiceId } from '../types';
-import { SERVICES_DATA } from '../data/contentData';
 import { StatsBar } from '../components/StatsBar';
+import { useLanguage } from '../context/LanguageContext';
 
 interface HomePageProps {
   onNavigate: (page: PageId) => void;
@@ -9,6 +9,36 @@ interface HomePageProps {
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService }) => {
+  const { t } = useLanguage();
+
+  const servicesList: { id: Exclude<ServiceId, 'all'>; title: string; shortDesc: string }[] = [
+    {
+      id: 'rides',
+      title: t.services.rides.title,
+      shortDesc: t.services.rides.shortDesc,
+    },
+    {
+      id: 'shelter',
+      title: t.services.shelter.title,
+      shortDesc: t.services.shelter.shortDesc,
+    },
+    {
+      id: 'pantry',
+      title: t.services.pantry.title,
+      shortDesc: t.services.pantry.shortDesc,
+    },
+    {
+      id: 'senior',
+      title: t.services.senior.title,
+      shortDesc: t.services.senior.shortDesc,
+    },
+    {
+      id: 'translation',
+      title: t.services.translation.title,
+      shortDesc: t.services.translation.shortDesc,
+    },
+  ];
+
   return (
     <div className="space-y-0">
       {/* Hero Section */}
@@ -17,26 +47,26 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
               <span className="inline-block text-xs font-bold tracking-widest uppercase text-[#1B6B5C] bg-[rgba(27,107,92,0.14)] px-3 py-1 rounded-[6px] mb-3">
-                Rooted in Community, Open to Everyone
+                {t.home.eyebrow}
               </span>
               <h1 className="hsc-font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-[#2A211A] mb-4">
-                Rooted in Community, Open to Everyone.
+                {t.home.heroTitle}
               </h1>
               <p className="text-base sm:text-lg text-[#6B5B4D] leading-relaxed mb-6">
-                The Hispanic Service Center is a multilingual nonprofit serving all residents in Lapeer County — from housing and food security to transportation, senior care, and language support. We connect individuals and families with resources, assistance, and support they need to thrive.
+                {t.home.heroLead}
               </p>
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => onNavigate('contact')}
                   className="hsc-btn hsc-btn-teal"
                 >
-                  Get Help
+                  {t.home.getHelp}
                 </button>
                 <button
                   onClick={() => onNavigate('services')}
                   className="hsc-btn hsc-btn-outline"
                 >
-                  See How We Can Help
+                  {t.home.seeHow}
                 </button>
               </div>
             </div>
@@ -81,18 +111,18 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
         <div className="hsc-container">
           <div className="text-center max-w-[680px] mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#C1502E] block mb-1">
-              Our Programs
+              {t.home.whatWeDoEyebrow}
             </span>
             <h2 className="hsc-font-heading text-2xl md:text-3xl text-[#2A211A] font-bold mb-2">
-              What We Do
+              {t.home.whatWeDoTitle}
             </h2>
             <p className="text-base text-[#6B5B4D]">
-              Direct support programs designed to meet essential human needs in our community.
+              {t.home.whatWeDoSubtitle}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES_DATA.map((service) => (
+            {servicesList.map((service) => (
               <article key={service.id} className="hsc-card flex flex-col h-full">
                 <div className="h-[180px] bg-[#FFFCF7] border-b border-[rgba(42,33,26,0.08)] relative flex items-center justify-center">
                   <svg width="100%" height="100%" viewBox="0 0 300 180" fill="none">
@@ -114,7 +144,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
                       onClick={() => onSelectService(service.id)}
                       className="hsc-btn hsc-btn-teal hsc-btn-sm"
                     >
-                      Learn More
+                      {t.home.learnMore}
                     </button>
                   </div>
                 </div>
@@ -129,59 +159,59 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectService 
         <div className="hsc-container">
           <div className="text-center max-w-[680px] mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#C1502E] block mb-1">
-              Make An Impact
+              {t.home.impactEyebrow}
             </span>
             <h2 className="hsc-font-heading text-2xl md:text-3xl text-[#2A211A] font-bold mb-2">
-              Get Involved
+              {t.home.impactTitle}
             </h2>
             <p className="text-base text-[#6B5B4D]">
-              Facing a hard time? Whether it's food, shelter, transportation, or translation support, our team is ready to help.
+              {t.home.impactSubtitle}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="hsc-card p-6 text-center flex flex-col items-center">
               <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
-                Get Help
+                {t.home.cardGetHelpTitle}
               </h3>
               <p className="text-sm text-[#6B5B4D] mb-6 flex-1">
-                Facing a hard time? Whether it's food, shelter, transportation, or translation support, our team is ready to help.
+                {t.home.cardGetHelpText}
               </p>
               <button
                 onClick={() => onNavigate('contact')}
                 className="hsc-btn hsc-btn-outline"
               >
-                See How We Can Help
+                {t.home.cardGetHelpBtn}
               </button>
             </div>
 
             <div className="hsc-card p-6 text-center flex flex-col items-center">
               <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
-                Volunteer With Us
+                {t.home.cardVolunteerTitle}
               </h3>
               <p className="text-sm text-[#6B5B4D] mb-6 flex-1">
-                From driving neighbors to appointments to stocking pantry shelves, our volunteers are the heart of everything we do.
+                {t.home.cardVolunteerText}
               </p>
               <button
                 onClick={() => onNavigate('contact')}
                 className="hsc-btn hsc-btn-teal"
               >
-                Join The Team
+                {t.home.cardVolunteerBtn}
               </button>
             </div>
 
             <div className="hsc-card p-6 text-center flex flex-col items-center">
               <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
-                Donate Today
+                {t.home.cardDonateTitle}
               </h3>
               <p className="text-sm text-[#6B5B4D] mb-6 flex-1">
-                Every gift — large or small — keeps our shelter open, our pantry stocked, and our doors welcoming to anyone who needs help.
+                {t.home.cardDonateText}
               </p>
               <button
                 onClick={() => onNavigate('contact')}
                 className="hsc-btn hsc-btn-terracotta"
               >
-                Donate
+                {t.home.cardDonateBtn}
               </button>
             </div>
           </div>
