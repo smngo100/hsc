@@ -16,8 +16,8 @@ export const translations = {
       toggleLang: "ES",
     },
     footer: {
-      topNote:
-        "Provide access to information, resources, assistance, and support to all Lapeer County residents, regardless of race or background.",
+      // topNote:
+      //   "Provide access to information, resources, assistance, and support to all Lapeer County residents, regardless of race or background.",
       brandTitle: "HSC - HISPANICS SERVICE CENTER",
       brandDesc:
         "A multilingual nonprofit organization serving Lapeer County residents with housing, food security, transportation, senior programs, and document translation.",
@@ -265,8 +265,8 @@ export const translations = {
       toggleLang: "EN",
     },
     footer: {
-      topNote:
-        "Brindar acceso a información, recursos, asistencia y apoyo a todos los residentes del condado de Lapeer, sin importar su raza o antecedentes.",
+      // topNote:
+      //   "Brindar acceso a información, recursos, asistencia y apoyo a todos los residentes del condado de Lapeer, sin importar su raza o antecedentes.",
       brandTitle: "HSC - CENTRO DE SERVICIOS HISPANOS",
       brandDesc:
         "Una organización sin fines de lucro multilingüe que sirve a los residentes del condado de Lapeer con vivienda, seguridad alimentaria, transporte, programas para adultos mayores y traducción de documentos.",
