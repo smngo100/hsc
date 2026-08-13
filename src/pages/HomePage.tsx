@@ -284,12 +284,12 @@ export const HomePage: React.FC<HomePageProps> = ({
               className="h-[8rem] w-auto object-contain shrink-0"
             />
             <img
-              src={`attachments/sponsors/fccf.jpg`}
+              src={`attachments/sponsors/fccf.png`}
               alt="FCCF"
               className="h-[8rem] w-auto object-contain shrink-0"
             />
             <img
-              src={`attachments/sponsors/Ford.png`}
+              src={`attachments/sponsors/ford.png`}
               alt="Ford"
               className="h-[6rem] w-auto object-contain shrink-0"
             />
@@ -299,7 +299,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               className="h-[8rem] w-auto object-contain shrink-0"
             />
             <img
-              src={`attachments/sponsors/vaaa.jpg`}
+              src={`attachments/sponsors/vaaa.png`}
               alt="VAAA"
               className="h-[8rem] w-auto object-contain shrink-0"
             />
