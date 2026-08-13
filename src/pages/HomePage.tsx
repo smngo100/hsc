@@ -249,32 +249,34 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
 
           {/* Sponsors Grid */}
-          <div className="flex flex-nowrap items-center justify-center gap-8">
-            <img
-              src={`attachments/sponsors/easterseals.png`}
-              alt="Easterseals"
-              className="h-[8rem] w-auto object-contain shrink-0"
-            />
-            <img
-              src={`attachments/sponsors/fccf.png`}
-              alt="FCCF"
-              className="h-[8rem] w-auto object-contain shrink-0"
-            />
-            <img
-              src={`attachments/sponsors/ford.png`}
-              alt="Ford"
-              className="h-[6rem] w-auto object-contain shrink-0"
-            />
-            <img
-              src={`attachments/sponsors/salvation_army.png`}
-              alt="Salvation Army"
-              className="h-[8rem] w-auto object-contain shrink-0"
-            />
-            <img
-              src={`attachments/sponsors/vaaa.png`}
-              alt="VAAA"
-              className="h-[8rem] w-auto object-contain shrink-0"
-            />
+          <div className="flex flex-nowrap justify-center overflow-x-auto sm:overflow-x-visible">
+            <div className="flex flex-nowrap items-center justify-start gap-12">
+              <img
+                src={`attachments/sponsors/easterseals.png`}
+                alt="Easterseals"
+                className="h-[5rem] w-auto object-contain shrink-0"
+              />
+              <img
+                src={`attachments/sponsors/fccf.png`}
+                alt="FCCF"
+                className="h-[6rem] w-auto object-contain shrink-0"
+              />
+              <img
+                src={`attachments/sponsors/ford.png`}
+                alt="Ford"
+                className="h-[4rem] w-auto object-contain shrink-0"
+              />
+              <img
+                src={`attachments/sponsors/salvation_army.png`}
+                alt="Salvation Army"
+                className="h-[5rem] w-auto object-contain shrink-0"
+              />
+              <img
+                src={`attachments/sponsors/vaaa.png`}
+                alt="VAAA"
+                className="h-[5rem] w-auto object-contain shrink-0"
+              />
+            </div>
           </div>
           {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             <img
