@@ -89,7 +89,11 @@ export const translations = {
         intro:
           "In partnership with the Ruth Hughes Community Foundation, HSC offers Imlay City Area Rides — a program that provides rides for residents without reliable personal transportation.",
         body: "For many, transportation is the invisible barrier between stability and setback. A missed doctor's appointment, a lost job, or work program that slips away can be tragic. This program helps relieve that burden.",
-        hours: "Operating Hours: 8:00 AM - 5:00 PM (Monday – Friday)",
+        daysOpen: "Monday – Friday",
+        daysClosed: "Saturday & Sunday",
+        hoursLabel: "Operating Hours",
+        hoursValue: "8:00 AM – 5:00 PM",
+        hoursClosedValue: "Closed",
         ratesHeader: "Ride Rates Information:",
         rates: {
           longDistance: "Long Distance Rides",
@@ -344,7 +348,11 @@ export const translations = {
         intro:
           "En asociación con la Fundación Comunitaria Ruth Hughes, HSC ofrece el programa Imlay City Area Rides para brindar transporte a residentes sin vehículo propio confiable.",
         body: "Para muchos, el transporte es la barrera invisible entre la estabilidad y las dificultades. Una cita médica perdida, un trabajo perdido o un programa de trabajo que se pierde pueden ser trágicos. Este programa ayuda a aliviar esa carga.",
-        hours: "Horario de atención: 8:00 AM - 5:00 PM (Lunes a Viernes)",
+        daysOpen: "Lunes a viernes",
+        daysClosed: "Sábado y domingo",
+        hoursLabel: "Horario de atención",
+        hoursValue: "8:00 AM – 5:00 PM",
+        hoursClosedValue: "Cerrado",
         ratesHeader: "Información sobre Tarifas:",
         rates: {
           longDistance: "Viajes de Larga Distancia",

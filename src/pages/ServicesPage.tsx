@@ -1,7 +1,7 @@
-import React from 'react';
-import { ServiceId } from '../types';
-import { RIDE_RATES, TRANSLATION_FEES } from '../data/contentData';
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+import { ServiceId } from "../types";
+import { RIDE_RATES, TRANSLATION_FEES } from "../data/contentData";
+import { useLanguage } from "../context/LanguageContext";
 
 interface ServicesPageProps {
   activeService: ServiceId;
@@ -15,47 +15,51 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
   const { t } = useLanguage();
 
   const tabs: { id: ServiceId; label: string }[] = [
-    { id: 'all', label: t.services.tabs.all },
-    { id: 'rides', label: t.services.tabs.rides },
-    { id: 'shelter', label: t.services.tabs.shelter },
-    { id: 'pantry', label: t.services.tabs.pantry },
-    { id: 'senior', label: t.services.tabs.senior },
-    { id: 'translation', label: t.services.tabs.translation },
+    { id: "all", label: t.services.tabs.all },
+    { id: "rides", label: t.services.tabs.rides },
+    { id: "shelter", label: t.services.tabs.shelter },
+    { id: "pantry", label: t.services.tabs.pantry },
+    { id: "senior", label: t.services.tabs.senior },
+    { id: "translation", label: t.services.tabs.translation },
   ];
 
-  const servicesOverviewList: { id: Exclude<ServiceId, 'all'>; title: string; shortDesc: string }[] = [
+  const servicesOverviewList: {
+    id: Exclude<ServiceId, "all">;
+    title: string;
+    shortDesc: string;
+  }[] = [
     {
-      id: 'rides',
+      id: "rides",
       title: t.services.rides.title,
       shortDesc: t.services.rides.shortDesc,
     },
     {
-      id: 'shelter',
+      id: "shelter",
       title: t.services.shelter.title,
       shortDesc: t.services.shelter.shortDesc,
     },
     {
-      id: 'pantry',
+      id: "pantry",
       title: t.services.pantry.title,
       shortDesc: t.services.pantry.shortDesc,
     },
     {
-      id: 'senior',
+      id: "senior",
       title: t.services.senior.title,
       shortDesc: t.services.senior.shortDesc,
     },
     {
-      id: 'translation',
+      id: "translation",
       title: t.services.translation.title,
       shortDesc: t.services.translation.shortDesc,
     },
   ];
 
   const translatedRideRates = [
-    { amount: '$15', label: t.services.rides.rates.longDistance },
-    { amount: '$10', label: t.services.rides.rates.discounted },
-    { amount: '$20', label: t.services.rides.rates.nonRes },
-    { amount: '$8', label: t.services.rides.rates.local },
+    { amount: "$15", label: t.services.rides.rates.longDistance },
+    { amount: "$10", label: t.services.rides.rates.discounted },
+    { amount: "$20", label: t.services.rides.rates.nonRes },
+    { amount: "$8", label: t.services.rides.rates.local },
   ];
 
   return (
@@ -84,8 +88,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 onClick={() => onSelectService(tab.id)}
                 className={`px-4 py-2 text-sm font-bold rounded-[6px] transition-colors whitespace-nowrap cursor-pointer border ${
                   isActive
-                    ? 'bg-[#1B6B5C] text-white border-[#1B6B5C]'
-                    : 'bg-[#F0E4D3] text-[#6B5B4D] border-[rgba(42,33,26,0.08)] hover:bg-[#1B6B5C] hover:text-white'
+                    ? "bg-[#1B6B5C] text-white border-[#1B6B5C]"
+                    : "bg-[#F0E4D3] text-[#6B5B4D] border-[rgba(42,33,26,0.08)] hover:bg-[#1B6B5C] hover:text-white"
                 }`}
               >
                 {tab.label}
@@ -95,10 +99,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         </div>
 
         {/* Sub-View: All Services Overview */}
-        {activeService === 'all' && (
+        {activeService === "all" && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {servicesOverviewList.map((service) => (
-              <div key={service.id} className="hsc-card p-6 flex flex-col justify-between">
+              <div
+                key={service.id}
+                className="hsc-card p-6 flex flex-col justify-between"
+              >
                 <div>
                   <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
                     {service.title}
@@ -119,7 +126,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         )}
 
         {/* Sub-View: Imlay City Area Rides */}
-        {activeService === 'rides' && (
+        {activeService === "rides" && (
           <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
@@ -132,16 +139,37 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             <p className="text-base text-[#2A211A] leading-relaxed mb-6">
               {t.services.rides.body}
             </p>
-            <div className="bg-[#F0E4D3] p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] mb-8 text-center font-bold text-[#2A211A]">
+            {/* <div className="bg-[#F0E4D3] p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] mb-8 text-center font-bold text-[#2A211A]">
               {t.services.rides.hours}
+              <div className="font-bold">{t.services.rides.hoursLabel}</div>
+              <div>{t.services.rides.hoursValue}</div>
+            </div> */}
+            <div className="font-semibold text-center mb-2">
+              {t.services.rides.hoursLabel}
+            </div>
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="bg-[#F0E4D3] p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] text-center text-[#2A211A] flex flex-col">
+                <p className="font-medium mb-2">{t.services.rides.daysOpen}</p>
+                <p>{t.services.rides.hoursValue}</p>
+              </div>
+
+              <div className="bg-[#F0E4D3] p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] text-center text-[#2A211A] flex flex-col">
+                <p className="font-medium mb-2">
+                  {t.services.rides.daysClosed}
+                </p>
+                <p>{t.services.rides.hoursClosedValue}</p>
+              </div>
             </div>
 
-            <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-4">
+            {/* <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-4">
               {t.services.rides.ratesHeader}
-            </h3>
+            </h3> */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               {translatedRideRates.map((rate, i) => (
-                <div key={i} className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[10px] p-4 text-center">
+                <div
+                  key={i}
+                  className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[10px] p-4 text-center"
+                >
                   <div className="hsc-font-heading text-2xl font-bold text-[#C1502E] mb-1">
                     {rate.amount}
                   </div>
@@ -158,7 +186,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         )}
 
         {/* Sub-View: Family Shelter */}
-        {activeService === 'shelter' && (
+        {activeService === "shelter" && (
           <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
@@ -183,7 +211,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         )}
 
         {/* Sub-View: Food Pantry */}
-        {activeService === 'pantry' && (
+        {activeService === "pantry" && (
           <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
@@ -203,7 +231,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         )}
 
         {/* Sub-View: Senior Program */}
-        {activeService === 'senior' && (
+        {activeService === "senior" && (
           <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
@@ -244,7 +272,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         )}
 
         {/* Sub-View: Translation Services */}
-        {activeService === 'translation' && (
+        {activeService === "translation" && (
           <div className="bg-[#FFFCF7] border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs">
             <div className="border-b border-[rgba(42,33,26,0.08)] pb-4 mb-6">
               <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
