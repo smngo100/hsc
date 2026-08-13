@@ -1,6 +1,6 @@
-import React from 'react';
-import { PageId } from '../types';
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+import { PageId } from "../types";
+import { useLanguage } from "../context/LanguageContext";
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
@@ -21,9 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     <footer className="bg-[#FFFCF7] border-t border-[rgba(42,33,26,0.14)] mt-auto">
       {/* Footer Top Note */}
       <div className="bg-[#F0E4D3] py-3 border-b border-[rgba(42,33,26,0.08)] text-sm text-[#6B5B4D] text-center">
-        <div className="hsc-container">
-          {t.footer.topNote}
-        </div>
+        <div className="hsc-container">{t.footer.topNote}</div>
       </div>
 
       {/* Main Footer Links & Info */}
@@ -32,12 +30,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand column */}
             <div>
-              <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-2">
+              {/* <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-2">
                 {t.footer.brandTitle}
-              </h3>
-              <p className="text-sm text-[#6B5B4D] leading-relaxed">
+              </h3> */}
+              <img
+                src="attachments/hsc_logo.png"
+                alt={t.brand.title}
+                className="h-[10rem] w-[auto] object-contain mb-2"
+              />
+              {/* <p className="text-sm text-[#6B5B4D] leading-relaxed">
                 {t.footer.brandDesc}
-              </p>
+              </p> */}
             </div>
 
             {/* Quick Links */}
@@ -46,7 +49,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 {t.footer.quickLinks}
               </h4>
               <div className="flex flex-col gap-2">
-                {(['home', 'services', 'gallery', 'about', 'contact'] as PageId[]).map((page) => (
+                {(
+                  [
+                    "home",
+                    "services",
+                    "gallery",
+                    "about",
+                    "contact",
+                  ] as PageId[]
+                ).map((page) => (
                   <button
                     key={page}
                     onClick={() => onNavigate(page)}
@@ -65,19 +76,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </h4>
               <div className="flex flex-col gap-2 max-w-[200px]">
                 <button
-                  onClick={() => onNavigate('contact')}
+                  onClick={() => onNavigate("contact")}
                   className="hsc-btn hsc-btn-teal hsc-btn-sm"
                 >
                   {t.footer.getHelpBtn}
                 </button>
                 <button
-                  onClick={() => onNavigate('contact')}
+                  onClick={() => onNavigate("contact")}
                   className="hsc-btn hsc-btn-outline hsc-btn-sm"
                 >
                   {t.footer.joinUsBtn}
                 </button>
                 <button
-                  onClick={() => onNavigate('contact')}
+                  onClick={() => onNavigate("contact")}
                   className="hsc-btn hsc-btn-terracotta hsc-btn-sm"
                 >
                   {t.footer.donateBtn}

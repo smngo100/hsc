@@ -155,42 +155,15 @@ export const HomePage: React.FC<HomePageProps> = ({
                 key={service.id}
                 className="hsc-card flex flex-col h-full"
               >
-                <div className="h-[180px] bg-[#FFFCF7] border-b border-[rgba(42,33,26,0.08)] relative flex items-center justify-center">
-                  <svg
-                    width="100%"
-                    height="100%"
-                    viewBox="0 0 300 180"
-                    fill="none"
-                  >
-                    <rect width="300" height="180" fill="#FFFCF7" />
-                    <line
-                      x1="0"
-                      y1="0"
-                      x2="300"
-                      y2="180"
-                      stroke="#EAE0D0"
-                      strokeWidth="1.5"
-                    />
-                    <line
-                      x1="300"
-                      y1="0"
-                      x2="0"
-                      y2="180"
-                      stroke="#EAE0D0"
-                      strokeWidth="1.5"
-                    />
-                    <circle
-                      cx="150"
-                      cy="90"
-                      r="28"
-                      fill="#F0E4D3"
-                      stroke="#1B6B5C"
-                      strokeWidth="2"
-                    />
-                  </svg>
+                <div className="h-[15rem] bg-[#FFFCF7] border-b border-[rgba(42,33,26,0.08)] relative overflow-hidden">
+                  <img
+                    src={`attachments/card_covers/${service.id}.jpg`}
+                    alt={service.title}
+                    className="h-full w-full object-cover object-[center_35%]"
+                  />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="hsc-font-heading text-xl text-[#2A211A] font-bold mb-2">
+                  <h3 className="hsc-font-heading text-xl text-[#2A211A] mb-2">
                     {service.title}
                   </h3>
                   <p className="text-sm text-[#6B5B4D] leading-relaxed mb-4 flex-1">

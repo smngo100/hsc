@@ -26,8 +26,7 @@ export const translations = {
       getHelpBtn: "GET HELP",
       joinUsBtn: "JOIN US",
       donateBtn: "DONATE",
-      copyright:
-        "©2026 HSC - HISPANICS SERVICE CENTER NONPROFIT. All Rights Reserved.",
+      copyright: "©2026 HSC - 501(C)(3) Nonprofit",
       locationNote: "Lapeer County, Michigan",
     },
     stats: {
