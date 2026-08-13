@@ -167,11 +167,12 @@ export const translations = {
           Renewals: "Renewals",
         },
         items: {
+          Birth: "Birth",
           Marriage: "Marriage",
           Death: "Death",
           "Court Records": "Court Records",
           Citizenship: "Citizenship",
-          "I-90 Form": "I-90 Form",
+          "I-30 Form": "I-30 Form",
           Passport: "Passport",
           Immigration: "Immigration",
           "Black & White": "Black & White",
@@ -179,7 +180,7 @@ export const translations = {
           "Green Card": "Green Card",
         },
         callNote:
-          "Other document translations are determined by page count. Call (012) 345-6789 for quotes.",
+          "Other document translations are determined by page count. We also offer in-person translations. For more information, call (012) 345-6789.",
       },
     },
     gallery: {
@@ -426,11 +427,12 @@ export const translations = {
           Renewals: "Renovaciones",
         },
         items: {
+          Birth: "Nacimiento",
           Marriage: "Matrimonio",
           Death: "Defunción",
           "Court Records": "Registros Judiciales",
           Citizenship: "Ciudadanía",
-          "I-90 Form": "Formulario I-90",
+          "I-30 Form": "Formulario I-30",
           Passport: "Pasaporte",
           Immigration: "Inmigración",
           "Black & White": "Blanco y Negro",
@@ -438,7 +440,7 @@ export const translations = {
           "Green Card": "Tarjeta Verde (Green Card)",
         },
         callNote:
-          "Otras traducciones de documentos se determinan según el número de páginas. Llame al (012) 345-6789 para cotizaciones.",
+          "La tarifa de otras traducciones de documentos se determina según el número de páginas. También ofrecemos servicios de traducción presencial. Para más información, llame al (012) 345-6789.",
       },
     },
     gallery: {

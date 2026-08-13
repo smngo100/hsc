@@ -294,30 +294,32 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   ] || group.category;
 
                 return (
-                  <table key={idx} className="hsc-table">
-                    <thead>
-                      <tr>
-                        <th colSpan={2}>{translatedCategory}</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {group.items.map((row, rIdx) => {
-                        const translatedItemName =
-                          t.services.translation.items[
-                            row.item as keyof typeof t.services.translation.items
-                          ] || row.item;
+                  <div className="border border-[rgba(42,33,26,0.14)] rounded-[10px]">
+                    <table key={idx} className="hsc-table">
+                      <thead>
+                        <tr>
+                          <th colSpan={2}>{translatedCategory}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {group.items.map((row, rIdx) => {
+                          const translatedItemName =
+                            t.services.translation.items[
+                              row.item as keyof typeof t.services.translation.items
+                            ] || row.item;
 
-                        return (
-                          <tr key={rIdx}>
-                            <td>{translatedItemName}</td>
-                            <td>
-                              <strong>{row.fee}</strong>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
+                          return (
+                            <tr key={rIdx}>
+                              <td>{translatedItemName}</td>
+                              <td style={{ textAlign: "right" }}>
+                                <strong>{row.fee}</strong>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
                 );
               })}
             </div>

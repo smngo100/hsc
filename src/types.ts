@@ -1,14 +1,25 @@
-export type PageId = 'home' | 'services' | 'gallery' | 'about' | 'contact';
+export type PageId = "home" | "services" | "gallery" | "about" | "contact";
 
-export type ServiceId = 'all' | 'rides' | 'shelter' | 'pantry' | 'senior' | 'translation';
+export type ServiceId =
+  | "all"
+  | "rides"
+  | "shelter"
+  | "pantry"
+  | "senior"
+  | "translation";
 
-export type GalleryCategory = 'all' | 'community' | 'pantry' | 'rides' | 'shelter';
+export type GalleryCategory =
+  | "all"
+  | "community"
+  | "pantry"
+  | "rides"
+  | "shelter";
 
 export interface ServiceItem {
-  id: Exclude<ServiceId, 'all'>;
+  id: Exclude<ServiceId, "all">;
   title: string;
   shortDesc: string;
-  iconType: 'rides' | 'shelter' | 'pantry' | 'senior' | 'translation';
+  iconType: "rides" | "shelter" | "pantry" | "senior" | "translation";
 }
 
 export interface StatItem {
@@ -29,7 +40,7 @@ export interface TeamMember {
   initials: string;
   name: string;
   role: string;
-  department: 'hsc' | 'rides';
+  department: "hsc" | "rides";
 }
 
 export interface RateCard {
@@ -38,7 +49,7 @@ export interface RateCard {
 }
 
 export interface TranslationFee {
-  category: 'Certificates' | 'Forms' | 'Copies' | 'Renewals';
+  category: "Certificates" | "Forms" | "Copies" | "Renewals";
   items: { item: string; fee: string }[];
 }
 
