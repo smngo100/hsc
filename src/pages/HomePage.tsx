@@ -89,7 +89,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div
                 className="aspect-[4/3] bg-[#F0E4D3] bg-cover bg-center"
                 style={{
-                  backgroundImage: `url('attachments/community.png')`,
+                  backgroundImage: `url('/attachments/community.png')`,
                   WebkitMaskImage:
                     "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
                   WebkitMaskComposite: "destination-in",

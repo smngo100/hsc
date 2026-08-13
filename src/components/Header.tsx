@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           className="flex items-center gap-3 font-serif font-bold text-base text-[#2A211A] tracking-wide h-full py-3"
         >
           <img
-            src="attachments/hsc_logo.png"
+            src="/attachments/hsc_logo.png"
             alt={t.brand.title}
             className="h-full w-auto object-contain"
           />
