@@ -199,6 +199,11 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="hsc-card p-6 text-center flex flex-col items-center">
+              <img
+                src="attachments/icons/handshake.svg"
+                alt="Handshake Icon"
+                className="mx-auto mb-3 w-8 h-8 text-[#C1502E]"
+              />
               <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
                 {t.home.cardGetHelpTitle}
               </h3>
@@ -207,13 +212,18 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
               <button
                 onClick={() => onNavigate("contact")}
-                className="hsc-btn hsc-btn-outline"
+                className="hsc-btn hsc-btn-teal"
               >
                 {t.home.cardGetHelpBtn}
               </button>
             </div>
 
             <div className="hsc-card p-6 text-center flex flex-col items-center">
+              <img
+                src="attachments/icons/users-three.svg"
+                alt="Volunteer Icon"
+                className="mx-auto mb-3 w-8 h-8 text-[#C1502E]"
+              />
               <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
                 {t.home.cardVolunteerTitle}
               </h3>
@@ -222,13 +232,18 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
               <button
                 onClick={() => onNavigate("contact")}
-                className="hsc-btn hsc-btn-teal"
+                className="hsc-btn hsc-btn-outline"
               >
                 {t.home.cardVolunteerBtn}
               </button>
             </div>
 
             <div className="hsc-card p-6 text-center flex flex-col items-center">
+              <img
+                src="attachments/icons/hand-heart.svg"
+                alt="Donate Icon"
+                className="mx-auto mb-3 w-8 h-8 text-[#C1502E]"
+              />
               <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
                 {t.home.cardDonateTitle}
               </h3>
