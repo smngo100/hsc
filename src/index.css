@@ -192,6 +192,11 @@
   box-shadow: var(--shadow-md);
 }
 
+.hsc-card--static:hover {
+  transform: none;
+  box-shadow: inherit; /* or whatever the resting shadow is */
+}
+
 .hsc-table {
   width: 100%;
   border-collapse: collapse;
