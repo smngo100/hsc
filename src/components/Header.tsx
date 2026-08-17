@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             e.preventDefault();
             handleNavClick("home");
           }}
-          className="flex items-center gap-3 font-serif font-bold text-base text-[#2A211A] tracking-wide h-full py-3"
+          className="flex items-center gap-3 tracking-wide h-full py-3"
         >
           <img
             src="/attachments/hsc_logo.png"
@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                 <li key={link.id}>
                   <button
                     onClick={() => handleNavClick(link.id)}
-                    className={`text-sm font-semibold px-3 py-2 rounded-[6px] transition-colors cursor-pointer w-full text-left lg:w-auto ${
+                    className={`text-sm px-3 py-2 rounded-[6px] transition-colors cursor-pointer w-full text-left lg:w-auto ${
                       isActive
                         ? "text-[#1B6B5C] bg-[rgba(27,107,92,0.14)]"
                         : "text-[#6B5B4D] hover:text-[#1B6B5C] hover:bg-[rgba(27,107,92,0.14)]"

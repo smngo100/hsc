@@ -40,7 +40,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* HSC Staff */}
-        <h3 className="hsc-font-heading text-center text-xl mb-6">
+        <h3 className="hsc-font-heading text-center text-xl font-bold mb-6">
           {t.about.hscStaffHeading}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
@@ -57,7 +57,7 @@ export const AboutPage: React.FC = () => {
                 <div className="w-20 h-20 rounded-full bg-[#F0E4D3] mx-auto mb-4 flex items-center justify-center border-2 border-[rgba(27,107,92,0.3)] text-[#1B6B5C] font-bold text-lg">
                   {member.initials}
                 </div>
-                <div className="text-base font-bold ">{member.name}</div>
+                <div className="text-base">{member.name}</div>
                 <div className="text-xs text-[#6B5B4D]">{translatedRole}</div>
               </div>
             );
@@ -65,7 +65,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* Rides Staff */}
-        <h3 className="hsc-font-heading text-center text-xl mb-6">
+        <h3 className="hsc-font-heading text-center text-xl font-bold mb-6">
           {t.about.ridesStaffHeading}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-xl mx-auto">
@@ -82,9 +82,7 @@ export const AboutPage: React.FC = () => {
                 <div className="w-20 h-20 rounded-full bg-[#F0E4D3] mx-auto mb-4 flex items-center justify-center border-2 border-[rgba(27,107,92,0.3)] text-[#1B6B5C] font-bold text-lg">
                   {member.initials}
                 </div>
-                <div className="text-base font-bold text-[#2A211A]">
-                  {member.name}
-                </div>
+                <div className="text-base text-[#2A211A]">{member.name}</div>
                 <div className="text-xs text-[#6B5B4D]">{translatedRole}</div>
               </div>
             );
@@ -92,7 +90,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* Board Staff */}
-        <h3 className="hsc-font-heading text-center text-xl mb-6">
+        <h3 className="hsc-font-heading text-center text-xl font-bold mb-6">
           {t.about.boardStaffHeading}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
@@ -109,9 +107,7 @@ export const AboutPage: React.FC = () => {
                 <div className="w-20 h-20 rounded-full bg-[#F0E4D3] mx-auto mb-4 flex items-center justify-center border-2 border-[rgba(27,107,92,0.3)] text-[#1B6B5C] font-bold text-lg">
                   {member.initials}
                 </div>
-                <div className="text-base font-bold text-[#2A211A]">
-                  {member.name}
-                </div>
+                <div className="text-base text-[#2A211A]">{member.name}</div>
                 <div className="text-xs text-[#6B5B4D]">{translatedRole}</div>
               </div>
             );

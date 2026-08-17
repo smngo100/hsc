@@ -86,7 +86,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               <button
                 key={tab.id}
                 onClick={() => onSelectService(tab.id)}
-                className={`px-4 py-2 text-sm font-bold rounded-[6px] transition-colors whitespace-nowrap cursor-pointer border ${
+                className={`px-4 py-2 text-sm rounded-[6px] transition-colors whitespace-nowrap cursor-pointer border ${
                   isActive
                     ? "bg-[#1B6B5C] text-white border-[#1B6B5C]"
                     : "bg-[#F0E4D3] text-[#6B5B4D] border-[rgba(42,33,26,0.08)] hover:bg-[#1B6B5C] hover:text-white"
