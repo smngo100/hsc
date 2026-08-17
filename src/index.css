@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Viaoda+Libre&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -69,10 +70,8 @@
     --white: #ffffff;
 
     /* Typography */
-    --font-heading: Georgia, "Times New Roman", serif;
-    --font-body:
-      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-      sans-serif;
+    --font-heading: "Viaoda Libre", Georgia, "Times New Roman", serif;
+    --font-body: "DM Sans", Roboto, Helvetica, Arial, sans-serif;
 
     /* Font Sizes */
     --fs-xs: 0.75rem; /* 12px */
