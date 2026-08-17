@@ -40,7 +40,7 @@ export interface TeamMember {
   initials: string;
   name: string;
   role: string;
-  department: "hsc" | "rides";
+  department: "hsc" | "rides" | "board";
 }
 
 export interface RateCard {

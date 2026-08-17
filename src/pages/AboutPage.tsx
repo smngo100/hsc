@@ -7,6 +7,7 @@ export const AboutPage: React.FC = () => {
 
   const hscStaff = TEAM_MEMBERS.filter((m) => m.department === "hsc");
   const ridesStaff = TEAM_MEMBERS.filter((m) => m.department === "rides");
+  const boardStaff = TEAM_MEMBERS.filter((m) => m.department === "board");
 
   return (
     <div className="py-12 md:py-16">
@@ -39,11 +40,36 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* HSC Staff */}
-        <h3 className="hsc-font-heading text-center text-xl font-bold text-[#1B6B5C] mb-6">
+        <h3 className="hsc-font-heading text-center text-xl mb-6">
           {t.about.hscStaffHeading}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
           {hscStaff.map((member) => {
+            const translatedRole =
+              t.about.roles[member.role as keyof typeof t.about.roles] ||
+              member.role;
+
+            return (
+              <div
+                key={member.id}
+                className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[10px] p-6 text-center"
+              >
+                <div className="w-20 h-20 rounded-full bg-[#F0E4D3] mx-auto mb-4 flex items-center justify-center border-2 border-[rgba(27,107,92,0.3)] text-[#1B6B5C] font-bold text-lg">
+                  {member.initials}
+                </div>
+                <div className="text-base font-bold ">{member.name}</div>
+                <div className="text-xs text-[#6B5B4D]">{translatedRole}</div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Rides Staff */}
+        <h3 className="hsc-font-heading text-center text-xl mb-6">
+          {t.about.ridesStaffHeading}
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-xl mx-auto">
+          {ridesStaff.map((member) => {
             const translatedRole =
               t.about.roles[member.role as keyof typeof t.about.roles] ||
               member.role;
@@ -65,12 +91,12 @@ export const AboutPage: React.FC = () => {
           })}
         </div>
 
-        {/* Rides Staff */}
-        <h3 className="hsc-font-heading text-center text-xl font-bold text-[#C1502E] mb-6">
-          {t.about.ridesStaffHeading}
+        {/* Board Staff */}
+        <h3 className="hsc-font-heading text-center text-xl mb-6">
+          {t.about.boardStaffHeading}
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto">
-          {ridesStaff.map((member) => {
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+          {boardStaff.map((member) => {
             const translatedRole =
               t.about.roles[member.role as keyof typeof t.about.roles] ||
               member.role;
@@ -80,7 +106,7 @@ export const AboutPage: React.FC = () => {
                 key={member.id}
                 className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[10px] p-6 text-center"
               >
-                <div className="w-20 h-20 rounded-full bg-[#F0E4D3] mx-auto mb-4 flex items-center justify-center border-2 border-[rgba(193,80,46,0.3)] text-[#C1502E] font-bold text-lg">
+                <div className="w-20 h-20 rounded-full bg-[#F0E4D3] mx-auto mb-4 flex items-center justify-center border-2 border-[rgba(27,107,92,0.3)] text-[#1B6B5C] font-bold text-lg">
                   {member.initials}
                 </div>
                 <div className="text-base font-bold text-[#2A211A]">
