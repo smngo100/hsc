@@ -295,7 +295,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               <div className="text-xs font-bold uppercase text-[#1B6B5C]">
                 {t.contact.locationLabel}
               </div>
-              <div className="text-base font-bold text-[#2A211A] mt-1">
+              <div className="text-base text-[#2A211A] mt-1">
                 {t.contact.locationValue}
               </div>
             </div>
@@ -304,7 +304,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               <div className="text-xs font-bold uppercase text-[#1B6B5C]">
                 {t.contact.poBoxLabel}
               </div>
-              <div className="text-base font-bold text-[#2A211A] mt-1">
+              <div className="text-base text-[#2A211A] mt-1">
                 {t.contact.poBoxValue}
               </div>
             </div>
@@ -313,11 +313,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               <div className="text-xs font-bold uppercase text-[#1B6B5C]">
                 {t.contact.emailPhoneLabel}
               </div>
-              <div className="text-base font-bold text-[#2A211A] mt-1">
-                email@gmail.com
+              <div className="text-base text-[#2A211A] mt-1">
+                director@imlayhsc.org
               </div>
-              <div className="text-base font-bold text-[#C1502E] mt-0.5">
-                (012) 345-6789
+              <div className="text-base text-[#C1502E] mt-0.5">
+                (810) 724-3665
               </div>
             </div>
 
@@ -325,7 +325,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               <div className="text-xs font-bold uppercase text-[#1B6B5C]">
                 {t.contact.hoursLabel}
               </div>
-              <div className="text-base font-bold text-[#2A211A] mt-1">
+              <div className="text-base text-[#2A211A] mt-1">
                 {t.contact.hoursValue}
               </div>
             </div>

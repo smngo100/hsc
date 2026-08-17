@@ -236,9 +236,9 @@ export const translations = {
       subtitle:
         "Reach out — we're here to help. Find our location, hours, and contact information below, or send us a message directly.",
       locationLabel: "Location",
-      locationValue: "123 Main Street, Imlay City, MI 48444",
+      locationValue: "113 N Almont Ave. Imlay City, Michigan 48444",
       poBoxLabel: "PO Box",
-      poBoxValue: "PO Box 123, Imlay City, MI 48444",
+      poBoxValue: "284 Imlay City, Michigan 48444",
       emailPhoneLabel: "Email & Phone",
       hoursLabel: "Operating Hours",
       hoursValue: "Monday – Friday: 8:00 AM – 5:00 PM",
@@ -246,7 +246,7 @@ export const translations = {
       fullNameLabel: "Full Name",
       fullNamePlaceholder: "Jane Doe",
       emailLabel: "Email Address",
-      emailPlaceholder: "jane@example.com",
+      emailPlaceholder: " director@imlayhsc.org",
       serviceNeededLabel: "Service Needed",
       serviceOptions: {
         general: "General Inquiry",
@@ -516,9 +516,9 @@ export const translations = {
       subtitle:
         "Contáctanos: estamos aquí para ayudar. Encuentra nuestra ubicación, horario e información de contacto a continuación, o envíanos un mensaje directamente.",
       locationLabel: "Ubicación",
-      locationValue: "123 Main Street, Imlay City, MI 48444",
+      locationValue: "113 N Almont Ave. Imlay City, Michigan 48444",
       poBoxLabel: "Apartado Postal",
-      poBoxValue: "PO Box 123, Imlay City, MI 48444",
+      poBoxValue: "284 Imlay City, Michigan 48444",
       emailPhoneLabel: "Correo Electrónico y Teléfono",
       hoursLabel: "Horario de Atención",
       hoursValue: "Lunes – Viernes: 8:00 AM – 5:00 PM",
@@ -526,7 +526,7 @@ export const translations = {
       fullNameLabel: "Nombre Completo",
       fullNamePlaceholder: "María García",
       emailLabel: "Correo Electrónico",
-      emailPlaceholder: "maria@ejemplo.com",
+      emailPlaceholder: " director@imlayhsc.org",
       serviceNeededLabel: "Servicio Requerido",
       serviceOptions: {
         general: "Consulta General",
