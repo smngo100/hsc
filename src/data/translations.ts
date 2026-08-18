@@ -50,7 +50,7 @@ export const translations = {
       impactEyebrow: "Make An Impact",
       impactTitle: "Get Involved",
       impactSubtitle:
-        "Facing a hard time? Whether it's food, shelter, transportation, or translation support, our team is ready to help.",
+        "There are many ways to be part of HSC — whether you need support, want to lend a hand, or hope to give back.",
       cardGetHelpTitle: "Get Help",
       cardGetHelpText:
         "Facing a hard time? Whether it's food, shelter, transportation, or translation support, our team is ready to help.",
@@ -313,7 +313,7 @@ export const translations = {
       impactEyebrow: "Genera un Impacto",
       impactTitle: "Involúcrate",
       impactSubtitle:
-        "¿Pasando por un momento difícil? Ya sea comida, refugio, transporte o traducción, nuestro equipo está listo para ayudar.",
+        "Hay muchas formas de formar parte de HSC, ya sea que necesites apoyo, quieras echar una mano o desees retribuir.",
       cardGetHelpTitle: "Obtener Ayuda",
       cardGetHelpText:
         "¿Enfrentando dificultades? Ya sea alimentos, refugio, transporte o traducción, nuestro equipo está listo para ayudar.",
