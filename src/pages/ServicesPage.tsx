@@ -99,7 +99,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         </div>
 
         {/* Sub-View: All Services Overview */}
-        {activeService === "all" && (
+        {/* {activeService === "all" && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {servicesOverviewList.map((service) => (
               <div
@@ -123,6 +123,64 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </div>
             ))}
           </div>
+        )} */}
+
+        {/* Sub-View: All Services Overview */}
+        {activeService === "all" && (
+          <div className="flex flex-col gap-6">
+            {/* Featured: Rides — full-width row */}
+            {(() => {
+              const ridesService = servicesOverviewList.find(
+                (s) => s.id === "rides",
+              );
+              if (!ridesService) return null;
+              return (
+                <div className="hsc-card p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                  <div>
+                    <h3 className="hsc-font-heading text-2xl font-bold text-[#2A211A] mb-2">
+                      {ridesService.title}
+                    </h3>
+                    <p className="text-base text-[#6B5B4D] leading-relaxed max-w-3xl">
+                      {ridesService.shortDesc}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => onSelectService("rides")}
+                    className="hsc-btn hsc-btn-teal self-start md:self-auto whitespace-nowrap"
+                  >
+                    {t.services.viewDetails}
+                  </button>
+                </div>
+              );
+            })()}
+
+            {/* Remaining services — two-column grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {servicesOverviewList
+                .filter((service) => service.id !== "rides")
+                .map((service) => (
+                  <div
+                    key={service.id}
+                    className="hsc-card p-6 flex flex-col justify-between"
+                  >
+                    <div>
+                      <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
+                        {service.title}
+                      </h3>
+                      <p className="text-base text-[#6B5B4D] leading-relaxed mb-6">
+                        {service.shortDesc}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => onSelectService(service.id)}
+                      className="hsc-btn hsc-btn-teal hsc-btn-sm self-start"
+                    >
+                      {t.services.viewDetails}
+                    </button>
+                  </div>
+                ))}
+            </div>
+          </div>
         )}
 
         {/* Sub-View: Imlay City Area Rides */}
@@ -139,11 +197,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             <p className="text-base text-[#2A211A] leading-relaxed mb-6">
               {t.services.rides.body}
             </p>
-            {/* <div className="bg-[#F0E4D3] p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] mb-8 text-center font-bold text-[#2A211A]">
-              {t.services.rides.hours}
-              <div className="font-bold">{t.services.rides.hoursLabel}</div>
-              <div>{t.services.rides.hoursValue}</div>
-            </div> */}
             <div className="font-semibold text-center mb-2">
               {t.services.rides.hoursLabel}
             </div>
