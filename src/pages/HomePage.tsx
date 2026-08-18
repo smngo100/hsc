@@ -135,7 +135,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="hsc-font-heading text-xl text-[#2A211A] mb-2">
+                  <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
                     {service.title}
                   </h3>
                   <p className="text-sm text-[#6B5B4D] leading-relaxed mb-4 flex-1">
