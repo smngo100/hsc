@@ -138,7 +138,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-[#6B5B4D] leading-relaxed mb-4 flex-1">
+                  <p className="text-base text-[#6B5B4D] leading-relaxed mb-4 flex-1">
                     {service.shortDesc}
                   </p>
                   <div className="mt-auto pt-2">
@@ -179,7 +179,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
                 {t.home.cardGetHelpTitle}
               </h3>
-              <p className="text-sm text-[#6B5B4D] mb-6 flex-1">
+              <p className="text-base text-[#6B5B4D] mb-6 flex-1">
                 {t.home.cardGetHelpText}
               </p>
               <button
@@ -199,7 +199,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
                 {t.home.cardVolunteerTitle}
               </h3>
-              <p className="text-sm text-[#6B5B4D] mb-6 flex-1">
+              <p className="text-base text-[#6B5B4D] mb-6 flex-1">
                 {t.home.cardVolunteerText}
               </p>
               <button
@@ -219,7 +219,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
                 {t.home.cardDonateTitle}
               </h3>
-              <p className="text-sm text-[#6B5B4D] mb-6 flex-1">
+              <p className="text-base text-[#6B5B4D] mb-6 flex-1">
                 {t.home.cardDonateText}
               </p>
               <button
