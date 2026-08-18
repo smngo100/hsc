@@ -254,7 +254,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <img
                 src={`attachments/sponsors/easterseals.png`}
                 alt="Easterseals"
-                className="h-[5rem] w-auto object-contain shrink-0"
+                className="h-[6rem] w-auto object-contain shrink-0"
               />
               <img
                 src={`attachments/sponsors/fccf.png`}
@@ -269,12 +269,12 @@ export const HomePage: React.FC<HomePageProps> = ({
               <img
                 src={`attachments/sponsors/salvation_army.png`}
                 alt="Salvation Army"
-                className="h-[5rem] w-auto object-contain shrink-0"
+                className="h-[6rem] w-auto object-contain shrink-0"
               />
               <img
                 src={`attachments/sponsors/vaaa.png`}
                 alt="VAAA"
-                className="h-[5rem] w-auto object-contain shrink-0"
+                className="h-[6rem] w-auto object-contain shrink-0"
               />
             </div>
           </div>
