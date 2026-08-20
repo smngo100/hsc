@@ -107,7 +107,7 @@ export const translations = {
       shelter: {
         title: "Family Shelter",
         shortDesc:
-          "Safe, non-violent temporary housing for women and children who need shelter from crisis.",
+          "Safe, non-violent temporary housing for families who need shelter from crisis.",
         intro:
           "Safe, non-violent temporary housing for families in crisis, giving them time and space to stabilize.",
         body: "The Hispanic Service Center provides temporary emergency shelter for families who need a safe place during periods of hardship. Families may stay for a short duration while working toward permanent housing.",
@@ -371,7 +371,7 @@ export const translations = {
       shelter: {
         title: "Refugio Familiar",
         shortDesc:
-          "Vivienda temporal segura y libre de violencia para mujeres y niños en situaciones de crisis.",
+          "Alojamiento temporal seguro y libre de violencia para familias que necesitan refugio ante una crisis.",
         intro:
           "Vivienda temporal segura y libre de violencia para familias en crisis, brindándoles tiempo y espacio para estabilizarse.",
         body: "El Centro de Servicios Hispanos brinda refugio de emergencia temporal a familias que necesitan un lugar seguro durante períodos de dificultad. Las familias pueden quedarse por una corta duración mientras trabajan para conseguir una vivienda permanente.",
