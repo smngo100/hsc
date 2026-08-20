@@ -87,12 +87,12 @@ export const translations = {
         shortDesc:
           "Free transportation connecting rural residents to medical, legal, and essential appointments.",
         intro:
-          "In partnership with the Ruth Hughes Community Foundation, HSC offers Imlay City Area Rides — a program that provides rides for residents without reliable personal transportation.",
+          "In partnership with Four County Community Foundation, HSC offers Imlay City Area Rides — a program that provides rides for residents without reliable personal transportation.",
         body: "For many, transportation is the invisible barrier between stability and setback. A missed doctor's appointment, a lost job, or work program that slips away can be tragic. This program helps relieve that burden.",
         daysOpen: "Monday – Friday",
         daysClosed: "Saturday & Sunday",
         hoursLabel: "Operating Hours",
-        hoursValue: "8:00 AM – 5:00 PM",
+        hoursValue: "9:00 AM – 5:00 PM",
         hoursClosedValue: "Closed",
         ratesHeader: "Ride Rates Information:",
         rates: {
@@ -102,14 +102,14 @@ export const translations = {
           local: "Local Rides",
         },
         callNote:
-          "For more information or to schedule a ride, call (012) 345-6789.",
+          "For more information or to schedule a ride, call (810) 874-3448.",
       },
       shelter: {
         title: "Family Shelter",
         shortDesc:
-          "Safe, non-violent temporary housing for families who need shelter from crisis.",
+          "Safe temporary housing for families who need shelter from crisis.",
         intro:
-          "Safe, non-violent temporary housing for families in crisis, giving them time and space to stabilize.",
+          "Safe temporary housing for families in crisis, giving them time and space to stabilize.",
         body: "The Hispanic Service Center provides temporary emergency shelter for families who need a safe place during periods of hardship. Families may stay for a short duration while working toward permanent housing.",
         list: [
           "Safe, private housing for women and children",
@@ -118,7 +118,7 @@ export const translations = {
           "Assistance with employment, transportation, and housing navigation",
         ],
         callNote:
-          "To check eligibility or to join the waitlist, call (012) 345-6789.",
+          "To check eligibility or to join the waitlist, call (810) 724-3665.",
       },
       pantry: {
         title: "Food Pantry",
@@ -130,6 +130,10 @@ export const translations = {
           "Our food pantry serves all residents throughout Lapeer County, open Monday through Friday, providing consistent access to nutritious food for individuals and families facing food insecurity.",
         body2:
           "Twice a week, we extend our reach through outdoor grab-and-go tables — making access quick, dignified, and convenient. We gratefully accept non-perishable food donations, produce, and monetary contributions to keep our shelves stocked.",
+        body3: "Grab-and-Go",
+        body4: "Appointments are required",
+        grabNGoDays: "Tuesday & Friday",
+        otherDays: "Mon, Wed, Thurs",
       },
       senior: {
         title: "Senior Program",
@@ -241,12 +245,12 @@ export const translations = {
       poBoxValue: "284 Imlay City, Michigan 48444",
       emailPhoneLabel: "Email & Phone",
       hoursLabel: "Operating Hours",
-      hoursValue: "Monday – Friday: 8:00 AM – 5:00 PM",
+      hoursValue: "Monday – Friday: 9:00 AM – 5:00 PM",
       formTitle: "Send Us A Message",
       fullNameLabel: "Full Name",
       fullNamePlaceholder: "Jane Doe",
       emailLabel: "Email Address",
-      emailPlaceholder: " director@imlayhsc.org",
+      emailPlaceholder: "director@imlayhsc.org",
       serviceNeededLabel: "Service Needed",
       serviceOptions: {
         general: "General Inquiry",
@@ -351,12 +355,12 @@ export const translations = {
         shortDesc:
           "Transporte gratuito que conecta a residentes rurales con citas médicas, legales y esenciales.",
         intro:
-          "En asociación con la Fundación Comunitaria Ruth Hughes, HSC ofrece el programa Imlay City Area Rides para brindar transporte a residentes sin vehículo propio confiable.",
+          "En colaboración con Four County Community Foundation, HSC ofrece el programa Imlay City Area Rides para brindar transporte a residentes sin vehículo propio confiable.",
         body: "Para muchos, el transporte es la barrera invisible entre la estabilidad y las dificultades. Una cita médica perdida, un trabajo perdido o un programa de trabajo que se pierde pueden ser trágicos. Este programa ayuda a aliviar esa carga.",
         daysOpen: "Lunes a viernes",
         daysClosed: "Sábado y domingo",
         hoursLabel: "Horario de atención",
-        hoursValue: "8:00 AM – 5:00 PM",
+        hoursValue: "9:00 AM – 5:00 PM",
         hoursClosedValue: "Cerrado",
         ratesHeader: "Información sobre Tarifas:",
         rates: {
@@ -366,7 +370,7 @@ export const translations = {
           local: "Viajes Locales",
         },
         callNote:
-          "Para obtener más información o programar un viaje, llame al (012) 345-6789.",
+          "Para obtener más información o programar un viaje, llame al (810) 874-3448.",
       },
       shelter: {
         title: "Refugio Familiar",
@@ -382,7 +386,7 @@ export const translations = {
           "Asistencia con empleo, transporte y búsqueda de vivienda",
         ],
         callNote:
-          "Para verificar la elegibilidad o unirse a la lista de espera, llame al (012) 345-6789.",
+          "Para verificar la elegibilidad o unirse a la lista de espera, llame al (810) 724-3665.",
       },
       pantry: {
         title: "Despensa de Alimentos",
@@ -394,6 +398,10 @@ export const translations = {
           "Nuestra despensa de alimentos sirve a todos los residentes del condado de Lapeer, abierta de lunes a viernes, brindando acceso constante a alimentos nutritivos para personas y familias que enfrentan inseguridad alimentaria.",
         body2:
           "Dos veces por semana ampliamos nuestro alcance a través de mesas al aire libre para llevar rápido. Aceptamos donaciones de alimentos no perecederos, frutas y verduras, y contribuciones monetarias para mantener nuestros estantes abastecidos.",
+        body3: "Para llevar",
+        body4: "Se requiere cita previa",
+        grabNGoDays: "Martes y viernes",
+        otherDays: "Lunes, miércoles y jueves",
       },
       senior: {
         title: "Programa de Adultos Mayores",
@@ -521,7 +529,7 @@ export const translations = {
       poBoxValue: "284 Imlay City, Michigan 48444",
       emailPhoneLabel: "Correo Electrónico y Teléfono",
       hoursLabel: "Horario de Atención",
-      hoursValue: "Lunes – Viernes: 8:00 AM – 5:00 PM",
+      hoursValue: "Lunes – Viernes: 9:00 AM – 5:00 PM",
       formTitle: "Envíanos un Mensaje",
       fullNameLabel: "Nombre Completo",
       fullNamePlaceholder: "María García",

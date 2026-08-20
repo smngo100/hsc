@@ -280,6 +280,18 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             <p className="text-base text-[#2A211A] leading-relaxed">
               {t.services.pantry.body2}
             </p>
+
+            <div className="grid grid-cols-2 gap-4 mt-8 mb-8">
+              <div className="bg-[#F0E4D3] p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] text-center text-[#2A211A] flex flex-col">
+                <p className="font-medium mb-2">{t.services.pantry.body3}</p>
+                <p>{t.services.pantry.grabNGoDays}</p>
+              </div>
+
+              <div className="bg-[#F0E4D3] p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] text-center text-[#2A211A] flex flex-col">
+                <p className="font-medium mb-2">{t.services.pantry.body4}</p>
+                <p>{t.services.pantry.otherDays}</p>
+              </div>
+            </div>
           </div>
         )}
 
