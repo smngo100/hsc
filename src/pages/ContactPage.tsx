@@ -326,6 +326,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 {t.contact.hoursLabel}
               </div>
               <div className="text-base text-[#2A211A] mt-1">
+                {t.contact.daysOpen}
+              </div>
+              <div className="text-base text-[#2A211A] mt-1">
                 {t.contact.hoursValue}
               </div>
             </div>
