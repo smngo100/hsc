@@ -89,7 +89,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div
                 className="aspect-[4/3] bg-[#F0E4D3] bg-cover bg-center"
                 style={{
-                  backgroundImage: `url('/attachments/hsc_4.jpg')`,
+                  backgroundImage: `url('/attachments/homepage/hsc_4.jpg')`,
                   WebkitMaskImage:
                     "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
                   WebkitMaskComposite: "destination-in",
@@ -278,33 +278,6 @@ export const HomePage: React.FC<HomePageProps> = ({
               />
             </div>
           </div>
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            <img
-              src={`attachments/sponsors/easterseals.png`}
-              alt="Easterseals"
-              className="h-[8rem] w-full object-contain"
-            />
-            <img
-              src={`attachments/sponsors/fccf.jpg`}
-              alt="FCCF"
-              className="h-[8rem] w-full object-contain"
-            />
-            <img
-              src={`attachments/sponsors/Ford.png`}
-              alt="Ford"
-              className="h-[6rem] w-full object-contain"
-            />
-            <img
-              src={`attachments/sponsors/salvation_army.png`}
-              alt="Salvation Army"
-              className="h-[8rem] w-full object-contain"
-            />
-            <img
-              src={`attachments/sponsors/vaaa.jpg`}
-              alt="VAAA"
-              className="h-[8rem] w-full object-contain"
-            />
-          </div> */}
         </div>
       </section>
     </div>
