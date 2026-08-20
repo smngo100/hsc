@@ -93,7 +93,7 @@ export const AboutPage: React.FC = () => {
         <h3 className="hsc-font-heading text-center text-xl font-bold mb-6">
           {t.about.boardStaffHeading}
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
           {boardStaff.map((member) => {
             const translatedRole =
               t.about.roles[member.role as keyof typeof t.about.roles] ||
