@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import { GalleryCategory, GalleryItem } from "../types";
-import { GALLERY_ITEMS } from "../data/contentData";
+import { GalleryCategory } from "../types";
+import { GALLERY_ITEMS } from "../data/galleryData";
 import { useLanguage } from "../context/LanguageContext";
 
-interface GalleryPageProps {
-  onOpenLightbox: (item: GalleryItem) => void;
-}
-
-export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenLightbox }) => {
+export const GalleryPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>("all");
   const { t } = useLanguage();
 
@@ -59,43 +55,19 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenLightbox }) => {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item) => {
-            const translatedItemInfo = t.gallery.items[
-              item.id as unknown as keyof typeof t.gallery.items
-            ] || {
-              title: item.title,
-              subtitle: item.subtitle,
-            };
-
-            const translatedCategoryLabel =
-              t.gallery.categories[
-                item.category as keyof typeof t.gallery.categories
-              ] || item.category;
-
-            const translatedItemObj: GalleryItem = {
-              ...item,
-              title: translatedItemInfo.title,
-              subtitle: translatedItemInfo.subtitle,
-            };
-
-            return (
-              <div
-                key={item.id}
-                onClick={() => onOpenLightbox(translatedItemObj)}
-                className="group relative rounded-[10px] overflow-hidden border border-[rgba(42,33,26,0.14)] cursor-pointer aspect-4/3 bg-[#F0E4D3]"
-              >
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(42,33,26,0.85)] via-[rgba(0,0,0,0)] to-transparent flex flex-col justify-end p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <div className="text-sm font-bold">
-                    {translatedItemInfo.title}
-                  </div>
-                  <div className="text-xs text-[#F0E4D3] capitalize">
-                    {translatedCategoryLabel}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              className="relative rounded-[10px] overflow-hidden border border-[rgba(42,33,26,0.14)] aspect-4/3 bg-[#F0E4D3]"
+            >
+              <img
+                src={item.image}
+                alt=""
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

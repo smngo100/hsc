@@ -232,7 +232,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 </div>
               ))}
             </div>
-            <p className="text-xs text-[#9C8C7D] text-center">
+            <p className="text-sm text-[#9C8C7D] text-center">
               {t.services.rides.callNote}
             </p>
           </div>

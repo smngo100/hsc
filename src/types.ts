@@ -29,10 +29,8 @@ export interface StatItem {
 
 export interface GalleryItem {
   id: string;
-  title: string;
-  subtitle: string;
   category: GalleryCategory;
-  bgColor: string;
+  image: string;
 }
 
 export interface TeamMember {
