@@ -13,7 +13,7 @@ export type GalleryCategory =
   | "community"
   | "pantry"
   | "rides"
-  | "shelter";
+  | "senior";
 
 export interface ServiceItem {
   id: Exclude<ServiceId, "all">;

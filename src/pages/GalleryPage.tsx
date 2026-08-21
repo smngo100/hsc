@@ -10,7 +10,7 @@ export const GalleryPage: React.FC = () => {
   const categories: { id: GalleryCategory; label: string }[] = [
     { id: "all", label: t.gallery.categories.all },
     { id: "community", label: t.gallery.categories.community },
-    { id: "pantry", label: t.gallery.categories.pantry },
+    // { id: "pantry", label: t.gallery.categories.pantry },
     { id: "rides", label: t.gallery.categories.rides },
     { id: "senior", label: t.gallery.categories.senior },
   ];
