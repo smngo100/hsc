@@ -1,7 +1,6 @@
 import {
   ServiceItem,
   StatItem,
-  GalleryItem,
   TeamMember,
   RateCard,
   TranslationFee,

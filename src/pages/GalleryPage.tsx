@@ -12,7 +12,7 @@ export const GalleryPage: React.FC = () => {
     { id: "community", label: t.gallery.categories.community },
     { id: "pantry", label: t.gallery.categories.pantry },
     { id: "rides", label: t.gallery.categories.rides },
-    { id: "shelter", label: t.gallery.categories.shelter },
+    { id: "senior", label: t.gallery.categories.senior },
   ];
 
   const filteredItems = GALLERY_ITEMS.filter(
@@ -53,7 +53,7 @@ export const GalleryPage: React.FC = () => {
           })}
         </div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid (fixed aspect ratio layout) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
             <div
@@ -69,6 +69,23 @@ export const GalleryPage: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Gallery Grid (masonry-style layout) */}
+        {/* <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              className="relative rounded-[10px] overflow-hidden border border-[rgba(42,33,26,0.14)] bg-[#F0E4D3] mb-6 break-inside-avoid"
+            >
+              <img
+                src={item.image}
+                alt=""
+                className="w-full h-auto block"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div> */}
       </div>
     </div>
   );

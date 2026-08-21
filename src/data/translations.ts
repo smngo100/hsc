@@ -197,7 +197,7 @@ export const translations = {
         community: "Community",
         pantry: "Food Pantry",
         rides: "Rides Program",
-        shelter: "Shelter",
+        senior: "Senior Program",
       },
       items: {
         1: { title: "Community Gathering", subtitle: "HSC Community Assembly" },
@@ -467,7 +467,7 @@ export const translations = {
         community: "Comunidad",
         pantry: "Despensa de Alimentos",
         rides: "Programa de Transporte",
-        shelter: "Refugio",
+        senior: "Programa para Personas Mayores",
       },
       items: {
         1: {
