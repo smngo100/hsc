@@ -91,51 +91,6 @@ export const TRANSLATION_FEES: TranslationFee[] = [
   },
 ];
 
-export const GALLERY_ITEMS: GalleryItem[] = [
-  {
-    id: "1",
-    title: "Community Gathering",
-    subtitle: "HSC Community Assembly",
-    category: "community",
-    bgColor: "#F0E4D3",
-  },
-  {
-    id: "2",
-    title: "Food Pantry Stocking",
-    subtitle: "Weekly Food Pantry Support",
-    category: "pantry",
-    bgColor: "#FAF3E8",
-  },
-  {
-    id: "3",
-    title: "Area Rides Van",
-    subtitle: "Transit Vehicle Fleet",
-    category: "rides",
-    bgColor: "#F0E4D3",
-  },
-  {
-    id: "4",
-    title: "Family Shelter Facility",
-    subtitle: "Housing Facility",
-    category: "shelter",
-    bgColor: "#FAF3E8",
-  },
-  {
-    id: "5",
-    title: "Senior Social Activity",
-    subtitle: "Weekly Social Hour",
-    category: "community",
-    bgColor: "#F0E4D3",
-  },
-  {
-    id: "6",
-    title: "Grab & Go Station",
-    subtitle: "Outdoor Distribution",
-    category: "pantry",
-    bgColor: "#FAF3E8",
-  },
-];
-
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "t1",
