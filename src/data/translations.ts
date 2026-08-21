@@ -252,6 +252,7 @@ export const translations = {
       fullNamePlaceholder: "Jane Doe",
       emailLabel: "Email Address",
       emailPlaceholder: "director@imlayhsc.org",
+      phoneNumber: "(810) 724-3665",
       serviceNeededLabel: "Service Needed",
       serviceOptions: {
         general: "General Inquiry",
@@ -536,6 +537,7 @@ export const translations = {
       fullNamePlaceholder: "María García",
       emailLabel: "Correo Electrónico",
       emailPlaceholder: " director@imlayhsc.org",
+      phoneNumber: "(810) 724-3665",
       serviceNeededLabel: "Servicio Requerido",
       serviceOptions: {
         general: "Consulta General",

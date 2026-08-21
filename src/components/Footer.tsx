@@ -19,32 +19,40 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
   return (
     <footer className="bg-surface3 border-t border-[rgba(42,33,26,0.14)] mt-auto">
-      {/* Footer Top Note */}
-      {/* <div className="bg-[#F0E4D3] py-3 border-b border-[rgba(42,33,26,0.08)] text-sm text-[#6B5B4D] text-center">
-        <div className="hsc-container">{t.footer.topNote}</div>
-      </div> */}
-
       {/* Main Footer Links & Info */}
-      <div className="py-10 md:py-12">
+      <div className="pt-10 pb-4">
         <div className="hsc-container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {/* Brand column */}
-            <div>
-              {/* <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-2">
-                {t.footer.brandTitle}
-              </h3> */}
+            <div className="flex items-center justify-start">
               <img
-                src="attachments/hsc_logo.png"
+                src="attachments/logos/hsc_logo_2.png"
                 alt={t.brand.title}
-                className="h-[10rem] w-[auto] object-contain mb-2"
+                className="h-[8rem] w-[auto] object-contain"
               />
               {/* <p className="text-sm text-[#6B5B4D] leading-relaxed">
                 {t.footer.brandDesc}
               </p> */}
             </div>
 
+            {/* Info */}
+            <div className="flex flex-col text-sm items-center gap-2 text-center">
+              <a
+                href="https://www.facebook.com/people/Hispanic-Service-Center/100087471197040/"
+                target="_blank"
+              >
+                <img
+                  src="attachments/icons/facebook.png"
+                  className="h-[1.5rem] w-[auto] object-contain"
+                />
+              </a>
+              <div>{t.contact.phoneNumber}</div>
+              <div>{t.contact.emailPlaceholder}</div>
+              <div className="max-w-[32rem]">{t.contact.locationValue}</div>
+            </div>
+
             {/* Quick Links */}
-            <div>
+            {/* <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#2A211A] mb-4">
                 {t.footer.quickLinks}
               </h4>
@@ -67,32 +75,34 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   </button>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Action Buttons */}
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#2A211A] mb-4">
-                {t.footer.getInvolved}
-              </h4>
-              <div className="flex flex-col gap-2 max-w-[200px]">
-                <button
-                  onClick={() => onNavigate("contact")}
-                  className="hsc-btn hsc-btn-teal hsc-btn-sm"
-                >
-                  {t.footer.getHelpBtn}
-                </button>
-                <button
-                  onClick={() => onNavigate("contact")}
-                  className="hsc-btn hsc-btn-outline hsc-btn-sm"
-                >
-                  {t.footer.joinUsBtn}
-                </button>
-                <button
-                  onClick={() => onNavigate("contact")}
-                  className="hsc-btn hsc-btn-terracotta hsc-btn-sm"
-                >
-                  {t.footer.donateBtn}
-                </button>
+            <div className="flex justify-end">
+              <div className="w-[200px]">
+                {/* <h4 className="text-xs font-bold uppercase tracking-wider text-[#2A211A] mb-4">
+                  {t.footer.getInvolved}
+                </h4> */}
+                <div className="flex flex-col gap-2">
+                  <button
+                    onClick={() => onNavigate("contact")}
+                    className="hsc-btn hsc-btn-teal hsc-btn-sm"
+                  >
+                    {t.footer.getHelpBtn}
+                  </button>
+                  <button
+                    onClick={() => onNavigate("contact")}
+                    className="hsc-btn hsc-btn-outline hsc-btn-sm"
+                  >
+                    {t.footer.joinUsBtn}
+                  </button>
+                  <button
+                    onClick={() => onNavigate("contact")}
+                    className="hsc-btn hsc-btn-terracotta hsc-btn-sm"
+                  >
+                    {t.footer.donateBtn}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -100,10 +110,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-[rgba(42,33,26,0.08)] py-4 text-xs text-[#9C8C7D]">
+      {/* <div className="border-t border-[rgba(42,33,26,0.08)] py-4 text-xs text-[#9C8C7D]"> */}
+      <div className="mb-4 text-xs text-[#9C8C7D]">
         <div className="hsc-container flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <span>{t.footer.copyright}</span>
-          <span>{t.footer.locationNote}</span>
+          {/* <span>{t.footer.locationNote}</span> */}
         </div>
       </div>
     </footer>
