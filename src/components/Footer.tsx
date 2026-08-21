@@ -20,30 +20,36 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-surface3 border-t border-[rgba(42,33,26,0.14)] mt-auto">
       {/* Main Footer Links & Info */}
-      <div className="pt-10 pb-4">
+      <div className="pt-6 pb-4">
         <div className="hsc-container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             {/* Brand column */}
-            <div className="flex items-center justify-start">
-              <img
-                src="attachments/logos/hsc_logo_2.png"
-                alt={t.brand.title}
-                className="h-[8rem] w-[auto] object-contain"
-              />
-              {/* <p className="text-sm text-[#6B5B4D] leading-relaxed">
-                {t.footer.brandDesc}
-              </p> */}
+            <div className="flex items-center justify-center md:justify-start">
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate("home");
+                }}
+                className="flex items-center gap-3 tracking-wide h-full py-3"
+              >
+                <img
+                  src="attachments/logos/hsc_logo_2.png"
+                  alt={t.brand.title}
+                  className="h-[8rem] w-[auto] object-contain"
+                />
+              </a>
             </div>
 
             {/* Info */}
-            <div className="flex flex-col text-sm items-center gap-2 text-center">
+            <div className="flex flex-col text-sm items-center gap-2 text-center text-[#9C8C7D]">
               <a
                 href="https://www.facebook.com/people/Hispanic-Service-Center/100087471197040/"
                 target="_blank"
               >
                 <img
                   src="attachments/icons/facebook.png"
-                  className="h-[1.5rem] w-[auto] object-contain"
+                  className="h-[1.5rem] w-[auto] object-contain mb-1.5"
                 />
               </a>
               <div>{t.contact.phoneNumber}</div>
@@ -78,7 +84,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </div> */}
 
             {/* Action Buttons */}
-            <div className="flex justify-end">
+            <div className="flex justify-center md:justify-end">
               <div className="w-[200px]">
                 {/* <h4 className="text-xs font-bold uppercase tracking-wider text-[#2A211A] mb-4">
                   {t.footer.getInvolved}
@@ -112,7 +118,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       {/* Copyright */}
       {/* <div className="border-t border-[rgba(42,33,26,0.08)] py-4 text-xs text-[#9C8C7D]"> */}
       <div className="mb-4 text-xs text-[#9C8C7D]">
-        <div className="hsc-container flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+        <div className="hsc-container flex justify-center">
           <span>{t.footer.copyright}</span>
           {/* <span>{t.footer.locationNote}</span> */}
         </div>
