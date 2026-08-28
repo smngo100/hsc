@@ -103,7 +103,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   >
                     {t.footer.joinUsBtn}
                   </button>
-                  <DonateButton />
+                  <DonateButton className="hsc-btn-sm" />
                 </div>
               </div>
             </div>

@@ -1,8 +1,15 @@
+import { useLanguage } from "../context/LanguageContext";
+
 interface DonateButtonProps {
   className?: string;
+  label?: string;
 }
 
-export default function DonateButton({ className = "" }: DonateButtonProps) {
+export default function DonateButton({
+  className = "",
+  label,
+}: DonateButtonProps) {
+  const { t } = useLanguage();
   return (
     <form
       action="https://www.paypal.com/ncp/payment/8X5NLXEXKQ9PQ"
@@ -14,7 +21,7 @@ export default function DonateButton({ className = "" }: DonateButtonProps) {
         type="submit"
         className={`hsc-btn hsc-btn-terracotta w-full ${className}`}
       >
-        donate
+        {label ?? t.nav.donate}
       </button>
     </form>
   );
