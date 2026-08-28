@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { PageId } from "../types";
 import { useLanguage } from "../context/LanguageContext";
 import { LanguageDropdown } from "./LanguageDropdown";
+import DonateButton from "./DonateButton";
 
 interface HeaderProps {
   currentPage: PageId;
@@ -103,13 +104,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
         {/* Actions: Language Selector & Donate CTA */}
         <div className="flex items-center gap-2 sm:gap-4">
           <LanguageDropdown />
-
-          <button
-            onClick={() => onNavigate("contact")}
-            className="hsc-btn hsc-btn-terracotta hsc-btn-sm"
-          >
-            {t.nav.donate}
-          </button>
+          <DonateButton />
         </div>
       </div>
     </header>

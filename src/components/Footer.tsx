@@ -1,6 +1,7 @@
 import React from "react";
 import { PageId } from "../types";
 import { useLanguage } from "../context/LanguageContext";
+import DonateButton from "./DonateButton";
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
@@ -102,12 +103,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   >
                     {t.footer.joinUsBtn}
                   </button>
-                  <button
-                    onClick={() => onNavigate("contact")}
-                    className="hsc-btn hsc-btn-terracotta hsc-btn-sm"
-                  >
-                    {t.footer.donateBtn}
-                  </button>
+                  <DonateButton />
                 </div>
               </div>
             </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { PageId, ServiceId } from "../types";
 import { StatsBar } from "../components/StatsBar";
 import { useLanguage } from "../context/LanguageContext";
+import DonateButton from "../components/DonateButton";
 
 interface HomePageProps {
   onNavigate: (page: PageId) => void;
@@ -184,7 +185,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
               <button
                 onClick={() => onNavigate("contact")}
-                className="hsc-btn hsc-btn-teal"
+                className="hsc-btn hsc-btn-teal  w-full"
               >
                 {t.home.cardGetHelpBtn}
               </button>
@@ -204,7 +205,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
               <button
                 onClick={() => onNavigate("contact")}
-                className="hsc-btn hsc-btn-outline"
+                className="hsc-btn hsc-btn-outline w-full"
               >
                 {t.home.cardVolunteerBtn}
               </button>
@@ -222,12 +223,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <p className="text-base text-[#6B5B4D] mb-6 flex-1">
                 {t.home.cardDonateText}
               </p>
-              <button
-                onClick={() => onNavigate("contact")}
-                className="hsc-btn hsc-btn-terracotta"
-              >
-                {t.home.cardDonateBtn}
-              </button>
+              <DonateButton />
             </div>
           </div>
         </div>
