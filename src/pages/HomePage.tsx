@@ -47,6 +47,26 @@ export const HomePage: React.FC<HomePageProps> = ({
     },
   ];
 
+  const sponsors: { src: string; alt: string; height: string }[] = [
+    {
+      src: "attachments/sponsors/easterseals.png",
+      alt: "Easterseals",
+      height: "h-24",
+    },
+    { src: "attachments/sponsors/fccf.png", alt: "FCCF", height: "h-24" },
+    { src: "attachments/sponsors/ford.png", alt: "Ford", height: "h-16" },
+    { src: "attachments/sponsors/cars.webp", alt: "CARS", height: "h-14" },
+    {
+      src: "attachments/sponsors/salvation_army.png",
+      alt: "Salvation Army",
+      height: "h-24",
+    },
+    { src: "attachments/sponsors/vaaa.png", alt: "VAAA", height: "h-24" },
+    { src: "attachments/sponsors/icdda.png", alt: "ICDDA", height: "h-24" },
+    { src: "attachments/sponsors/lccf.png", alt: "LCCF", height: "h-28" },
+    { src: "attachments/sponsors/uwlp.webp", alt: "UWLP", height: "h-24" },
+  ];
+
   return (
     <div className="space-y-0">
       {/* Hero Section */}
@@ -245,7 +265,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
 
           {/* Sponsors Grid */}
-          <div className="flex flex-nowrap justify-center overflow-x-auto sm:overflow-x-visible">
+          {/* <div className="flex flex-nowrap justify-center overflow-x-auto sm:overflow-x-visible">
             <div className="flex flex-nowrap items-center justify-start gap-12">
               <img
                 src={`attachments/sponsors/easterseals.png`}
@@ -263,6 +283,11 @@ export const HomePage: React.FC<HomePageProps> = ({
                 className="h-[4rem] w-auto object-contain shrink-0"
               />
               <img
+                src={`attachments/sponsors/cars.webp`}
+                alt="CARS"
+                className="h-[3.5rem] w-auto object-contain shrink-0"
+              />
+              <img
                 src={`attachments/sponsors/salvation_army.png`}
                 alt="Salvation Army"
                 className="h-[6rem] w-auto object-contain shrink-0"
@@ -272,6 +297,34 @@ export const HomePage: React.FC<HomePageProps> = ({
                 alt="VAAA"
                 className="h-[6rem] w-auto object-contain shrink-0"
               />
+              <img
+                src={`attachments/sponsors/icdda.png`}
+                alt="ICDDA"
+                className="h-[6rem] w-auto object-contain shrink-0"
+              />
+              <img
+                src={`attachments/sponsors/lccf.png`}
+                alt="LCCF"
+                className="h-[7rem] w-auto object-contain shrink-0"
+              />
+              <img
+                src={`attachments/sponsors/uwlp.webp`}
+                alt="UWLP"
+                className="h-[6rem] w-auto object-contain shrink-0"
+              />
+            </div>
+          </div> */}
+          {/* Sponsors Carousel */}
+          <div className="hsc-marquee-mask overflow-hidden">
+            <div className="flex w-max hsc-marquee-track">
+              {[...sponsors, ...sponsors].map((sponsor, i) => (
+                <img
+                  key={i}
+                  src={sponsor.src}
+                  alt={sponsor.alt}
+                  className={`${sponsor.height} w-auto object-contain shrink-0 mx-8`}
+                />
+              ))}
             </div>
           </div>
         </div>
