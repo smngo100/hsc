@@ -239,11 +239,7 @@
 }
 
 .hsc-marquee-track {
-  animation: hsc-marquee 32s linear infinite;
-}
-
-.hsc-marquee-track:hover {
-  animation-play-state: paused;
+  animation: hsc-marquee 40s linear infinite;
 }
 
 .hsc-marquee-mask {

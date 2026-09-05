@@ -55,7 +55,6 @@ export const HomePage: React.FC<HomePageProps> = ({
     },
     { src: "attachments/sponsors/fccf.png", alt: "FCCF", height: "h-24" },
     { src: "attachments/sponsors/ford.png", alt: "Ford", height: "h-16" },
-    { src: "attachments/sponsors/cars.webp", alt: "CARS", height: "h-14" },
     {
       src: "attachments/sponsors/salvation_army.png",
       alt: "Salvation Army",
@@ -64,6 +63,7 @@ export const HomePage: React.FC<HomePageProps> = ({
     { src: "attachments/sponsors/vaaa.png", alt: "VAAA", height: "h-24" },
     { src: "attachments/sponsors/icdda.png", alt: "ICDDA", height: "h-24" },
     { src: "attachments/sponsors/lccf.png", alt: "LCCF", height: "h-28" },
+    { src: "attachments/sponsors/cars.webp", alt: "CARS", height: "h-14" },
     { src: "attachments/sponsors/uwlp.webp", alt: "UWLP", height: "h-24" },
   ];
 
