@@ -6,8 +6,8 @@ export const StatsBar: React.FC = () => {
 
   const stats = [
     { number: "50+", label: t.stats.years },
-    { number: "1,200+", label: t.stats.families },
-    { number: "15,000+", label: t.stats.meals },
+    { number: "500+", label: t.stats.families },
+    { number: "1,000+", label: t.stats.meals },
     { number: "3,500+", label: t.stats.residents },
   ];
 

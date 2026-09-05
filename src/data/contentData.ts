@@ -8,8 +8,8 @@ import {
 
 export const STATS_DATA: StatItem[] = [
   { number: "50+", label: "Years Serving The Community" },
-  { number: "1,200+", label: "Families Housed" },
-  { number: "15,000+", label: "Meals Distributed" },
+  { number: "500+", label: "Families Housed" },
+  { number: "1,000+", label: "Meals Distributed" },
   { number: "3,500+", label: "Residents Served" },
 ];
 
