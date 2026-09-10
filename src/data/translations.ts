@@ -94,12 +94,47 @@ export const translations = {
         hoursLabel: "Operating Hours",
         hoursValue: "9:00 AM – 5:00 PM",
         hoursClosedValue: "Closed",
-        ratesHeader: "Ride Rates Information:",
+        ratesHeader: "Scheduled Community Runs",
         rates: {
-          longDistance: "Long Distance Rides",
-          discounted: "Discounted Rides",
-          nonRes: "Discounted Non-Res",
-          local: "Local Rides",
+          general: {
+            label: "General Rates",
+            localPrice: 8,
+            longDistancePrice: 16,
+          },
+          medical: {
+            label: "Medical Rates",
+            localPrice: 5,
+            longDistancePrice: 10,
+          },
+          airport: {
+            label: "Airport Rates",
+            destinations: {
+              detroitMetro: {
+                name: "Detroit Metro",
+                price: 80,
+                extraPassengerFee: 5,
+              },
+              flintBishop: {
+                name: "Flint Bishop",
+                price: 50,
+                extraPassengerFee: null,
+              },
+            },
+          },
+          scheduledRuns: {
+            kroger: {
+              location: "Kroger",
+              price: 10,
+              dayTime: "Tue @1 PM & Thu @10 AM",
+              info: "Imlay City, Almont, Capac, Attica Residents Only",
+            },
+            walmart: {
+              location: "Walmart",
+              price: 20,
+              dayTime: "Wed @10 AM",
+              info: "Imlay City & Attica Residents Only",
+            },
+          },
         },
         callNote:
           "For more information or to schedule a ride, call (810) 874-3448.",
@@ -366,12 +401,47 @@ export const translations = {
         hoursLabel: "Horario de atención",
         hoursValue: "9:00 AM – 5:00 PM",
         hoursClosedValue: "Cerrado",
-        ratesHeader: "Información sobre Tarifas:",
+        ratesHeader: "Carreras comunitarias programadas",
         rates: {
-          longDistance: "Viajes de Larga Distancia",
-          discounted: "Viajes con Descuento",
-          nonRes: "No Residentes con Descuento",
-          local: "Viajes Locales",
+          general: {
+            label: "Tarifas generales",
+            localPrice: 8,
+            longDistancePrice: 16,
+          },
+          medical: {
+            label: "Tarifas Médicas",
+            localPrice: 5,
+            longDistancePrice: 10,
+          },
+          airport: {
+            label: "Tarifas al aeropuerto",
+            destinations: {
+              detroitMetro: {
+                name: "Detroit Metro",
+                price: 80,
+                extraPassengerFee: 5,
+              },
+              flintBishop: {
+                name: "Flint Bishop",
+                price: 50,
+                extraPassengerFee: null,
+              },
+            },
+          },
+          scheduledRuns: {
+            kroger: {
+              location: "Kroger",
+              price: 10,
+              dayTime: "Tue @1 PM & Thu @10 AM",
+              info: "Solo para residentes de Imlay City, Almont, Capac y Attica",
+            },
+            walmart: {
+              location: "Walmart",
+              price: 20,
+              dayTime: "Wed @10 AM",
+              info: "Solo para residentes de Imlay City y Attica",
+            },
+          },
         },
         callNote:
           "Para obtener más información o programar un viaje, llame al (810) 874-3448.",

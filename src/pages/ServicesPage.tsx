@@ -55,12 +55,18 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
     },
   ];
 
-  const translatedRideRates = [
-    { amount: "$15", label: t.services.rides.rates.longDistance },
-    { amount: "$10", label: t.services.rides.rates.discounted },
-    { amount: "$20", label: t.services.rides.rates.nonRes },
-    { amount: "$8", label: t.services.rides.rates.local },
-  ];
+  const distanceConfig = [
+    { label: "In-Town", priceKey: "localPrice", icon: "map-pin.svg" },
+    {
+      label: "Out-of-Town",
+      priceKey: "longDistancePrice",
+      icon: "road-horizon.svg",
+    },
+  ] as const;
+
+  const rateTypes = ["general", "medical"] as const;
+  const airportDestinations = ["detroitMetro", "flintBishop"] as const;
+  const scheduledRunKeys = ["kroger", "walmart"] as const;
 
   return (
     <div className="py-12 md:py-16">
@@ -155,6 +161,32 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             })()}
 
             {/* Remaining services — two-column grid */}
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {servicesOverviewList
+                .filter((service) => service.id !== "rides")
+                .map((service) => (
+                  <div
+                    key={service.id}
+                    className="hsc-card p-6 flex flex-col justify-between"
+                  >
+                    <div>
+                      <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
+                        {service.title}
+                      </h3>
+                      <p className="text-base text-[#6B5B4D] leading-relaxed mb-6">
+                        {service.shortDesc}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => onSelectService(service.id)}
+                      className="hsc-btn hsc-btn-teal hsc-btn-sm self-start"
+                    >
+                      {t.services.viewDetails}
+                    </button>
+                  </div>
+                ))}
+            </div> */}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {servicesOverviewList
                 .filter((service) => service.id !== "rides")
@@ -214,23 +246,166 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </div>
             </div>
 
-            {/* <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-4">
-              {t.services.rides.ratesHeader}
-            </h3> */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              {translatedRideRates.map((rate, i) => (
-                <div
-                  key={i}
-                  className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[10px] p-4 text-center"
-                >
-                  <div className="hsc-font-heading text-2xl font-bold text-[#C1502E] mb-1">
-                    {rate.amount}
-                  </div>
-                  <div className="text-xs font-bold uppercase text-[#6B5B4D]">
-                    {rate.label}
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] mb-6">
+                <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-3">
+                  {t.services.rides.rates.general.label}
+                </h3>
+                <div className="flex flex-col">
+                  {distanceConfig.map(({ label, priceKey, icon }) => {
+                    const price = t.services.rides.rates.general[priceKey];
+                    return (
+                      <div
+                        key={priceKey}
+                        className="p-4 text-center flex justify-between items-center"
+                      >
+                        <div className="flex items-center gap-2">
+                          <img
+                            src={`attachments/icons/${icon}`}
+                            alt="${label} Icon"
+                            className="w-6 h-6 text-[#C1502E]"
+                          />
+                          <div className="text-xs font-bold uppercase text-[#6B5B4D]">
+                            {label}
+                          </div>
+                        </div>
+                        <div className="hsc-font-heading text-2xl font-bold text-[#C1502E]">
+                          ${price}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              ))}
+              </div>
+              <div className="p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] mb-6">
+                <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-3">
+                  {t.services.rides.rates.medical.label}
+                </h3>
+                <div className="flex flex-col">
+                  {distanceConfig.map(({ label, priceKey, icon }) => {
+                    const price = t.services.rides.rates.medical[priceKey];
+                    return (
+                      <div
+                        key={priceKey}
+                        className="p-4 text-center flex justify-between items-center"
+                      >
+                        <div className="flex items-center gap-2">
+                          <img
+                            src={`attachments/icons/${icon}`}
+                            alt="${label} Icon"
+                            className="w-6 h-6 text-[#C1502E]"
+                          />
+                          <div className="text-xs font-bold uppercase text-[#6B5B4D]">
+                            {label}
+                          </div>
+                        </div>
+                        <div className="hsc-font-heading text-2xl font-bold text-[#C1502E]">
+                          ${price}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] mb-6">
+                <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-3">
+                  {t.services.rides.rates.airport.label}
+                </h3>
+                <div className="flex flex-col">
+                  {airportDestinations.map((key) => {
+                    const dest =
+                      t.services.rides.rates.airport.destinations[key];
+                    return (
+                      <div
+                        key={key}
+                        className="p-4 text-center flex justify-between items-center"
+                      >
+                        <div className="flex items-start gap-2">
+                          <img
+                            src="attachments/icons/airplane.svg"
+                            alt="Airplane Icon"
+                            className="w-6 h-6 text-[#C1502E]"
+                          />
+                          <div className="flex flex-col items-start">
+                            <div className="text-xs font-bold uppercase text-[#6B5B4D]">
+                              {dest.name}
+                            </div>
+                            {dest.extraPassengerFee && (
+                              <div className="text-xs text-[#9C8C7D] mt-1">
+                                +${dest.extraPassengerFee}/additional passenger
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                        <div className="hsc-font-heading text-2xl font-bold text-[#C1502E]">
+                          ${dest.price}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            <div className="p-4 rounded-[10px] border border-[rgba(42,33,26,0.14)] mb-6">
+              <h3 className="hsc-font-heading text-lg font-bold text-[#2A211A] mb-3">
+                {
+                  t.services.rides
+                    .ratesHeader /* or a dedicated "Scheduled Runs" label if you add one */
+                }
+              </h3>
+              <div className="grid grid-cols-2 gap-4 p-2">
+                {scheduledRunKeys.map((key) => {
+                  const run = t.services.rides.rates.scheduledRuns[key];
+                  return (
+                    <div
+                      key={key}
+                      className="flex flex-col gap-2 rounded-[10px] border border-[rgba(42,33,26,0.14)] p-6"
+                    >
+                      <div className="flex items-center gap-2">
+                        <img
+                          src="attachments/icons/map-pin.svg"
+                          alt="Map Pin Icon"
+                          className="w-6 h-6 text-[#C1502E]"
+                        />
+                        <div className="text-xs font-bold uppercase text-[#6B5B4D]">
+                          {run.location}
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <img
+                          src="attachments/icons/car-profile.svg"
+                          alt="Car Icon"
+                          className="w-6 h-6 text-[#C1502E]"
+                        />
+                        <div className="hsc-font-heading text-2xl font-bold text-[#C1502E]">
+                          ${run.price}
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <img
+                          src="attachments/icons/calendar-blank.svg"
+                          alt="Calendar Icon"
+                          className="w-6 h-6 text-[#C1502E]"
+                        />
+                        <div className="text-xs text-[#6B5B4D] mt-1">
+                          {run.dayTime}
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <img
+                          src="attachments/icons/user.svg"
+                          alt="User Icon"
+                          className="w-6 h-6 text-[#C1502E]"
+                        />
+                        <div className="text-xs text-[#9C8C7D] mt-1">
+                          {run.info}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             <p className="text-sm text-[#9C8C7D] text-center">
               {t.services.rides.callNote}
