@@ -29,6 +29,7 @@ export const AboutPage: React.FC = () => {
           <p>{t.about.p3}</p>
           <p>{t.about.p4}</p>
           <p>{t.about.p5}</p>
+          <p className="text-center text-lg">{t.about.p6}</p>
         </div>
 
         {/* Leadership & Staff */}
