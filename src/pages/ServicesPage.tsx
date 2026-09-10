@@ -407,9 +407,23 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 })}
               </div>
             </div>
-            <p className="text-sm text-[#9C8C7D] text-center">
-              {t.services.rides.callNote}
-            </p>
+            <div className="text-sm text-[#9C8C7D] text-center space-y-2">
+              <p>{t.services.rides.callNote[0]}</p>
+              <p className="flex items-center justify-center gap-2">
+                {t.services.rides.callNote[1]}
+                <a
+                  href="https://www.facebook.com/people/Hispanic-Service-Center/100087471197040/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="attachments/icons/facebook.png"
+                    alt="Facebook"
+                    className="h-6 w-auto object-contain"
+                  />
+                </a>
+              </p>
+            </div>
           </div>
         )}
 

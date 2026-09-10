@@ -136,8 +136,10 @@ export const translations = {
             },
           },
         },
-        callNote:
+        callNote: [
           "For more information or to schedule a ride, call (810) 874-3448.",
+          "Visit our facebook for more details:",
+        ],
       },
       shelter: {
         title: "Family Shelter",
@@ -444,8 +446,10 @@ export const translations = {
             },
           },
         },
-        callNote:
+        callNote: [
           "Para obtener más información o programar un viaje, llame al (810) 874-3448.",
+          "Visite nuestra página de Facebook para más detalles:",
+        ],
       },
       shelter: {
         title: "Refugio Familiar",
