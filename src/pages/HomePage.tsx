@@ -131,9 +131,9 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="py-12 md:py-16 border-b border-[rgba(42,33,26,0.08)]">
         <div className="hsc-container">
           <div className="text-center max-w-[680px] mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-terracotta block mb-1">
+            {/* <span className="text-xs font-bold uppercase tracking-widest text-terracotta block mb-1">
               {t.home.whatWeDoEyebrow}
-            </span>
+            </span> */}
             <h2 className="hsc-font-heading text-2xl md:text-3xl text-text1 font-bold mb-2">
               {t.home.whatWeDoTitle}
             </h2>
@@ -179,9 +179,9 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="py-12 md:py-16 bg-surface2 border-b border-[rgba(42,33,26,0.08)]">
         <div className="hsc-container">
           <div className="text-center max-w-[680px] mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-terracotta block mb-1">
+            {/* <span className="text-xs font-bold uppercase tracking-widest text-terracotta block mb-1">
               {t.home.impactEyebrow}
-            </span>
+            </span> */}
             <h2 className="hsc-font-heading text-2xl md:text-3xl text-text1 font-bold mb-2">
               {t.home.impactTitle}
             </h2>
@@ -251,9 +251,9 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="py-12 md:py-16 bg-surface3 border-b border-[rgba(42,33,26,0.08)]">
         <div className="hsc-container">
           <div className="text-center max-w-[680px] mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#1B6B5C] block mb-1">
+            {/* <span className="text-xs font-bold uppercase tracking-widest text-[#1B6B5C] block mb-1">
               {t.home.sponsorsEyebrow}
-            </span>
+            </span> */}
             <h2 className="hsc-font-heading text-2xl md:text-3xl text-text1 font-bold mb-2">
               {t.home.sponsorsTitle}
             </h2>
