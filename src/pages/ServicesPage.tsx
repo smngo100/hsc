@@ -478,7 +478,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     onClick={() => setLightboxSrc(null)}
                     aria-label="Close"
                   >
-                    <img src="attachments/icons/x.svg" />
+                    <img src="attachments/icons/x.svg" className="invert" />
                   </button>
                   <img
                     src={lightboxSrc}
