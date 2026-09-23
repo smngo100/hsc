@@ -77,10 +77,10 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* <span className="inline-block text-xs font-bold tracking-widest uppercase text-[#1B6B5C] bg-[rgba(27,107,92,0.14)] px-3 py-1 rounded-[6px] mb-3">
                 {t.home.eyebrow}
               </span> */}
-              <h1 className="hsc-font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-[#2A211A] mb-4">
+              <h1 className="hsc-font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-text1 mb-4">
                 {t.home.heroTitle}
               </h1>
-              <p className="text-base sm:text-lg text-[#6B5B4D] leading-relaxed mb-6">
+              <p className="text-base sm:text-lg text-text2 leading-relaxed mb-6">
                 {t.home.heroLead}
               </p>
               <div className="flex flex-wrap gap-4">
@@ -131,15 +131,13 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="py-12 md:py-16 border-b border-[rgba(42,33,26,0.08)]">
         <div className="hsc-container">
           <div className="text-center max-w-[680px] mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C1502E] block mb-1">
+            <span className="text-xs font-bold uppercase tracking-widest text-terracotta block mb-1">
               {t.home.whatWeDoEyebrow}
             </span>
-            <h2 className="hsc-font-heading text-2xl md:text-3xl text-[#2A211A] font-bold mb-2">
+            <h2 className="hsc-font-heading text-2xl md:text-3xl text-text1 font-bold mb-2">
               {t.home.whatWeDoTitle}
             </h2>
-            <p className="text-base text-[#6B5B4D]">
-              {t.home.whatWeDoSubtitle}
-            </p>
+            <p className="text-base text-text2">{t.home.whatWeDoSubtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -156,10 +154,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
+                  <h3 className="hsc-font-heading text-xl font-bold text-text1 mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-base text-[#6B5B4D] leading-relaxed mb-4 flex-1">
+                  <p className="text-base text-text2 leading-relaxed mb-4 flex-1">
                     {service.shortDesc}
                   </p>
                   <div className="mt-auto pt-2">
@@ -181,13 +179,13 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="py-12 md:py-16 bg-surface2 border-b border-[rgba(42,33,26,0.08)]">
         <div className="hsc-container">
           <div className="text-center max-w-[680px] mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C1502E] block mb-1">
+            <span className="text-xs font-bold uppercase tracking-widest text-terracotta block mb-1">
               {t.home.impactEyebrow}
             </span>
-            <h2 className="hsc-font-heading text-2xl md:text-3xl text-[#2A211A] font-bold mb-2">
+            <h2 className="hsc-font-heading text-2xl md:text-3xl text-text1 font-bold mb-2">
               {t.home.impactTitle}
             </h2>
-            <p className="text-base text-[#6B5B4D]">{t.home.impactSubtitle}</p>
+            <p className="text-base text-text2">{t.home.impactSubtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -195,12 +193,12 @@ export const HomePage: React.FC<HomePageProps> = ({
               <img
                 src="attachments/icons/handshake.svg"
                 alt="Handshake Icon"
-                className="mx-auto mb-3 w-8 h-8 text-[#C1502E]"
+                className="mx-auto mb-3 w-8 h-8 text-terracotta"
               />
-              <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
+              <h3 className="hsc-font-heading text-xl font-bold text-text1 mb-2">
                 {t.home.cardGetHelpTitle}
               </h3>
-              <p className="text-base text-[#6B5B4D] mb-6 flex-1">
+              <p className="text-base text-text2 mb-6 flex-1">
                 {t.home.cardGetHelpText}
               </p>
               <button
@@ -215,12 +213,12 @@ export const HomePage: React.FC<HomePageProps> = ({
               <img
                 src="attachments/icons/users-three.svg"
                 alt="Volunteer Icon"
-                className="mx-auto mb-3 w-8 h-8 text-[#C1502E]"
+                className="mx-auto mb-3 w-8 h-8 text-terracotta"
               />
-              <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
+              <h3 className="hsc-font-heading text-xl font-bold text-text1 mb-2">
                 {t.home.cardVolunteerTitle}
               </h3>
-              <p className="text-base text-[#6B5B4D] mb-6 flex-1">
+              <p className="text-base text-text2 mb-6 flex-1">
                 {t.home.cardVolunteerText}
               </p>
               <button
@@ -235,12 +233,12 @@ export const HomePage: React.FC<HomePageProps> = ({
               <img
                 src="attachments/icons/hand-heart.svg"
                 alt="Donate Icon"
-                className="mx-auto mb-3 w-8 h-8 text-[#C1502E]"
+                className="mx-auto mb-3 w-8 h-8 text-terracotta"
               />
-              <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-2">
+              <h3 className="hsc-font-heading text-xl font-bold text-text1 mb-2">
                 {t.home.cardDonateTitle}
               </h3>
-              <p className="text-base text-[#6B5B4D] mb-6 flex-1">
+              <p className="text-base text-text2 mb-6 flex-1">
                 {t.home.cardDonateText}
               </p>
               <DonateButton />
@@ -256,12 +254,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             <span className="text-xs font-bold uppercase tracking-widest text-[#1B6B5C] block mb-1">
               {t.home.sponsorsEyebrow}
             </span>
-            <h2 className="hsc-font-heading text-2xl md:text-3xl text-[#2A211A] font-bold mb-2">
+            <h2 className="hsc-font-heading text-2xl md:text-3xl text-text1 font-bold mb-2">
               {t.home.sponsorsTitle}
             </h2>
-            <p className="text-base text-[#6B5B4D]">
-              {t.home.sponsorsSubtitle}
-            </p>
+            <p className="text-base text-text2">{t.home.sponsorsSubtitle}</p>
           </div>
 
           {/* Sponsors Grid */}

@@ -43,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             alt={t.brand.title}
             className="h-full w-auto object-contain"
           />
-          {/* <span className="text-xs sm:text-sm md:text-base font-bold text-[#2A211A]">
+          {/* <span className="text-xs sm:text-sm md:text-base font-bold text-text1">
             {t.brand.title}
           </span> */}
         </a>
@@ -90,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                     className={`text-sm px-3 py-2 rounded-[6px] transition-colors cursor-pointer w-full text-left lg:w-auto ${
                       isActive
                         ? "text-[#1B6B5C] bg-[rgba(27,107,92,0.14)]"
-                        : "text-[#6B5B4D] hover:text-[#1B6B5C] hover:bg-[rgba(27,107,92,0.14)]"
+                        : "text-text2 hover:text-[#1B6B5C] hover:bg-[rgba(27,107,92,0.14)]"
                     }`}
                   >
                     {link.label}

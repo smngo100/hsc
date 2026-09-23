@@ -27,10 +27,10 @@ export const GalleryPage: React.FC = () => {
           <span className="text-xs font-bold uppercase tracking-widest text-[#1B6B5C] block mb-1">
             {t.gallery.eyebrow}
           </span>
-          <h1 className="hsc-font-heading text-3xl font-bold text-[#2A211A] mb-3">
+          <h1 className="hsc-font-heading text-3xl font-bold text-text1 mb-3">
             {t.gallery.title}
           </h1>
-          <p className="text-base text-[#6B5B4D]">{t.gallery.subtitle}</p>
+          <p className="text-base text-text2">{t.gallery.subtitle}</p>
         </div>
 
         {/* Category Filters */}
@@ -44,7 +44,7 @@ export const GalleryPage: React.FC = () => {
                 className={`px-4 py-2 text-sm rounded-[6px] transition-colors cursor-pointer border ${
                   isActive
                     ? "bg-[#1B6B5C] text-white border-[#1B6B5C]"
-                    : "bg-[#F0E4D3] text-[#6B5B4D] border-[rgba(42,33,26,0.08)] hover:bg-[#1B6B5C] hover:text-white"
+                    : "bg-[#F0E4D3] text-text2 border-[rgba(42,33,26,0.08)] hover:bg-[#1B6B5C] hover:text-white"
                 }`}
               >
                 {cat.label}

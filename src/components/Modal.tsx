@@ -26,7 +26,7 @@ export const Modal: React.FC<ModalProps> = ({
       >
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 bg-[#F0E4D3] rounded-full w-8 h-8 flex items-center justify-center font-bold text-[#2A211A] hover:bg-bg cursor-pointer"
+          className="absolute top-3 right-3 bg-[#F0E4D3] rounded-full w-8 h-8 flex items-center justify-center font-bold text-text1 hover:bg-bg cursor-pointer"
           aria-label="Close Modal"
         >
           &times;
@@ -72,10 +72,10 @@ export const Modal: React.FC<ModalProps> = ({
           </svg>
         </div>
         <div className="p-4">
-          <h3 className="hsc-font-heading text-lg text-[#2A211A] font-bold mb-1">
+          <h3 className="hsc-font-heading text-lg text-text1 font-bold mb-1">
             {title}
           </h3>
-          <p className="text-sm text-[#6B5B4D]">{subtitle}</p>
+          <p className="text-sm text-text2">{subtitle}</p>
         </div>
       </div>
     </div>

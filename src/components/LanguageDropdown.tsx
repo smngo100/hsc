@@ -75,17 +75,17 @@ export const LanguageDropdown: React.FC = () => {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-semibold text-[#2A211A] bg-white hover:bg-bg border border-[rgba(42,33,26,0.18)] rounded-2xl shadow-xs transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1B6B5C]"
+        className="flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-semibold text-text1 bg-white hover:bg-bg border border-[rgba(42,33,26,0.18)] rounded-2xl shadow-xs transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1B6B5C]"
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label="Select language"
       >
         {currentLang.flag}
-        <span className="text-xs font-semibold text-[#2A211A]">
+        <span className="text-xs font-semibold text-text1">
           {currentLang.name}
         </span>
         <svg
-          className={`w-3.5 h-3.5 text-[#6B5B4D] transition-transform duration-200 ${
+          className={`w-3.5 h-3.5 text-text2 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"
@@ -112,7 +112,7 @@ export const LanguageDropdown: React.FC = () => {
                 className={`w-full flex items-center justify-between px-4 py-2.5 text-xs font-medium transition-colors cursor-pointer text-left ${
                   isSelected
                     ? "bg-[rgba(27,107,92,0.1)] text-[#1B6B5C] font-bold"
-                    : "text-[#2A211A] hover:bg-bg"
+                    : "text-text1 hover:bg-bg"
                 }`}
               >
                 <div className="flex items-center gap-2.5">

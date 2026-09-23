@@ -97,10 +97,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
           <span className="text-xs font-bold uppercase tracking-widest text-[#1B6B5C] block mb-1">
             {t.contact.eyebrow}
           </span>
-          <h1 className="hsc-font-heading text-3xl font-bold text-[#2A211A] mb-3">
+          <h1 className="hsc-font-heading text-3xl font-bold text-text1 mb-3">
             {t.contact.title}
           </h1>
-          <p className="text-base text-[#6B5B4D]">{t.contact.subtitle}</p>
+          <p className="text-base text-text2">{t.contact.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -110,7 +110,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               <div className="text-xs font-bold uppercase text-[#1B6B5C]">
                 {t.contact.locationLabel}
               </div>
-              <div className="text-base text-[#2A211A] mt-1">
+              <div className="text-base text-text1 mt-1">
                 {t.contact.locationValue}
               </div>
             </div>
@@ -119,7 +119,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               <div className="text-xs font-bold uppercase text-[#1B6B5C]">
                 {t.contact.poBoxLabel}
               </div>
-              <div className="text-base text-[#2A211A] mt-1">
+              <div className="text-base text-text1 mt-1">
                 {t.contact.poBoxValue}
               </div>
             </div>
@@ -128,10 +128,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               <div className="text-xs font-bold uppercase text-[#1B6B5C]">
                 {t.contact.emailPhoneLabel}
               </div>
-              <div className="text-base text-[#2A211A] mt-1">
+              <div className="text-base text-text1 mt-1">
                 {t.contact.emailPlaceholder}
               </div>
-              <div className="text-base text-[#C1502E] mt-0.5">
+              <div className="text-base text-terracotta mt-0.5">
                 {t.contact.phoneNumber}
               </div>
             </div>
@@ -140,10 +140,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               <div className="text-xs font-bold uppercase text-[#1B6B5C]">
                 {t.contact.hoursLabel}
               </div>
-              <div className="text-base text-[#2A211A] mt-1">
+              <div className="text-base text-text1 mt-1">
                 {t.contact.daysOpen}
               </div>
-              <div className="text-base text-[#2A211A] mt-1">
+              <div className="text-base text-text1 mt-1">
                 {t.contact.hoursValue}
               </div>
             </div>
@@ -154,12 +154,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
             onSubmit={handleSubmit}
             className="bg-surface3 border border-[rgba(42,33,26,0.14)] rounded-[16px] p-6 md:p-8 shadow-xs"
           >
-            <h3 className="hsc-font-heading text-xl font-bold text-[#2A211A] mb-6">
+            <h3 className="hsc-font-heading text-xl font-bold text-text1 mb-6">
               {t.contact.formTitle}
             </h3>
 
             <div className="mb-4">
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#2A211A] mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-text1 mb-1">
                 {t.contact.fullNameLabel}
               </label>
               <input
@@ -170,12 +170,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   setFormData({ ...formData, fullName: e.target.value })
                 }
                 placeholder={t.contact.fullNamePlaceholder}
-                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
+                className="w-full px-3.5 py-2.5 text-sm text-text1 bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
               />
             </div>
 
             <div className="mb-4">
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#2A211A] mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-text1 mb-1">
                 {t.contact.emailLabel}
               </label>
               <input
@@ -186,12 +186,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   setFormData({ ...formData, email: e.target.value })
                 }
                 placeholder={t.contact.emailPlaceholder}
-                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
+                className="w-full px-3.5 py-2.5 text-sm text-text1 bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
               />
             </div>
 
             <div className="mb-4">
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#2A211A] mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-text1 mb-1">
                 {t.contact.serviceNeededLabel}
               </label>
               <select
@@ -199,7 +199,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 onChange={(e) =>
                   setFormData({ ...formData, serviceNeeded: e.target.value })
                 }
-                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
+                className="w-full px-3.5 py-2.5 text-sm text-text1 bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all"
               >
                 <option value="general">
                   {t.contact.serviceOptions.general}
@@ -221,7 +221,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
             </div>
 
             <div className="mb-6">
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#2A211A] mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-text1 mb-1">
                 {t.contact.messageLabel}
               </label>
               <textarea
@@ -232,7 +232,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   setFormData({ ...formData, message: e.target.value })
                 }
                 placeholder={t.contact.messagePlaceholder}
-                className="w-full px-3.5 py-2.5 text-sm text-[#2A211A] bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all resize-y"
+                className="w-full px-3.5 py-2.5 text-sm text-text1 bg-bg border border-[rgba(42,33,26,0.24)] rounded-[6px] outline-none focus:border-[#1B6B5C] focus:ring-2 focus:ring-[rgba(27,107,92,0.14)] transition-all resize-y"
               />
             </div>
 

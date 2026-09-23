@@ -60,7 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
             {/* Quick Links */}
             {/* <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#2A211A] mb-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-text1 mb-4">
                 {t.footer.quickLinks}
               </h4>
               <div className="flex flex-col gap-2">
@@ -76,7 +76,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   <button
                     key={page}
                     onClick={() => onNavigate(page)}
-                    className="text-sm text-[#6B5B4D] hover:text-[#1B6B5C] text-left transition-colors cursor-pointer"
+                    className="text-sm text-text2 hover:text-[#1B6B5C] text-left transition-colors cursor-pointer"
                   >
                     {pageLabels[page]}
                   </button>
@@ -87,7 +87,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             {/* Action Buttons */}
             <div className="flex justify-center md:justify-end">
               <div className="w-[200px]">
-                {/* <h4 className="text-xs font-bold uppercase tracking-wider text-[#2A211A] mb-4">
+                {/* <h4 className="text-xs font-bold uppercase tracking-wider text-text1 mb-4">
                   {t.footer.getInvolved}
                 </h4> */}
                 <div className="flex flex-col gap-2">

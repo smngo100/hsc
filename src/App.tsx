@@ -42,7 +42,7 @@ function MainLayout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-bg text-[#2A211A]">
+    <div className="min-h-screen flex flex-col bg-bg text-text1">
       <Header currentPage={currentPage} onNavigate={handleNavigate} />
 
       <main className="flex-1">

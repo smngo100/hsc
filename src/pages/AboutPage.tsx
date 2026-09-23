@@ -17,13 +17,13 @@ export const AboutPage: React.FC = () => {
           <span className="text-xs font-bold uppercase tracking-widest text-[#1B6B5C] block mb-1">
             {t.about.eyebrow}
           </span>
-          <h1 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A] leading-snug">
+          <h1 className="hsc-font-heading text-2xl md:text-3xl font-bold text-text1 leading-snug">
             {t.about.heading}
           </h1>
         </div>
 
         {/* Narrative Box */}
-        <div className="max-w-3xl mx-auto mb-16 text-[#6B5B4D] leading-relaxed space-y-4">
+        <div className="max-w-3xl mx-auto mb-16 text-text2 leading-relaxed space-y-4">
           <p>{t.about.p1}</p>
           <p>{t.about.p2}</p>
           <p>{t.about.p3}</p>
@@ -37,7 +37,7 @@ export const AboutPage: React.FC = () => {
           <span className="text-xs font-bold uppercase tracking-widest text-[#1B6B5C] block mb-1">
             {t.about.staffEyebrow}
           </span>
-          <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#2A211A]">
+          <h2 className="hsc-font-heading text-2xl md:text-3xl font-bold text-text1">
             {t.about.staffTitle}
           </h2>
         </div>
@@ -61,7 +61,7 @@ export const AboutPage: React.FC = () => {
                   {member.initials}
                 </div>
                 <div className="text-base">{member.name}</div>
-                <div className="text-xs text-[#6B5B4D]">{translatedRole}</div>
+                <div className="text-xs text-text2">{translatedRole}</div>
               </div>
             );
           })}
@@ -85,8 +85,8 @@ export const AboutPage: React.FC = () => {
                 <div className="w-20 h-20 rounded-full bg-[#F0E4D3] mx-auto mb-4 flex items-center justify-center border-2 border-[rgba(27,107,92,0.3)] text-[#1B6B5C] font-bold text-lg">
                   {member.initials}
                 </div>
-                <div className="text-base text-[#2A211A]">{member.name}</div>
-                <div className="text-xs text-[#6B5B4D]">{translatedRole}</div>
+                <div className="text-base text-text1">{member.name}</div>
+                <div className="text-xs text-text2">{translatedRole}</div>
               </div>
             );
           })}
@@ -110,8 +110,8 @@ export const AboutPage: React.FC = () => {
                 <div className="w-20 h-20 rounded-full bg-[#F0E4D3] mx-auto mb-4 flex items-center justify-center border-2 border-[rgba(27,107,92,0.3)] text-[#1B6B5C] font-bold text-lg">
                   {member.initials}
                 </div>
-                <div className="text-base text-[#2A211A]">{member.name}</div>
-                <div className="text-xs text-[#6B5B4D]">{translatedRole}</div>
+                <div className="text-base text-text1">{member.name}</div>
+                <div className="text-xs text-text2">{translatedRole}</div>
               </div>
             );
           })}

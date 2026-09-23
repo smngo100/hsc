@@ -20,7 +20,7 @@ export const StatsBar: React.FC = () => {
               <div className="hsc-font-heading text-2xl md:text-3xl font-bold text-[#1B6B5C] leading-tight mb-1">
                 {stat.number}
               </div>
-              <div className="text-xs font-bold uppercase tracking-wider text-[#6B5B4D]">
+              <div className="text-xs font-bold uppercase tracking-wider text-text2">
                 {stat.label}
               </div>
             </div>

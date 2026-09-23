@@ -95,6 +95,7 @@ export const translations = {
         hoursValue: "9:00 AM – 5:00 PM",
         hoursClosedValue: "Closed",
         ratesHeader: "Scheduled Community Runs",
+        mapsHeader: "Service Area Maps",
         rates: {
           general: {
             label: "General Rates",
@@ -395,16 +396,17 @@ export const translations = {
       rides: {
         title: "Transportes de Imlay City",
         shortDesc:
-          "Transporte gratuito que conecta a residentes rurales con citas médicas, legales y esenciales.",
+          "Transporte gratuito   que conecta a residentes rurales con citas médicas, legales y esenciales.",
         intro:
           "En colaboración con Four County Community Foundation, HSC ofrece el programa Imlay City Area Rides para brindar transporte a residentes sin vehículo propio confiable.",
         body: "Para muchos, el transporte es la barrera invisible entre la estabilidad y las dificultades. Una cita médica perdida, un trabajo perdido o un programa de trabajo que se pierde pueden ser trágicos. Este programa ayuda a aliviar esa carga.",
         daysOpen: "Lunes a viernes",
         daysClosed: "Sábado y domingo",
         hoursLabel: "Horario de atención",
-        hoursValue: "9:00 AM – 5:00 PM",
+        hoursValue: "9S:00 AM – 5:00 PM",
         hoursClosedValue: "Cerrado",
         ratesHeader: "Carreras comunitarias programadas",
+        mapsHeader: "Mapas de áreas de servicio",
         rates: {
           general: {
             label: "Tarifas generales",
