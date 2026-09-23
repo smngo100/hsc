@@ -292,6 +292,7 @@ export const translations = {
       fullNameLabel: "Full Name",
       fullNamePlaceholder: "Jane Doe",
       emailLabel: "Email Address",
+      email: "director@imlayhsc.org",
       emailPlaceholder: "name@example.com",
       phoneNumber: "(810) 724-3665",
       serviceNeededLabel: "Service Needed",

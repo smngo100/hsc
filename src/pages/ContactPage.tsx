@@ -128,9 +128,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               <div className="text-xs font-bold uppercase text-[#1B6B5C]">
                 {t.contact.emailPhoneLabel}
               </div>
-              <div className="text-base text-text1 mt-1">
-                {t.contact.emailPlaceholder}
-              </div>
+              <div className="text-base text-text1 mt-1">{t.contact.email}</div>
               <div className="text-base text-terracotta mt-0.5">
                 {t.contact.phoneNumber}
               </div>

@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 />
               </a>
               <div>{t.contact.phoneNumber}</div>
-              <div>{t.contact.emailPlaceholder}</div>
+              <div>{t.contact.email}</div>
               <div className="max-w-[32rem]">{t.contact.locationValue}</div>
             </div>
 
