@@ -68,6 +68,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
   const airportDestinations = ["detroitMetro", "flintBishop"] as const;
   const scheduledRunKeys = ["kroger", "walmart"] as const;
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [mapView, setMapView] = useState<"static" | "interactive">("static");
+  const mapViews = [
+    { id: "static", label: "Static" },
+    { id: "interactive", label: "Interactive" },
+  ] as const;
 
   // Close on Escape
   useEffect(() => {
@@ -116,33 +121,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         </div>
 
         {/* Sub-View: All Services Overview */}
-        {/* {activeService === "all" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {servicesOverviewList.map((service) => (
-              <div
-                key={service.id}
-                className="hsc-card p-6 flex flex-col justify-between"
-              >
-                <div>
-                  <h3 className="hsc-font-heading text-xl font-bold text-text1 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-text2 leading-relaxed mb-6">
-                    {service.shortDesc}
-                  </p>
-                </div>
-                <button
-                  onClick={() => onSelectService(service.id)}
-                  className="hsc-btn hsc-btn-teal hsc-btn-sm self-start"
-                >
-                  {t.services.viewDetails}
-                </button>
-              </div>
-            ))}
-          </div>
-        )} */}
-
-        {/* Sub-View: All Services Overview */}
         {activeService === "all" && (
           <div className="flex flex-col gap-6">
             {/* Featured: Rides — full-width row */}
@@ -170,33 +148,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 </div>
               );
             })()}
-
-            {/* Remaining services — two-column grid */}
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {servicesOverviewList
-                .filter((service) => service.id !== "rides")
-                .map((service) => (
-                  <div
-                    key={service.id}
-                    className="hsc-card p-6 flex flex-col justify-between"
-                  >
-                    <div>
-                      <h3 className="hsc-font-heading text-xl font-bold text-text1 mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-base text-text2 leading-relaxed mb-6">
-                        {service.shortDesc}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => onSelectService(service.id)}
-                      className="hsc-btn hsc-btn-teal hsc-btn-sm self-start"
-                    >
-                      {t.services.viewDetails}
-                    </button>
-                  </div>
-                ))}
-            </div> */}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {servicesOverviewList
@@ -421,49 +372,88 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </div>
             </div>
 
-            {/* Poster Carousel */}
+            {/* Map: static / interactive */}
             <div className="mb-6">
               <h3 className="hsc-font-heading text-lg font-bold text-text1 mb-3 text-center">
                 {t.services.rides.mapsHeader}
               </h3>
-              <div className="hsc-carousel">
-                <ul className="hsc-carousel-track">
-                  <li>
-                    <button
-                      type="button"
-                      className="block w-full cursor-zoom-in relative"
-                      onClick={() =>
-                        setLightboxSrc(
-                          "attachments/car_service_posters/icarwellnessridesmap_noairports.png",
-                        )
-                      }
-                      aria-label="Enlarge ICAR Wellness rides service area map"
-                    >
-                      <img
-                        src="attachments/car_service_posters/icarwellnessridesmap_noairports.png"
-                        alt="ICAR Wellness rides service area map"
-                      />
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      type="button"
-                      className="block w-full cursor-zoom-in relative"
-                      onClick={() =>
-                        setLightboxSrc(
-                          "attachments/car_service_posters/airportmaplayout1_updated.png",
-                        )
-                      }
-                      aria-label="Enlarge airport ride layout map"
-                    >
-                      <img
-                        src="attachments/car_service_posters/airportmaplayout1_updated.png"
-                        alt="Airport ride layout map"
-                      />
-                    </button>
-                  </li>
-                </ul>
+
+              {/* Segmented control */}
+              <div className="flex justify-end mb-4">
+                <div
+                  role="tablist"
+                  aria-label="Map view"
+                  className="inline-flex p-1 gap-1 rounded-[10px] bg-[#F0E4D3] border border-[rgba(42,33,26,0.14)]"
+                >
+                  {mapViews.map(({ id, label }) => {
+                    const isActive = mapView === id;
+                    return (
+                      <button
+                        key={id}
+                        type="button"
+                        role="tab"
+                        aria-selected={isActive}
+                        onClick={() => setMapView(id)}
+                        className={`px-5 py-1.5 text-sm rounded-[6px] transition-colors cursor-pointer ${
+                          isActive
+                            ? "bg-[#1B6B5C] text-white shadow-xs"
+                            : "text-text2 hover:bg-[rgba(27,107,92,0.12)]"
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
+
+              {mapView === "static" ? (
+                <div className="hsc-carousel">
+                  <ul className="hsc-carousel-track">
+                    <li>
+                      <button
+                        type="button"
+                        className="block w-full cursor-zoom-in relative"
+                        onClick={() =>
+                          setLightboxSrc(
+                            "attachments/car_service_posters/icarwellnessridesmap_noairports.png",
+                          )
+                        }
+                        aria-label="Enlarge ICAR Wellness rides service area map"
+                      >
+                        <img
+                          src="attachments/car_service_posters/icarwellnessridesmap_noairports.png"
+                          alt="ICAR Wellness rides service area map"
+                        />
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        className="block w-full cursor-zoom-in relative"
+                        onClick={() =>
+                          setLightboxSrc(
+                            "attachments/car_service_posters/airportmaplayout1_updated.png",
+                          )
+                        }
+                        aria-label="Enlarge airport ride layout map"
+                      >
+                        <img
+                          src="attachments/car_service_posters/airportmaplayout1_updated.png"
+                          alt="Airport ride layout map"
+                        />
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              ) : (
+                <iframe
+                  src="https://luciagald.github.io/icar-destinations/"
+                  title="ICAR Wellness interactive destinations map"
+                  loading="lazy"
+                  className="w-full h-[480px] md:h-[600px] rounded-[10px] border border-[rgba(42,33,26,0.14)] bg-white"
+                />
+              )}
 
               {lightboxSrc && (
                 <div
