@@ -379,7 +379,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </h3>
 
               {/* Segmented control */}
-              <div className="flex justify-end mb-4">
+              <div className="flex justify-center mb-4">
                 <div
                   role="tablist"
                   aria-label="Map view"
