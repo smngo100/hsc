@@ -121,8 +121,8 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: "t5",
-    initials: "SSP",
-    name: "Sherry Smith-Perry",
+    initials: "FR",
+    name: " Franklin Rodriguez",
     role: "",
     department: "rides",
   },
